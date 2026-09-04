@@ -1,0 +1,254 @@
+================================================================================
+                    MOOREREVENUE - WEBSITE COPY & CONTENT MASTER
+================================================================================
+INSTRUCTIONS FOR USER:
+1. You can edit any text/copy in this file directly.
+2. When you share your updated text back to me, I will update the code to match
+   your exact wordings across all components and pages.
+================================================================================
+
+--------------------------------------------------------------------------------
+1. GLOBAL NAVIGATION & HEADER
+--------------------------------------------------------------------------------
+Brand Name: MooreRevenue
+WhatsApp Number: +918287367640
+Founder Name: Krishna Aggarwal
+Navigation Links:
+- Home
+- Capabilities
+- Services (Dropdown: AI Voice Agents, Custom Automations, Website Development, WhatsApp CRM Automation)
+- Areas We Serve (Dropdown: Mathura Road, DLF Sector 24/25, Ballabgarh, Greater Faridabad, Sector 15 & 16)
+- Comparison
+- FAQs
+Navigation CTA Button: "Call +91 8287367640"
+
+
+--------------------------------------------------------------------------------
+2. HOMEPAGE (src/pages/index.astro)
+--------------------------------------------------------------------------------
+
+[HERO SECTION]
+Top Badge: "AI Automation in Faridabad & NCR"
+
+Main Heading (H1):
+"Best AI Voice Agents & Automation in Faridabad"
+
+Subheading / Description:
+"Faridabad’s AI automation agency, We build custom AI Voice Agents and automations for Businesses"
+
+Primary CTA Button: "Book a Free Discovery Call"
+Secondary CTA Button: "Call +91 8287367640"
+
+Terminal Console Logs (Interactive Simulation):
+- "09:42:01 [Voice AI] Faridabad Inbound caller answered in Hindi/English"
+- "09:42:04 [Voice AI] Identified inquiry: high-volume order consultation"
+- "09:42:06 [WhatsApp Engine] Automated brochure & quote dispatched in 1.4s"
+- "09:42:09 [CRM Pipeline] Lead scored (94/100) & synced with sales calendar"
+- "Inbound booking confirmed for Mathura Rd manufacturer"
+- "Ultra-fast conversion landing page launched for Faridabad firm"
+- "Customer payment link generated (₹84,500)"
+- "18 new B2B local prospects enriched & qualified"
+
+Hero Metrics Pills:
+- "Fast Voice Response"
+- "High PageSpeed Performance"
+- "Official WhatsApp Cloud API"
+- "Zero Manual Data Entry"
+
+
+[SERVICES GRID / CORE SERVICES SECTION]
+Section Badge: "Our Core Services"
+Section Heading: "Simple, Practical Solutions for Local Businesses"
+Section Description: "We build systems that help businesses save hours of manual work and respond to customers faster and grow your Revenue"
+
+Card 1 - Bilingual AI Voice Calling Agents:
+- Badge: "Hindi & English"
+- Title: "Bilingual AI Voice Calling Agents"
+- Description: "Never miss an inbound customer inquiry. Our voice agents answer promptly, speak natural Hindi and everyday English, answer common questions, and book meetings directly to your calendar."
+- Highlights:
+  - Natural Hindi & English voice conversation
+  - Handles bulk calls at the same time
+  - Direct Google Calendar & CRM integration
+- Link: /services/ai-voice-agent-faridabad
+
+Card 2 - WhatsApp Business Automation:
+- Badge: "Official Meta Cloud API"
+- Title: "WhatsApp Business Automation"
+- Description: "Meet your customers on their favorite messaging app. Automatically answer incoming inquiries, share product brochures, deliver instant quotes, and re-engage leads 24/7."
+- Highlights:
+  - Instant 24/7 replies to customer messages
+  - Built on official Meta Cloud API (100% compliant)
+  - Follow-up reminders & appointment notifications
+- Link: /services/whatsapp-automation-faridabad
+
+Card 3 - Fast Website Development:
+- Badge: "Modern & Mobile-First"
+- Title: "Fast Website Development"
+- Description: "Clean, fast-loading websites and landing pages built to convert visitors into direct phone calls and WhatsApp chats. Clean mobile design with built-in local Google SEO structure."
+- Highlights:
+  - Fast page load speeds on mobile & desktop
+  - Direct WhatsApp click-to-chat integration
+  - Clean local SEO structure for Faridabad & NCR
+- Link: /services/website-development-faridabad
+
+Card 4 - Business Workflow Automation:
+- Badge: "Custom Workflows"
+- Title: "Business Workflow Automation"
+- Description: "Connect your day-to-day tools to eliminate repetitive manual work. Automatically route new leads, send team alerts, update spreadsheets, and keep your business running smoothly."
+- Highlights:
+  - Connects forms, WhatsApp, and CRM databases
+  - Automated lead routing
+  - Simple setup with transparent 7–14 day delivery
+- Link: /services/ai-automation-agency-faridabad
+
+
+[CLIENT TESTIMONIAL VIDEO SECTION]
+Section Badge: "Client Testimonials & Case Studies"
+Section Heading: "See Real Impact Delivered Through AI Automation"
+
+Featured Video URL: https://youtu.be/NmS6j-tzLd8
+Review Rating: "5.0 Star Verified Review"
+Video Title: "Client Case Study"
+Badge: "Verified Client Experience"
+
+
+[DIRECT WHATSAPP BOOKING & INQUIRY FORM SECTION]
+Section Badge: "Free AI Audit Call"
+Section Heading: "Book a AI Audit Call"
+
+Form Input Labels & Options:
+- Name Input Label: "Your Full Name *" | Placeholder: "e.g. Vikram Sharma"
+- Company Input Label: "Company / Business Name *" | Placeholder: "e.g. Apex Engineering Works"
+- Location Input Label: "Location / Area *" | Placeholder: "e.g. Faridabad, DLF Phase 1, Ballabgarh"
+- Service Dropdown Label: "Service / Solution You Need *" | Options:
+    1. "AI Voice Calling Agent"
+    2. "WhatsApp Business Automation"
+    3. "Website Development"
+    4. "Custom Business Automation"
+
+Pre-filled WhatsApp Message Template:
+"Hi, Krishna. I am {{name}} from {{Company name}} we based in {{location}} and we are looking for {{service}} solutions."
+
+Destination WhatsApp Number: +91 8287367640 (Krishna Aggarwal)
+
+Form CTA Button Text: "Book a Free AI Audit"
+
+Post-Submit Fallback Screen:
+- Title: "Book a Free AI Audit"
+- Direct Button: "Book a Free AI Audit"
+
+
+
+[FREQUENTLY ASKED QUESTIONS (FAQS)]
+Section Badge: "Got Questions? We Have Clear Answers"
+Section Heading: "Frequently Asked Questions"
+
+Q1: "Can your AI Voice Agents speak fluent Hindi and understand regional Indian accents?"
+A1: "Yes, absolutely. Unlike robotic IVR phone menus, our next-generation Voice AI models are specially fine-tuned on natural conversational Hindi, Indian English, and everyday Hinglish. They understand local accents, booking appointments, answering service queries, and qualifying leads."
+
+Q2: "Which CRMs, communication tools, and APIs do you integrate with?"
+A2: "We integrate seamlessly with modern business stacks including WhatsApp Cloud API, Zoho CRM, Salesforce, HubSpot, Google Workspace, Calendly, Stripe, Razorpay, Slack, and custom REST/GraphQL APIs and webhooks. We don't force you to change your existing tools; we build the intelligent automation AI layer directly across them."
+
+
+Q3: "How long does it take from discovery audit to live deployment?"
+A3: "Our sprint model deploys functional systems in 7 to 14 business days. Following our initial architecture review, we develop your custom voice agent or automation pipeline within week one."
+
+Q4: "Which business processes can be automated with AI?
+A4: "Common areas include invoice and form processing, customer enquiry handling, approval workflows, report generation, inventory updates, appointment reminders, and data movement between different software tools."
+
+Q5: "Is AI automation suitable for small and mid-size businesses?
+A5: "Yes. Many mid-size companies start with one or two high-impact processes. Once they see time savings and fewer errors, they expand. You do not need a large technical team to begin."
+
+Q6:"Can the system handle documents and communication in Indian languages?"
+A6:"Yes. Automation solutions can be designed to work with English as well as major Indian languages commonly used."
+--------------------------------------------------------------------------------
+3. SERVICES PAGES (src/pages/services/...)
+--------------------------------------------------------------------------------
+
+[SERVICE 1: AI AUTOMATION AGENCY]
+URL: /services/ai-automation-agency-faridabad
+Title: "AI Automation Agency in Faridabad"
+Contact Bar: "Serving Clients Across Faridabad & Delhi NCR • Available for On-Site Consultations"
+CTA Box Title: "Ready to Eliminate Manual Bottlenecks in Your Business?"
+CTA Box Description: "Book a 30-minute Free AI Discovery Audit and see live AI automation running for your Faridabad business."
+
+
+[SERVICE 2: AI VOICE AGENTS]
+URL: /services/ai-voice-agent-faridabad
+Title: "AI Voice Agents in Faridabad: Bilingual Conversational Phone Bots for Inbound & Outbound"
+Contact Bar: "Deploying Custom AI Voice Agents Across Faridabad & Delhi NCR"
+CTA Box Title: "Deploy Your Bilingual AI Voice Agent in Under 14 Days"
+CTA Box Description: "Test a live AI voice bot tailored to your business model. Message or call us at +91 8287367640."
+
+
+[SERVICE 3: WEBSITE DEVELOPMENT]
+URL: /services/website-development-faridabad
+Title: "Website Development in Faridabad: Modern, Fast Websites Built to Convert"
+Contact Bar: "Engineering High-Speed Web Platforms Across Faridabad & Delhi NCR"
+CTA Box Title: "Ready for a Website That Actually Drives Inquiries?"
+CTA Box Description: "Reach out to us (+91 8287367640). We will review your current website performance and outline an actionable redesign plan."
+
+
+[SERVICE 4: WHATSAPP AUTOMATION]
+URL: /services/whatsapp-automation-faridabad
+Title: "WhatsApp CRM Automation in Faridabad: Turn Inquiries Into Closed Deals 24/7"
+Contact Bar: "Serving Industrial Belts Across Mathura Road, DLF, Ballabgarh & Neharpar"
+CTA Box Title: "Start Closing Leads on WhatsApp Automatically"
+CTA Box Description: "Speak with us at +91 8287367640 for a 15-minute live demo of our WhatsApp sales pipeline."
+
+
+--------------------------------------------------------------------------------
+4. AREAS WE SERVE PAGES (src/pages/areas-we-serve/...)
+--------------------------------------------------------------------------------
+
+[AREA HUB]
+URL: /areas-we-serve
+Heading: "Areas We Serve Across Faridabad"
+Subtitle: "MooreRevenue delivers AI automation solutions for businesses across Faridabad, Delhi NCR."
+Card Interaction: Any card clicked anywhere will directly open the corresponding location page.
+Button Label: "View Local Solutions & Case Scenarios →"
+
+
+[AREA 1: MATHURA ROAD]
+URL: /areas-we-serve/mathura-road-faridabad
+Title: "AI Automation & Voice Agents in Mathura Road, Faridabad"
+Contact Bar: "Serving Industrial Plants & Suppliers Across Mathura Road (NH-19), Faridabad"
+
+[AREA 2: DLF INDUSTRIAL AREA]
+URL: /areas-we-serve/dlf-industrial-area-faridabad
+Title: "AI Automation & Voice Agents in DLF Industrial Area, Faridabad"
+Contact Bar: "Serving Manufacturing & Engineering Units in DLF Industrial Area (Sectors 24 & 25)"
+
+[AREA 3: BALLABGARH]
+URL: /areas-we-serve/ballabgarh-faridabad
+Title: "AI Automation & Voice Agents in Ballabgarh, Faridabad"
+Contact Bar: "Serving Industrial Plants & Export Units Across the Ballabgarh Corridor"
+
+[AREA 4: GREATER FARIDABAD (NEHARPAR)]
+URL: /areas-we-serve/greater-faridabad-neharpar
+Title: "AI Automation & Voice Agents in Greater Faridabad (Nehar Par)"
+Contact Bar: "Serving Real Estate, Healthcare & Retail Hubs Across Greater Faridabad (Nehar Par)"
+
+[AREA 5: SECTOR 15 & 16]
+URL: /areas-we-serve/sector-15-16-faridabad
+Title: "AI Automation & Voice Agents in Sector 15 & 16, Faridabad"
+Contact Bar: "Serving Corporate Offices, Clinics & Consultancies in Sector 15 & Sector 16"
+
+
+--------------------------------------------------------------------------------
+5. COMPARISON PAGE (src/pages/comparisons/...)
+--------------------------------------------------------------------------------
+URL: /comparisons/ai-agency-vs-traditional-it-faridabad
+Title: "AI Automation Agency vs Traditional IT in Faridabad: Which Drives Real Revenue?"
+
+
+--------------------------------------------------------------------------------
+6. FOOTER
+--------------------------------------------------------------------------------
+
+Service Area Line: "Serving Businesses Across Faridabad & Delhi NCR, India (On-Site & Remote Consultations)"
+Phone: "+91 8287367640"
+
+
+Copyright Line: "© 2026 MooreRevenue"
+================================================================================

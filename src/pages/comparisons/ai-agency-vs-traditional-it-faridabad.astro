@@ -1,0 +1,194 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer.astro";
+import { 
+  Check, 
+  X, 
+  ArrowRight, 
+  PhoneCall, 
+  ShieldCheck, 
+  Zap, 
+  Bot, 
+  Scale,
+  MessageSquare 
+} from "lucide-react";
+
+const pageFaqs = [
+  {
+    question: "When does it make more sense to work with an AI automation agency vs a traditional IT company?",
+    answer: "Traditional IT vendors typically focus on infrastructure, ERP maintenance, or building software from scratch. An AI automation agency like MooreRevenue focuses on connecting and configuring systems that handle specific business tasks automatically — things like call answering, lead qualification, or data syncing. If you need a system built and running quickly rather than a long software development project, an agency approach usually makes more sense.",
+  },
+  {
+    question: "How does cost compare between hiring staff and deploying an AI voice agent?",
+    answer: "A full-time telecaller or receptionist in Faridabad typically costs ₹20,000 to ₹40,000 per month plus overhead. An AI voice agent covers calls outside business hours and during peak times without those recurring costs. The exact comparison depends on your call volume and use case — we can walk you through this on a discovery call.",
+  },
+  {
+    question: "What is the typical timeline to get a system live?",
+    answer: "Most of our projects are scoped and deployed within 7 to 14 business days. This includes understanding your workflow, building the system, testing it with you, and going live. Traditional software development projects often take much longer due to their broader scope.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": pageFaqs.map((f) => ({
+    "@type": "Question",
+    "name": f.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.answer,
+    },
+  })),
+};
+
+const breadcrumbs = [
+  { name: "Home", url: "https://moorerevenue.com/" },
+  { name: "Comparisons", url: "https://moorerevenue.com/comparisons" },
+  { name: "AI Agency vs Traditional IT in Faridabad", url: "https://moorerevenue.com/comparisons/ai-agency-vs-traditional-it-faridabad" }
+];
+---
+
+<Layout
+  title="AI Automation Agency vs Traditional IT Companies in Faridabad | MooreRevenue"
+  description="Honest comparison between modern AI Automation Agencies and traditional IT vendors in Faridabad. Speed, cost, and ROI comparison."
+  canonicalUrl="https://moorerevenue.com/comparisons/ai-agency-vs-traditional-it-faridabad"
+  breadcrumbs={breadcrumbs}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <Navbar client:load />
+
+  <main class="pt-32 pb-24 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
+      <nav class="flex items-center gap-2 text-xs text-slate-500 font-mono">
+        <a href="/" class="hover:text-[#059669]">Home</a>
+        <span>/</span>
+        <span class="text-slate-700 font-medium">AI Agency vs Traditional IT in Faridabad</span>
+      </nav>
+    </div>
+
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-emerald-500/30 bg-emerald-50 text-[#059669] text-xs font-semibold uppercase tracking-wider shadow-xs">
+        <Scale class="w-3.5 h-3.5" />
+        AI Automation Agency vs Traditional IT
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+        AI Automation Agency vs Traditional IT in Faridabad: <span class="text-[#059669]">What's the Difference?</span>
+      </h1>
+    </section>
+
+    <article class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-14 space-y-12 text-slate-600 leading-relaxed">
+      {/* Comparison Matrix Table */}
+      <section class="space-y-6">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+          Comprehensive Feature & ROI Comparison Matrix
+        </h2>
+
+        <div class="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-xs">
+          <table class="w-full text-left text-sm">
+            <thead>
+              <tr class="border-b border-slate-200 text-xs font-mono uppercase tracking-wider text-slate-500 bg-slate-50">
+                <th class="py-4 px-5">Area</th>
+                <th class="py-4 px-5 text-[#059669] font-bold bg-emerald-50/60">MooreRevenue (AI Agency)</th>
+                <th class="py-4 px-5 text-slate-600">Traditional IT Vendor</th>
+                <th class="py-4 px-5 text-slate-500">In-House Staff</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 text-xs sm:text-sm text-slate-700">
+              <tr>
+                <td class="py-4 px-5 font-semibold text-slate-900">Time to Go Live</td>
+                <td class="py-4 px-5 text-[#059669] font-bold bg-emerald-50/60">7 - 14 Business Days</td>
+                <td class="py-4 px-5 text-slate-500">Weeks to months, depending on scope</td>
+                <td class="py-4 px-5 text-slate-500">30 - 60 Days (hiring + onboarding)</td>
+              </tr>
+              <tr>
+                <td class="py-4 px-5 font-semibold text-slate-900">Inbound Lead Response</td>
+                <td class="py-4 px-5 text-[#059669] font-bold bg-emerald-50/60">Configurable availability, any hours</td>
+                <td class="py-4 px-5 text-slate-500">Not typically in scope</td>
+                <td class="py-4 px-5 text-slate-500">Depends on who is available</td>
+              </tr>
+              <tr>
+                <td class="py-4 px-5 font-semibold text-slate-900">Call Handling</td>
+                <td class="py-4 px-5 text-[#059669] font-bold bg-emerald-50/60">Bilingual AI voice agent</td>
+                <td class="py-4 px-5 text-slate-500">Basic IVR or not included</td>
+                <td class="py-4 px-5 text-slate-500">One person per line</td>
+              </tr>
+              <tr>
+                <td class="py-4 px-5 font-semibold text-slate-900">Operating Hours</td>
+                <td class="py-4 px-5 text-[#059669] font-bold bg-emerald-50/60">Configurable 24/7 availability</td>
+                <td class="py-4 px-5 text-slate-500">Standard business hours</td>
+                <td class="py-4 px-5 text-slate-500">Shift-based</td>
+              </tr>
+              <tr>
+                <td class="py-4 px-5 font-semibold text-slate-900">Who You Work With</td>
+                <td class="py-4 px-5 text-[#059669] font-bold bg-emerald-50/60">Directly with core builder</td>
+                <td class="py-4 px-5 text-slate-500">Account manager + dev team</td>
+                <td class="py-4 px-5 text-slate-500">Employee + manager overhead</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      {/* Cross-Link section */}
+      <section class="space-y-4 pt-4">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+          Explore Our Core Services & Faridabad Coverage
+        </h2>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 text-xs font-mono">
+          <a href="/services/ai-automation-agency-faridabad" class="p-3 rounded-xl bg-white hover:bg-emerald-50 border border-slate-200 text-slate-700 hover:text-[#059669] transition-colors shadow-xs">AI Automation Agency →</a>
+          <a href="/services/ai-voice-agent-faridabad" class="p-3 rounded-xl bg-white hover:bg-emerald-50 border border-slate-200 text-slate-700 hover:text-[#059669] transition-colors shadow-xs">AI Voice Agents →</a>
+          <a href="/services/website-development-faridabad" class="p-3 rounded-xl bg-white hover:bg-emerald-50 border border-slate-200 text-slate-700 hover:text-[#059669] transition-colors shadow-xs">Web Development →</a>
+          <a href="/areas-we-serve" class="p-3 rounded-xl bg-white hover:bg-emerald-50 border border-slate-200 text-slate-700 hover:text-[#059669] transition-colors shadow-xs">Faridabad Coverage →</a>
+        </div>
+      </section>
+
+      {/* FAQs */}
+      <section class="space-y-6 pt-6 border-t border-slate-200">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+          Frequently Asked Questions: AI Agency vs Traditional IT
+        </h2>
+        <div class="space-y-4">
+          {pageFaqs.map((faq) => (
+            <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
+              <h3 class="text-base font-bold text-slate-900">{faq.question}</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">{faq.answer}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA Box */}
+      <section class="mt-16 p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-emerald-50/80 via-white to-slate-50 border border-emerald-300 text-center space-y-6 shadow-xl">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight max-w-2xl mx-auto">
+          Not Sure Which Approach Fits?
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 max-w-xl mx-auto leading-relaxed">
+          Book a free 30-minute discovery call (+91 8287367640). We will look at your current setup and give you an honest view of what automation can and cannot do for your business.
+        </p>
+        <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="/#audit-section"
+            class="w-full sm:w-auto px-8 py-4 text-base font-bold text-black bg-[#00dc82] hover:bg-[#05df85] rounded-xl shadow-[0_4px_16px_rgba(0,220,130,0.3)] hover:shadow-[0_6px_24px_rgba(0,220,130,0.5)] transition-all flex items-center justify-center gap-2 cursor-pointer"
+          >
+            <span>Book Free AI Audit</span>
+            <ArrowRight class="w-4 h-4" />
+          </a>
+          <a
+            href="https://wa.me/918287367640"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full sm:w-auto px-6 py-4 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-800 font-mono font-semibold text-sm flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-xs"
+          >
+            <MessageSquare class="w-4 h-4 text-[#059669]" />
+            <span>WhatsApp +91 8287367640</span>
+          </a>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <Footer />
+</Layout>

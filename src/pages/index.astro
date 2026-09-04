@@ -1,0 +1,55 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar";
+import HeroInteractive from "../components/HeroInteractive";
+import ServicesGrid from "../components/ServicesGrid.astro";
+import Testimonials from "../components/Testimonials.astro";
+import AuditForm from "../components/AuditForm";
+import FaqSection, { faqsData } from "../components/FaqSection";
+import Footer from "../components/Footer.astro";
+
+// FAQ Schema for Rich Search Snippets
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqsData.map((faq) => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer,
+    },
+  })),
+};
+---
+
+<Layout
+  title="AI Automation Agency Faridabad - AI Voice Agents, WhatsApp & Websites | MooreRevenue"
+  description="MooreRevenue is an AI automation agency in Faridabad. We build custom AI voice agents, WhatsApp automations, and modern websites for local businesses."
+>
+  <!-- Inject FAQ Schema into Page -->
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <!-- Fixed Navigation Header -->
+  <Navbar client:load />
+
+  <main>
+    <!-- Hero Section with Interactive Agent Terminal -->
+    <HeroInteractive client:load />
+
+    <!-- Services Grid: Core Services in Simple Manner -->
+    <ServicesGrid />
+
+    <!-- Client Testimonial Video Section -->
+    <Testimonials />
+
+    <!-- Free AI Discovery Audit Lead Capture Form -->
+    <AuditForm client:visible />
+
+    <!-- SEO Rich FAQ Section with Shadcn Accordion -->
+    <FaqSection client:visible />
+  </main>
+
+  <!-- Footer with Local SEO NAP Citations -->
+  <Footer />
+</Layout>

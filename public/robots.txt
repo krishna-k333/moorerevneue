@@ -1,0 +1,35 @@
+# robots.txt for MooreRevenue (https://moorerevenue.com)
+# Configured for Maximum Local SEO & Answer Engine Optimization (AEO / GEO)
+
+User-agent: *
+Allow: /
+
+# OpenAI Crawlers (ChatGPT & SearchGPT)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic Claude Crawler
+User-agent: ClaudeBot
+Allow: /
+
+# Perplexity AI Crawler
+User-agent: PerplexityBot
+Allow: /
+
+# Google Gemini & AI Overviews
+User-agent: Google-Extended
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot-Extended
+Allow: /
+
+# Bing Copilot
+User-agent: Bingbot
+Allow: /
+
+# Sitemap Index
+Sitemap: https://moorerevenue.com/sitemap.xml

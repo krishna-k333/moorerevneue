@@ -1,0 +1,174 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalUrl?: string;
+  image?: string;
+  breadcrumbs?: Array<{ name: string; url: string }>;
+}
+
+const {
+  title = "AI Automation Agency Faridabad - AI Voice Agents, WhatsApp & Websites | MooreRevenue",
+  description = "AI Automation Agency in Faridabad. Practical AI Voice Agents, WhatsApp CRM Automation, and High-Converting Modern Websites.",
+  canonicalUrl = "https://moorerevenue.com",
+  image = "/og-image.png",
+  breadcrumbs = [],
+} = Astro.props;
+
+const jsonLdLocalBusiness = {
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "ProfessionalService"],
+  "@id": "https://moorerevenue.com/#organization",
+  "name": "MooreRevenue - AI Automation & Voice Agent Agency",
+  "alternateName": ["MooreRevenue", "Moore Revenue Faridabad"],
+  "url": "https://moorerevenue.com",
+  "logo": "https://moorerevenue.com/favicon.svg",
+  "image": "https://moorerevenue.com/og-image.png",
+  "description": "AI Automation Agency in Faridabad, Haryana. Specializing in Bilingual AI Voice Calling Agents, Workflow Automation, WhatsApp CRM Systems, and High-Converting Modern Websites.",
+  "founder": {
+    "@type": "Person",
+    "name": "Krishna Aggarwal",
+    "jobTitle": "Founder",
+    "telephone": "+918287367640",
+    "url": "https://moorerevenue.com"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Faridabad",
+    "addressRegion": "Haryana",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 28.4089,
+    "longitude": 77.3178
+  },
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "Faridabad" },
+    { "@type": "AdministrativeArea", "name": "Mathura Road Industrial Area" },
+    { "@type": "AdministrativeArea", "name": "DLF Industrial Area Sector 24/25" },
+    { "@type": "AdministrativeArea", "name": "Ballabgarh" },
+    { "@type": "AdministrativeArea", "name": "Greater Faridabad (Neharpar)" },
+    { "@type": "AdministrativeArea", "name": "Sector 15 & 16 Faridabad" },
+    { "@type": "AdministrativeArea", "name": "NIT Faridabad" },
+    { "@type": "AdministrativeArea", "name": "Delhi NCR" },
+    { "@type": "Country", "name": "India" }
+  ],
+  "priceRange": "$$",
+  "telephone": "+918287367640",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+      ],
+      "opens": "09:00",
+      "closes": "20:00"
+    }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "AI Automation, Voice Agents & Web Development in Faridabad",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "AI Voice Calling & Reception Agents in Faridabad",
+          "description": "Bilingual Hindi & English conversational AI agents for automated inbound support, appointment scheduling, and outbound lead qualification."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "AI Automation Agency in Faridabad",
+          "description": "End-to-end workflow automation, CRM synchronization, lead routing pipelines, and WhatsApp Cloud API bots for businesses."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "High-Converting Website Development in Faridabad",
+          "description": "Ultra-fast modern websites and web applications built with Astro, React, and Tailwind CSS engineered for maximum Google rankings and sales conversion."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "WhatsApp CRM & Lead Pipeline Automation",
+          "description": "Instant 24/7 lead nurturing, catalog quoting, and automated multi-channel messaging integrations."
+        }
+      }
+    ]
+  }
+};
+
+const breadcrumbsSchema = breadcrumbs.length > 0 ? {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": breadcrumbs.map((crumb, idx) => ({
+    "@type": "ListItem",
+    "position": idx + 1,
+    "name": crumb.name,
+    "item": crumb.url
+  }))
+} : null;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="canonical" href={canonicalUrl} />
+    <title>{title}</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content={description} />
+    <meta
+      name="keywords"
+      content="AI Automation agency in faridabad, AI Automation in faridabad, AI voice agent in faridabad, AI voice agents in Faridabad, Website development in Faridabad, Web development agency Faridabad, Best AI agency Faridabad, Krishna Aggarwal, MooreRevenue"
+    />
+    <meta name="author" content="Krishna Aggarwal - MooreRevenue" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:locale" content="en_IN" />
+    <meta property="og:site_name" content="MooreRevenue" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalUrl} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- LocalBusiness & Service Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLdLocalBusiness)} />
+    {breadcrumbsSchema && (
+      <script type="application/ld+json" set:html={JSON.stringify(breadcrumbsSchema)} />
+    )}
+  </head>
+  <body class="min-h-screen bg-[#ffffff] text-slate-900 antialiased selection:bg-[#00dc82] selection:text-black overflow-x-hidden">
+    <slot />
+  </body>
+</html>

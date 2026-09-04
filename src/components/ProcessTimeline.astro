@@ -1,0 +1,96 @@
+---
+import { Search, Cog, Rocket, ArrowRight, ShieldAlert } from "lucide-react";
+
+const steps = [
+  {
+    number: "01",
+    icon: Search,
+    title: "Discovery & Revenue Audit",
+    duration: "Day 1 - 3",
+    description:
+      "We map every repetitive bottleneck in your Faridabad or NCR operations. We calculate exactly how many hours your staff loses and design your custom AI blueprint.",
+    deliverable: "Custom AI Architecture & ROI Projection Document",
+  },
+  {
+    number: "02",
+    icon: Cog,
+    title: "AI Engineering & Integration",
+    duration: "Day 4 - 12",
+    description:
+      "We train your dedicated bilingual AI Voice Agents, build WhatsApp pipelines, deploy high-speed website funnels, and configure secure zero-leakage API links to your CRM and databases.",
+    deliverable: "Fully functional sandbox agent ready for team stress-testing",
+  },
+  {
+    number: "03",
+    icon: Rocket,
+    title: "Production Launch & Live Operation",
+    duration: "Day 14 Onwards",
+    description:
+      "We launch your systems into live customer-facing or internal operations with ongoing monitoring and direct support.",
+    deliverable: "Live deployment + ongoing founder support",
+  },
+];
+---
+
+<section id="process" class="py-24 bg-slate-50/60 relative overflow-hidden border-t border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-emerald-500/30 bg-emerald-50 text-[#059669] text-xs font-semibold tracking-wide uppercase shadow-xs">
+        <Rocket class="w-3.5 h-3.5" />
+        Agile Delivery
+      </div>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
+        From Manual Work to Streamlined Systems in 14 Days
+      </h2>
+      <p class="text-base sm:text-lg text-slate-600">
+        No endless retainers or bloat. We work in focused sprints to deploy practical systems that save your team hours and capture inbound leads.
+      </p>
+    </div>
+
+    {/* Process Steps */}
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+      {steps.map((s, index) => {
+        const Icon = s.icon;
+        return (
+          <div class="relative rounded-3xl p-8 bg-white border border-slate-200 hover:border-emerald-400 hover:shadow-xl transition-all duration-300 flex flex-col justify-between group shadow-xs">
+            {/* Step Number Background */}
+            <div class="absolute top-4 right-6 text-5xl font-extrabold text-slate-100 font-mono select-none group-hover:text-emerald-100 transition-colors">
+              {s.number}
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between mb-6">
+                <div class="w-12 h-12 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-[#059669]">
+                  <Icon class="w-6 h-6" />
+                </div>
+                <span class="text-xs font-mono text-[#059669] font-semibold bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
+                  {s.duration}
+                </span>
+              </div>
+
+              <h3 class="text-xl font-bold text-slate-900 mb-3">{s.title}</h3>
+              <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                {s.description}
+              </p>
+            </div>
+
+            <div class="pt-4 border-t border-slate-100">
+              <div class="text-[11px] font-mono text-slate-400 font-medium">DELIVERABLE:</div>
+              <div class="text-xs font-semibold text-slate-800 mt-1 flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-[#059669]"></span>
+                {s.deliverable}
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+
+    {/* Commitment Callout */}
+    <div class="mt-14 max-w-3xl mx-auto text-center p-6 rounded-2xl bg-emerald-50/80 border border-emerald-200 shadow-xs">
+      <p class="text-sm text-slate-800">
+        <strong class="text-[#059669]">The MooreRevenue Commitment:</strong> If our deployed automation or website isn't saving your team time or improving response speed within 30 days, we continue refining and fine-tuning the system at no additional charge until you're satisfied.
+      </p>
+    </div>
+  </div>
+</section>

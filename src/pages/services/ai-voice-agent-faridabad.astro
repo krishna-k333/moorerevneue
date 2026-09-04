@@ -1,0 +1,328 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer.astro";
+import { 
+  CheckCircle2, 
+  ArrowRight, 
+  PhoneCall, 
+  Bot, 
+  Zap, 
+  ShieldCheck, 
+  MapPin, 
+  Volume2, 
+  Headphones,
+  MessageSquare 
+} from "lucide-react";
+
+const pageFaqs = [
+  {
+    question: "What is an AI voice agent and how does it work?",
+    answer: "An AI voice agent is a software system that handles telephone conversations automatically. It listens to callers, understands what they need, responds in natural speech, and can perform actions like booking appointments or collecting information. It works with your existing phone number.",
+  },
+  {
+    question: "Can it speak Hindi and understand regional Indian accents?",
+    answer: "Yes. Our voice agents are configured to handle Hindi, English, and Hinglish. They are tested against common Indian conversational patterns and can switch language based on the caller's preference.",
+  },
+  {
+    question: "Can it connect to our existing phone number?",
+    answer: "Yes. We configure the agent to work with your current number via SIP trunking or cloud telephony providers. Callers dial your usual number and reach the AI agent directly.",
+  },
+  {
+    question: "How does the agent book appointments into our calendar?",
+    answer: "During the call, the agent checks your calendar in real time via Google Calendar or Calendly, offers available slots to the caller, and confirms the booking. A transcript and summary are generated after each call.",
+  },
+  {
+    question: "What happens if the agent cannot handle a question?",
+    answer: "We configure fallback behaviour before launch. This could mean transferring to a human, sending a WhatsApp message, or noting the query for follow-up. We test these edge cases with you before going live.",
+  },
+  {
+    question: "How do I hear a demo before committing?",
+    answer: "Message us on WhatsApp at +91 8287367640 and we will set up a short demo call tailored to your business type.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": pageFaqs.map((f) => ({
+    "@type": "Question",
+    "name": f.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.answer,
+    },
+  })),
+};
+
+const breadcrumbs = [
+  { name: "Home", url: "https://moorerevenue.com/" },
+  { name: "Services", url: "https://moorerevenue.com/services" },
+  { name: "AI Voice Agent in Faridabad", url: "https://moorerevenue.com/services/ai-voice-agent-faridabad" }
+];
+---
+
+<Layout
+  title="AI Voice Agents in Faridabad - Bilingual Hindi & English Phone Agents | MooreRevenue"
+  description="MooreRevenue builds AI voice agents for businesses in Faridabad and NCR. Configured for inbound calls in Hindi and English. Book a free call to see a demo: +91 8287367640."
+  canonicalUrl="https://moorerevenue.com/services/ai-voice-agent-faridabad"
+  breadcrumbs={breadcrumbs}
+>
+  <!-- Inject FAQ Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <Navbar client:load />
+
+  <main class="pt-32 pb-24 bg-white">
+    {/* Breadcrumbs */}
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
+      <nav class="flex items-center gap-2 text-xs text-slate-500 font-mono">
+        <a href="/" class="hover:text-[#059669]">Home</a>
+        <span>/</span>
+        <a href="/services" class="hover:text-[#059669]">Services</a>
+        <span>/</span>
+        <span class="text-slate-700 font-medium">AI Voice Agent in Faridabad</span>
+      </nav>
+    </div>
+
+    {/* Hero & BLUF Header */}
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-emerald-500/30 bg-emerald-50 text-[#059669] text-xs font-semibold uppercase tracking-wider shadow-xs">
+        <Volume2 class="w-3.5 h-3.5" />
+        AI Voice Agents • Hindi & English • Faridabad & NCR
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+        AI Voice Agents in Faridabad: <span class="text-[#059669]">Inbound Call Handling</span> in Hindi & English
+      </h1>
+
+      {/* Local Contact Bar */}
+      <div class="flex flex-wrap items-center justify-between gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm text-slate-700 shadow-xs">
+        <div class="flex items-center gap-2">
+          <MapPin class="w-4 h-4 text-[#059669]" />
+          <span>Deploying Custom AI Voice Agents Across Faridabad & Delhi NCR</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="tel:+918287367640" class="text-slate-700 font-mono font-medium hover:underline">+91 8287367640</a>
+          <span class="text-slate-300">•</span>
+          <a href="https://wa.me/918287367640" target="_blank" rel="noopener noreferrer" class="text-[#059669] font-mono font-bold hover:underline">WhatsApp Chat</a>
+        </div>
+      </div>
+    </section>
+
+    {/* Deep Topical Authority Article */}
+    <article class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-14 space-y-12 text-slate-600 leading-relaxed">
+      
+      {/* Section 1: The Problem */}
+      <section class="space-y-4">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+          The Missed Call Problem
+        </h2>
+        <p>
+          Most businesses in Faridabad rely on phone calls for a significant share of inbound enquiries. The problem is that calls come in at all hours, and a missed call often means a lost opportunity — especially when the caller simply moves on to the next option.
+        </p>
+        <p>
+          An AI voice agent does not replace your team. It handles the calls your team cannot always get to: calls outside hours, simultaneous calls when your line is busy, and routine enquiries that do not need a human but still need an immediate response.
+        </p>
+      </section>
+
+      {/* Section 2: How It Works */}
+      <section class="space-y-6">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+          How the Voice Agent Works
+        </h2>
+        <p>
+          Each agent is configured to your business before launch. We define the questions it asks, the answers it gives, the language it uses, and what it does when a caller needs escalation.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+            <div class="text-[#059669] font-mono text-xs font-bold uppercase">01. Call Handling</div>
+            <h3 class="text-lg font-bold text-slate-900">Answers & Responds</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Picks up inbound calls, greets callers in Hindi or English based on their preference, and handles common queries using your business knowledge base.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+            <div class="text-[#059669] font-mono text-xs font-bold uppercase">02. Lead Qualification</div>
+            <h3 class="text-lg font-bold text-slate-900">Qualifies Callers</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Asks the qualification questions you define, collects relevant information, and routes the call or creates a record based on the outcome.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+            <div class="text-[#059669] font-mono text-xs font-bold uppercase">03. Appointment Booking</div>
+            <h3 class="text-lg font-bold text-slate-900">Books Into Your Calendar</h3>
+            <p class="text-xs text-slate-600 leading-relaxed">
+              Connected to Google Calendar or Calendly. Checks availability and books meetings during the call, with a confirmation sent to the caller.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 3: Use Cases */}
+      <section class="space-y-6">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+          Who Uses Voice Agents in Faridabad
+        </h2>
+        
+        <div class="space-y-4">
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
+            <h3 class="text-lg font-bold text-slate-900">Manufacturing & Industrial Plants (Mathura Road & DLF)</h3>
+            <p class="text-sm text-slate-600">
+              Handle vendor enquiries, dispatch status checks, and quotation requests without pulling production managers away from the floor.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
+            <h3 class="text-lg font-bold text-slate-900">Real Estate & Property Developers (Greater Faridabad)</h3>
+            <p class="text-sm text-slate-600">
+              Respond to enquiries from digital ads, qualify buyer intent and budget, and schedule site visits directly with your sales team.
+            </p>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
+            <h3 class="text-lg font-bold text-slate-900">Clinics & Diagnostic Centres (Sector 15 & 16)</h3>
+            <p class="text-sm text-slate-600">
+              Manage appointment bookings, answer availability queries, and send reminders — without tying up your front desk staff on every call.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 4: Quantitative Comparison */}
+      <section class="space-y-6">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+          Economic Comparison: In-House Telecallers vs MooreRevenue AI Voice Agent
+        </h2>
+        
+        <div class="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-xs">
+          <table class="w-full text-left text-sm">
+            <thead>
+              <tr class="border-b border-slate-200 text-xs font-mono uppercase text-slate-500 bg-slate-50">
+                <th class="py-4 px-5">Metric</th>
+                <th class="py-4 px-5 text-[#059669] font-bold bg-emerald-50/60">MooreRevenue AI Voice Agent</th>
+                <th class="py-4 px-5 text-slate-600">In-House Human Telecallers</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 text-xs sm:text-sm text-slate-700">
+              <tr>
+                <td class="py-4 px-5 font-semibold text-slate-900">Answering Speed</td>
+                <td class="py-4 px-5 text-[#059669] font-bold bg-emerald-50/60">Instant (0 - 1 Rings)</td>
+                <td class="py-4 px-5 text-slate-500">4 to 6 Rings (or Missed)</td>
+              </tr>
+              <tr>
+                <td class="py-4 px-5 font-semibold text-slate-900">Simultaneous Capacity</td>
+                <td class="py-4 px-5 text-[#059669] font-bold bg-emerald-50/60">Bulk Calls at Same Time</td>
+                <td class="py-4 px-5 text-slate-500">1 Caller at a time</td>
+              </tr>
+              <tr>
+                <td class="py-4 px-5 font-semibold text-slate-900">Operating Schedule</td>
+                <td class="py-4 px-5 text-[#059669] font-bold bg-emerald-50/60">24/7/365 Non-stop</td>
+                <td class="py-4 px-5 text-slate-500">8-hour shift, 6 days/week</td>
+              </tr>
+              <tr>
+                <td class="py-4 px-5 font-semibold text-slate-900">Call Logging & CRM Sync</td>
+                <td class="py-4 px-5 text-[#059669] font-bold bg-emerald-50/60">100% Automated Instant Audio & Text</td>
+                <td class="py-4 px-5 text-slate-500">Manual, Prone to Omission</td>
+              </tr>
+              <tr>
+                <td class="py-4 px-5 font-semibold text-slate-900">Cost Structure</td>
+                <td class="py-4 px-5 text-[#059669] font-bold bg-emerald-50/60">Flat Scalable Software Rate</td>
+                <td class="py-4 px-5 text-slate-500">₹25,000 - ₹45,000/month per agent</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      {/* Section 5: Local Coverage Links */}
+      <section class="space-y-4">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+          Providing On-Site Voice AI Deployment Across Faridabad
+        </h2>
+        <p>
+          We provide localized deployment, SIP configuration, and on-site testing across all key commercial corridors:
+        </p>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 text-xs font-mono">
+          <a href="/areas-we-serve/mathura-road-faridabad" class="p-3 rounded-xl bg-white hover:bg-emerald-50 border border-slate-200 text-slate-700 hover:text-[#059669] transition-colors shadow-xs">
+            Mathura Road Hub →
+          </a>
+          <a href="/areas-we-serve/dlf-industrial-area-faridabad" class="p-3 rounded-xl bg-white hover:bg-emerald-50 border border-slate-200 text-slate-700 hover:text-[#059669] transition-colors shadow-xs">
+            DLF Sector 24/25 →
+          </a>
+          <a href="/areas-we-serve/ballabgarh-faridabad" class="p-3 rounded-xl bg-white hover:bg-emerald-50 border border-slate-200 text-slate-700 hover:text-[#059669] transition-colors shadow-xs">
+            Ballabgarh Cluster →
+          </a>
+          <a href="/areas-we-serve/greater-faridabad-neharpar" class="p-3 rounded-xl bg-white hover:bg-emerald-50 border border-slate-200 text-slate-700 hover:text-[#059669] transition-colors shadow-xs">
+            Greater Faridabad →
+          </a>
+          <a href="/areas-we-serve/sector-15-16-faridabad" class="p-3 rounded-xl bg-white hover:bg-emerald-50 border border-slate-200 text-slate-700 hover:text-[#059669] transition-colors shadow-xs">
+            Sector 15 & 16 →
+          </a>
+          <a href="/services/ai-automation-agency-faridabad" class="p-3 rounded-xl bg-white hover:bg-emerald-50 border border-slate-200 text-slate-700 hover:text-[#059669] transition-colors shadow-xs">
+            All AI Services →
+          </a>
+        </div>
+      </section>
+
+      {/* Section 6: FAQs */}
+      <section class="space-y-6 pt-6 border-t border-slate-200">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+          Frequently Asked Questions: AI Voice Agents in Faridabad
+        </h2>
+        
+        <div class="space-y-4">
+          {pageFaqs.map((faq) => (
+            <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
+              <h3 class="text-base font-bold text-slate-900">
+                {faq.question}
+              </h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                {faq.answer}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section class="mt-16 p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-emerald-50/80 via-white to-slate-50 border border-emerald-300 text-center space-y-6 shadow-xl">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-emerald-500/30 bg-emerald-50 text-[#059669] text-xs font-semibold uppercase tracking-wider shadow-xs">
+          <PhoneCall class="w-3.5 h-3.5" />
+          Book a Free Call
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight max-w-2xl mx-auto">
+          Want to Hear a Demo Before Deciding?
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 max-w-xl mx-auto leading-relaxed">
+          Message us on WhatsApp and we will set up a short demo call configured to your business type. No commitment needed.
+        </p>
+        <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="https://wa.me/918287367640"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full sm:w-auto px-8 py-4 text-base font-bold text-black bg-[#00dc82] hover:bg-[#05df85] rounded-xl shadow-[0_4px_16px_rgba(0,220,130,0.3)] hover:shadow-[0_6px_24px_rgba(0,220,130,0.5)] transition-all flex items-center justify-center gap-2 cursor-pointer"
+          >
+            <MessageSquare class="w-5 h-5 text-black" />
+            <span>WhatsApp +91 8287367640</span>
+          </a>
+          <a
+            href="/#audit-section"
+            class="w-full sm:w-auto px-6 py-4 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-800 font-semibold text-sm flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-xs"
+          >
+            <span>Book Free AI Audit</span>
+            <ArrowRight class="w-4 h-4" />
+          </a>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <Footer />
+</Layout>

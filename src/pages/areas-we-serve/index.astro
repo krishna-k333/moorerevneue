@@ -1,0 +1,153 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer.astro";
+import { 
+  MapPin, 
+  Building2, 
+  ArrowRight, 
+  CheckCircle2, 
+  ShieldCheck, 
+  PhoneCall 
+} from "lucide-react";
+
+const areas = [
+  {
+    name: "Mathura Road Industrial Corridor",
+    slug: "/areas-we-serve/mathura-road-faridabad",
+    headline: "Heavy Manufacturing & Auto Component Hub",
+    desc: "Deploying bilingual voice agents, order intake pipelines, and workflow automation for manufacturing units along Delhi-Mathura National Highway 19.",
+    landmarks: "Bata Chowk, Escorts Mujesar, Sector 28 Metro",
+    focus: "Manufacturing & Supply Chain AI",
+  },
+  {
+    name: "DLF Industrial Area (Sectors 24 & 25)",
+    slug: "/areas-we-serve/dlf-industrial-area-faridabad",
+    headline: "Precision Engineering & OEM Suppliers",
+    desc: "Automated quotation bots, vendor order reconciliation, and 24/7 client response agents for Faridabad's premier industrial sector.",
+    landmarks: "Sector 24 Industrial Belt, DLF Phase 1 & 2, Sector 25",
+    focus: "OEM Quotation & Supplier Bots",
+  },
+  {
+    name: "Ballabgarh Manufacturing Hub",
+    slug: "/areas-we-serve/ballabgarh-faridabad",
+    headline: "Heavy Industry, Logistics & Exporters",
+    desc: "Automated RFQ pricing engines, supplier coordination systems, and bilingual customer support for Ballabgarh industrial units.",
+    landmarks: "Raja Nahar Singh Metro, Ballabgarh Industrial Corridor",
+    focus: "Logistics & High-Volume B2B AI",
+  },
+  {
+    name: "Greater Faridabad (Neharpar Sectors 75-89)",
+    slug: "/areas-we-serve/greater-faridabad-neharpar",
+    headline: "Real Estate, Healthcare & Retail Epicenter",
+    desc: "Instant WhatsApp brochure delivery, AI site-visit appointment scheduling, and conversion web platforms for residential and commercial projects.",
+    landmarks: "Sectors 75, 81, 82, 85, 86, 88, 89 Commercial Zones",
+    focus: "Real Estate Lead Funnels & Web Apps",
+  },
+  {
+    name: "Sector 15 & 16 Corporate Centers",
+    slug: "/areas-we-serve/sector-15-16-faridabad",
+    headline: "High-End Corporate, Legal & Medical Consultancies",
+    desc: "Custom bilingual phone receptionists, automated appointment calendars, and sleek modern web applications for Faridabad's central business district.",
+    landmarks: "Sector 15 Market, Sector 16 Commercial Complex, Central Faridabad",
+    focus: "Professional Practice & Medical AI",
+  },
+];
+
+const breadcrumbs = [
+  { name: "Home", url: "https://moorerevenue.com/" },
+  { name: "Areas We Serve", url: "https://moorerevenue.com/areas-we-serve" }
+];
+---
+
+<Layout
+  title="Areas We Serve in Faridabad - Local AI Automation & Voice Agents | MooreRevenue"
+  description="Explore MooreRevenue's service coverage across Faridabad & Delhi NCR. Practical AI automation, voice agents, and web development across Mathura Road, DLF Sectors 24/25, Ballabgarh, Greater Faridabad & Sector 15/16."
+  canonicalUrl="https://moorerevenue.com/areas-we-serve"
+  breadcrumbs={breadcrumbs}
+>
+  <Navbar client:load />
+
+  <main class="pt-32 pb-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-emerald-500/30 bg-emerald-50 text-[#059669] text-xs font-semibold uppercase tracking-wider mb-4 shadow-xs">
+        <MapPin class="w-3.5 h-3.5" />
+        Local Authority • Faridabad & Delhi NCR Hub
+      </div>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight mb-6">
+        Areas We Serve Across <span class="text-[#059669]">Faridabad</span>
+      </h1>
+      <p class="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+        MooreRevenue delivers AI automation solutions for businesses across Faridabad, Delhi NCR.
+      </p>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {areas.map((area) => (
+          <a
+            href={area.slug}
+            class="p-8 rounded-3xl bg-white border border-slate-200 hover:border-emerald-400 hover:shadow-xl transition-all duration-300 shadow-xs flex flex-col justify-between group cursor-pointer block text-inherit no-underline"
+          >
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono font-semibold text-[#059669] bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+                  {area.focus}
+                </span>
+                <MapPin class="w-4 h-4 text-slate-400 group-hover:text-[#059669] transition-colors" />
+              </div>
+
+              <h2 class="text-2xl font-bold text-slate-900 group-hover:text-[#059669] transition-colors">
+                {area.name}
+              </h2>
+              <div class="text-xs text-slate-500 font-mono font-medium">
+                {area.headline}
+              </div>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                {area.desc}
+              </p>
+
+              <div class="pt-4 border-t border-slate-100 text-xs text-slate-600 space-y-1">
+                <div class="text-slate-400 font-mono">Key Landmarks & Transit:</div>
+                <div class="text-slate-900 font-semibold">{area.landmarks}</div>
+              </div>
+            </div>
+
+            <div class="pt-6">
+              <div
+                class="inline-flex items-center justify-between w-full px-4 py-2.5 rounded-xl bg-slate-50 group-hover:bg-[#00dc82] text-slate-800 group-hover:text-black font-semibold text-xs border border-slate-200 group-hover:border-[#00dc82] transition-all shadow-xs"
+              >
+                <span>View Local Solutions & Case Scenarios</span>
+                <ArrowRight class="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      {/* Services Interlink Cross Grid */}
+      <div class="mt-20 p-8 rounded-3xl bg-slate-50 border border-slate-200 text-center max-w-4xl mx-auto space-y-4 shadow-xs">
+        <h3 class="text-2xl font-bold text-slate-900">Our Core AI Services Available Across All Zones</h3>
+        <p class="text-sm text-slate-600">
+          Every location benefits from our complete technology stack:
+        </p>
+        <div class="pt-2 flex flex-wrap items-center justify-center gap-3">
+          <a href="/services/ai-automation-agency-faridabad" class="px-4 py-2 rounded-xl bg-white hover:bg-emerald-50 border border-slate-200 text-xs font-semibold text-slate-700 hover:text-[#059669] transition-colors shadow-xs">
+            AI Automation Agency →
+          </a>
+          <a href="/services/ai-voice-agent-faridabad" class="px-4 py-2 rounded-xl bg-white hover:bg-emerald-50 border border-slate-200 text-xs font-semibold text-slate-700 hover:text-[#059669] transition-colors shadow-xs">
+            Bilingual AI Voice Agents →
+          </a>
+          <a href="/services/website-development-faridabad" class="px-4 py-2 rounded-xl bg-white hover:bg-emerald-50 border border-slate-200 text-xs font-semibold text-slate-700 hover:text-[#059669] transition-colors shadow-xs">
+            Website Development →
+          </a>
+          <a href="/services/whatsapp-automation-faridabad" class="px-4 py-2 rounded-xl bg-white hover:bg-emerald-50 border border-slate-200 text-xs font-semibold text-slate-700 hover:text-[#059669] transition-colors shadow-xs">
+            WhatsApp CRM Automation →
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,368 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer.astro";
+import { 
+  Workflow,
+  Calendar,
+  CheckCircle2, 
+  ArrowRight, 
+  PhoneCall, 
+  Bot, 
+  Clock, 
+  TrendingUp, 
+  ShieldCheck, 
+  MapPin, 
+  Building2,
+  Zap,
+  MessageSquare
+} from "lucide-react";
+
+const pageFaqs = [
+  {
+    question: "What does an AI automation agency actually do?",
+    answer: "We design, build, and connect automated systems that handle repeatable business tasks — things like answering inbound enquiries, routing leads, sending follow-up messages, or syncing data between tools. The goal is to reduce the manual steps your team handles daily so they can focus on higher-value work.",
+  },
+  {
+    question: "Which types of businesses in Faridabad typically work with you?",
+    answer: "We work with manufacturing units, trading companies, service firms, clinics, and real estate teams across Faridabad and NCR. Most clients come to us because they are losing enquiries outside business hours or spending too much time on repetitive coordination work.",
+  },
+  {
+    question: "What tools and systems can you connect or automate?",
+    answer: "We work with WhatsApp Business Cloud API, Zoho CRM, HubSpot, Google Workspace, Calendly, Razorpay, Stripe, and custom systems via REST APIs. We scope the integrations on a discovery call once we understand your current stack.",
+  },
+  {
+    question: "How long does it typically take to go live?",
+    answer: "Most projects are scoped and deployed within 7 to 14 business days depending on complexity. We will give you a clear timeline after the first call.",
+  },
+  {
+    question: "Do we need to change our existing software to use your systems?",
+    answer: "Usually not. We build the automation layer on top of your existing tools where possible. If a replacement makes sense, we will flag it and explain why before any work begins.",
+  },
+  {
+    question: "Who handles the technical work at MooreRevenue?",
+    answer: "Krishna Aggarwal leads all builds directly. You work with the same person from the first call to launch, not a support ticket system.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": pageFaqs.map((f) => ({
+    "@type": "Question",
+    "name": f.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.answer,
+    },
+  })),
+};
+
+const breadcrumbs = [
+  { name: "Home", url: "https://moorerevenue.com/" },
+  { name: "Services", url: "https://moorerevenue.com/services" },
+  { name: "AI Automation Agency Faridabad", url: "https://moorerevenue.com/services/ai-automation-agency-faridabad" }
+];
+---
+
+<Layout
+  title="AI Automation Agency in Faridabad - Voice Agents, Workflows & WhatsApp Automation | MooreRevenue"
+  description="MooreRevenue builds AI voice agents, custom automations, and WhatsApp pipelines for businesses in Faridabad and NCR. Founder-led, practical systems scoped to your workflow. WhatsApp: +91 8287367640."
+  canonicalUrl="https://moorerevenue.com/services/ai-automation-agency-faridabad"
+  breadcrumbs={breadcrumbs}
+>
+  <!-- Inject Subpage FAQ Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <Navbar client:load />
+
+  <main class="pt-32 pb-24 bg-white">
+    {/* Breadcrumbs */}
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
+      <nav class="flex items-center gap-2 text-xs text-slate-500 font-mono">
+        <a href="/" class="hover:text-[#059669]">Home</a>
+        <span>/</span>
+        <a href="/services" class="hover:text-[#059669]">Services</a>
+        <span>/</span>
+        <span class="text-slate-700 font-medium">AI Automation Agency in Faridabad</span>
+      </nav>
+    </div>
+
+    {/* Hero & BLUF Section */}
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      {/* Target Pill */}
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-emerald-500/30 bg-emerald-50 text-[#059669] text-xs font-semibold uppercase tracking-wider shadow-xs">
+        <Workflow class="w-3.5 h-3.5" />
+        AI Automation • Faridabad & NCR
+      </div>
+
+      {/* Target H1 */}
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+        AI Automation Agency in Faridabad: <span class="text-[#059669]">Custom Systems</span> Built Around Your Workflow
+      </h1>
+
+      {/* Direct Contact & Founder Hook */}
+      <div class="flex flex-wrap items-center justify-between gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm text-slate-700 shadow-xs">
+        <div class="flex items-center gap-2">
+          <MapPin class="w-4 h-4 text-[#059669]" />
+          <span>Serving Clients Across Faridabad & Delhi NCR • Available for On-Site Consultations</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="tel:+918287367640" class="text-slate-700 font-mono font-medium hover:underline">+91 8287367640</a>
+          <span class="text-slate-300">•</span>
+          <a href="https://wa.me/918287367640" target="_blank" rel="noopener noreferrer" class="text-[#059669] font-mono font-bold hover:underline">WhatsApp Chat</a>
+        </div>
+      </div>
+    </section>
+
+    {/* In-Depth Article Content */}
+    <article class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-14 space-y-12 text-slate-600 leading-relaxed">
+       {/* Section 1: The Problem */}
+      <section class="space-y-4">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+          Where Most Businesses in Faridabad Lose Time and Enquiries
+        </h2>
+        <p>
+          Faridabad has a wide mix of manufacturers, distributors, service firms, and clinics. Most of them share a common pattern: enquiries come in through phone and WhatsApp, but response depends entirely on whoever is available at that moment. Outside business hours, on weekends, or during busy periods, messages go unanswered and calls go missed.
+        </p>
+        <p>
+          This is not a staffing problem — it is a process problem. The fix is not always to hire more people. Sometimes it is to configure a system that handles the routine work reliably so your team can focus on the conversations that actually need them.
+        </p>
+        <p>
+          At <strong>MooreRevenue</strong>, we build those systems. AI voice agents that handle inbound calls, WhatsApp flows that respond and qualify automatically, and integrations that keep your data connected across tools.
+        </p>
+      </section>
+
+      {/* Section 2: Core Capabilities */}
+      <section class="space-y-6">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+          What We Build
+        </h2>
+        <p>
+          Each project is scoped to your use case. Below are the main systems we build and deploy:
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+            <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+              <PhoneCall class="w-5 h-5 text-[#059669]" />
+              AI Voice Agents
+            </h3>
+            <p class="text-sm text-slate-600">
+              Configured to handle inbound calls, answer queries in Hindi and English, qualify callers based on your criteria, and book appointments into your calendar. Useful for businesses that miss calls outside office hours or during busy periods.
+            </p>
+            <a href="/services/ai-voice-agent-faridabad" class="inline-block text-xs font-semibold text-[#059669] hover:underline">
+              Learn more about AI Voice Agents →
+            </a>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+            <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+              <Bot class="w-5 h-5 text-[#059669]" />
+              WhatsApp Automation
+            </h3>
+            <p class="text-sm text-slate-600">
+              Automated flows for responding to inbound WhatsApp enquiries, sending quotes or brochures, collecting specifications, and following up with leads. Built on the official WhatsApp Cloud API.
+            </p>
+            <a href="/services/whatsapp-automation-faridabad" class="inline-block text-xs font-semibold text-[#059669] hover:underline">
+              Explore WhatsApp Automation →
+            </a>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+            <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+              <TrendingUp class="w-5 h-5 text-[#059669]" />
+              Website Development
+            </h3>
+            <p class="text-sm text-slate-600">
+              Modern, fast-loading websites built on Astro and React. Designed for clear positioning and lead capture, with SEO structure built in from the start.
+            </p>
+            <a href="/services/website-development-faridabad" class="inline-block text-xs font-semibold text-[#059669] hover:underline">
+              Explore Website Development →
+            </a>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+            <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+              <ShieldCheck class="w-5 h-5 text-[#059669]" />
+              Custom Workflow Automation
+            </h3>
+            <p class="text-sm text-slate-600">
+              Connecting your existing tools — CRMs, spreadsheets, communication apps — so data moves automatically between them. Common use cases include lead routing, invoice creation, and appointment reminders.
+            </p>
+            <a href="/comparisons/ai-agency-vs-traditional-it-faridabad" class="inline-block text-xs font-semibold text-[#059669] hover:underline">
+              AI Automation vs Traditional IT →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 3: How We Approach It */}
+      <section class="space-y-6">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+          How We Work
+        </h2>
+        <p>
+          We do not use templates. Every build starts with a discovery call where we understand your current workflow before recommending anything.
+        </p>
+
+        <div class="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-xs">
+          <table class="w-full text-left text-sm">
+            <thead>
+              <tr class="border-b border-slate-200 text-xs font-mono uppercase text-slate-500 bg-slate-50">
+                <th class="py-4 px-5">Area</th>
+                <th class="py-4 px-5 text-[#059669] font-bold bg-emerald-50/60">AI-Assisted System</th>
+                <th class="py-4 px-5 text-slate-600">Manual / No System</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 text-xs sm:text-sm text-slate-700">
+              <tr>
+                <td class="py-4 px-5 font-semibold text-slate-900">Inbound Enquiry Response</td>
+                <td class="py-4 px-5 text-[#059669] font-bold bg-emerald-50/60">Configured to respond immediately, day or night</td>
+                <td class="py-4 px-5 text-slate-500">Depends on who is available at that moment</td>
+              </tr>
+              <tr>
+                <td class="py-4 px-5 font-semibold text-slate-900">Lead Qualification</td>
+                <td class="py-4 px-5 text-[#059669] font-bold bg-emerald-50/60">Handled by voice agent or WhatsApp flow based on your rules</td>
+                <td class="py-4 px-5 text-slate-500">Handled manually, inconsistently across team members</td>
+              </tr>
+              <tr>
+                <td class="py-4 px-5 font-semibold text-slate-900">Data Entry Between Tools</td>
+                <td class="py-4 px-5 text-[#059669] font-bold bg-emerald-50/60">Automated once the integration is built</td>
+                <td class="py-4 px-5 text-slate-500">Done manually, prone to delays and errors</td>
+              </tr>
+              <tr>
+                <td class="py-4 px-5 font-semibold text-slate-900">Deployment Time</td>
+                <td class="py-4 px-5 text-[#059669] font-bold bg-emerald-50/60">7 to 14 business days for most projects</td>
+                <td class="py-4 px-5 text-slate-500">N/A — no system to deploy</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      {/* Section 4: Hyperlocal Authority & Coverage */}
+      <section class="space-y-4">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+          Serving All Key Industrial & Commercial Corridors in Faridabad
+        </h2>
+        <p>
+          We know that local business context matters. MooreRevenue provides tailored automation workflows and on-site engineering consultations across all major Faridabad zones:
+        </p>
+
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-sm">
+          <li class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-xs flex items-center justify-between">
+            <span class="font-medium text-slate-800">Mathura Road Heavy Industrial Zone</span>
+            <a href="/areas-we-serve/mathura-road-faridabad" class="text-[#059669] font-mono text-xs font-semibold hover:underline">View Zone →</a>
+          </li>
+          <li class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-xs flex items-center justify-between">
+            <span class="font-medium text-slate-800">DLF Industrial Area (Sectors 24 & 25)</span>
+            <a href="/areas-we-serve/dlf-industrial-area-faridabad" class="text-[#059669] font-mono text-xs font-semibold hover:underline">View Zone →</a>
+          </li>
+          <li class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-xs flex items-center justify-between">
+            <span class="font-medium text-slate-800">Ballabgarh Manufacturing Hub</span>
+            <a href="/areas-we-serve/ballabgarh-faridabad" class="text-[#059669] font-mono text-xs font-semibold hover:underline">View Zone →</a>
+          </li>
+          <li class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-xs flex items-center justify-between">
+            <span class="font-medium text-slate-800">Greater Faridabad (Neharpar Sectors 75-89)</span>
+            <a href="/areas-we-serve/greater-faridabad-neharpar" class="text-[#059669] font-mono text-xs font-semibold hover:underline">View Zone →</a>
+          </li>
+          <li class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-xs flex items-center justify-between">
+            <span class="font-medium text-slate-800">Sector 15 & 16 Corporate Centers</span>
+            <a href="/areas-we-serve/sector-15-16-faridabad" class="text-[#059669] font-mono text-xs font-semibold hover:underline">View Zone →</a>
+          </li>
+          <li class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-xs flex items-center justify-between">
+            <span class="font-medium text-slate-800">Complete Faridabad Coverage Hub</span>
+            <a href="/areas-we-serve" class="text-[#059669] font-mono text-xs font-semibold hover:underline">All Hubs →</a>
+          </li>
+        </ul>
+      </section>
+
+      {/* Section 5: Process */}
+      <section class="space-y-4">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+          Our Process
+        </h2>
+        <p>
+          We keep it simple. Here is what working with us typically looks like:
+        </p>
+
+        <div class="space-y-4 pt-2">
+          <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+            <div class="text-xs font-mono text-[#059669] font-bold">STEP 1: DISCOVERY CALL</div>
+            <p class="text-xs sm:text-sm text-slate-600">
+              We spend 30 minutes understanding your current workflow, the gaps, and what you want to change. No slides, just a practical conversation.
+            </p>
+          </div>
+          <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+            <div class="text-xs font-mono text-[#059669] font-bold">STEP 2: SCOPE & BUILD</div>
+            <p class="text-xs sm:text-sm text-slate-600">
+              We agree on scope, timeline, and cost before anything starts. Most projects are built and ready to test within 7 to 10 days.
+            </p>
+          </div>
+          <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
+            <div class="text-xs font-mono text-[#059669] font-bold">STEP 3: TEST & LAUNCH</div>
+            <p class="text-xs sm:text-sm text-slate-600">
+              We test with you before going live, fix anything that needs adjusting, and launch. We stay available after launch for issues and refinements.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 6: FAQ Section with Structured Content */}
+      <section class="space-y-6 pt-6 border-t border-slate-200">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+          Frequently Asked Questions: AI Automation in Faridabad
+        </h2>
+        
+        <div class="space-y-4">
+          {pageFaqs.map((faq) => (
+            <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
+              <h3 class="text-base font-bold text-slate-900">
+                {faq.question}
+              </h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                {faq.answer}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section class="mt-16 p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-emerald-50/80 via-white to-slate-50 border border-emerald-300 text-center space-y-6 shadow-xl">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-emerald-500/30 bg-emerald-50 text-[#059669] text-xs font-semibold uppercase tracking-wider shadow-xs">
+          <Calendar class="w-3.5 h-3.5" />
+          Book a Free Discovery Call
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight max-w-2xl mx-auto">
+          Book a Free Discovery Call for Your Business
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 max-w-xl mx-auto leading-relaxed">
+          A 30-minute call to understand your workflow, ask questions, and figure out whether automation makes sense for your business right now.
+        </p>
+        <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="/#audit-section"
+            class="w-full sm:w-auto px-8 py-4 text-base font-bold text-black bg-[#00dc82] hover:bg-[#05df85] rounded-xl shadow-[0_4px_16px_rgba(0,220,130,0.3)] hover:shadow-[0_6px_24px_rgba(0,220,130,0.5)] transition-all flex items-center justify-center gap-2 cursor-pointer"
+          >
+            <span>Book Free AI Audit</span>
+            <ArrowRight class="w-4 h-4" />
+          </a>
+          <a
+            href="https://wa.me/918287367640"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full sm:w-auto px-6 py-4 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-800 font-mono font-semibold text-sm flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-xs"
+          >
+            <MessageSquare class="w-4 h-4 text-[#059669]" />
+            <span>WhatsApp +91 8287367640</span>
+          </a>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <Footer />
+</Layout>

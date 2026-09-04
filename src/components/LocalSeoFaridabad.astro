@@ -1,0 +1,184 @@
+---
+import {
+  MapPin,
+  Check,
+  X,
+  Building2,
+  PhoneCall,
+  ShieldCheck,
+  Wrench,
+  Layers,
+  ArrowRight
+} from "lucide-react";
+
+const localSectors = [
+  "Mathura Road Industrial Corridor",
+  "DLF Industrial Area & Sector 24/25",
+  "Ballabgarh Manufacturing Hub",
+  "Greater Faridabad (Neharpar Sectors 75-89)",
+  "NIT Faridabad Commercial Center",
+  "Sector 15 & 16 Corporate Hubs",
+  "Surajkund & Delhi-NCR Border Corridor",
+];
+
+const industries = [
+  {
+    icon: Building2,
+    title: "Automotive & Heavy Manufacturing",
+    desc: "Automate supplier purchase inquiries, inventory threshold alerts, order confirmations, and delivery updates for Faridabad's tier-1 & tier-2 suppliers.",
+  },
+  {
+    icon: Layers,
+    title: "Real Estate & Infrastructure",
+    desc: "Zero lead leakage for Greater Faridabad projects. Instant WhatsApp brochure delivery, AI site-visit scheduling, and automated investor qualification.",
+  },
+  {
+    icon: PhoneCall,
+    title: "Healthcare & Specialized Clinics",
+    desc: "Bilingual Hindi/English AI voice agents handling 100% of patient inquiries, appointment confirmations, and diagnostic report lookups 24/7.",
+  },
+  {
+    icon: Wrench,
+    title: "B2B Wholesalers & Exporters",
+    desc: "Handle global buyer RFQs in any timezone. Automated price calculation based on customer requirements and instant quotation generation.",
+  },
+];
+---
+
+<section id="faridabad-advantage" class="py-24 bg-white relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+    {/* Section Header */}
+    <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-emerald-500/30 bg-emerald-50 text-[#059669] text-xs font-semibold tracking-wide uppercase">
+        <MapPin class="w-3.5 h-3.5" />
+        Local Advantage: Faridabad & Delhi NCR
+      </div>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
+        Why Faridabad Businesses Choose MooreRevenue Over Generic Tech Agencies
+      </h2>
+      <p class="text-base sm:text-lg text-slate-600">
+        AI shouldn't be complicated or theoretical. At MooreRevenue, we build practical AI voice agents, business automations, and fast websites designed specifically for Faridabad's commercial and industrial businesses.
+      </p>
+    </div>
+
+    {/* Local Industry Solutions Grid */}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+      {industries.map((ind) => {
+        const Icon = ind.icon;
+        return (
+          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-emerald-300 hover:shadow-md transition-all duration-200 flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-emerald-100/70 border border-emerald-200 flex items-center justify-center text-[#059669] mb-4">
+                <Icon class="w-5 h-5" />
+              </div>
+              <h3 class="text-lg font-bold text-slate-900 mb-2">{ind.title}</h3>
+              <p class="text-xs text-slate-600 leading-relaxed">{ind.desc}</p>
+            </div>
+            <div class="pt-4 mt-4 border-t border-slate-200 flex items-center gap-1.5 text-xs text-[#059669] font-semibold">
+              <span>Tailored for Faridabad</span>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+
+    {/* Comparison Matrix: Why MooreRevenue Wins */}
+    <div class="rounded-3xl bg-white border border-slate-200 p-6 sm:p-10 shadow-lg overflow-hidden mb-16">
+      <div class="text-center max-w-2xl mx-auto mb-8">
+        <h3 class="text-2xl font-bold text-slate-900">How MooreRevenue Compares</h3>
+        <p class="text-xs sm:text-sm text-slate-600 mt-1">
+          Compare building with MooreRevenue vs traditional IT software houses or hiring internal staff.
+        </p>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-sm">
+          <thead>
+            <tr class="border-b border-slate-200 text-xs uppercase tracking-wider text-slate-500 font-mono">
+              <th class="py-4 px-4">Feature / Capability</th>
+              <th class="py-4 px-4 text-[#059669] font-bold bg-emerald-50/60 rounded-t-xl">
+                MooreRevenue AI
+              </th>
+              <th class="py-4 px-4 text-slate-500">Traditional IT Agency</th>
+              <th class="py-4 px-4 text-slate-500">Hiring In-House Team</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100 text-slate-700">
+            <tr>
+              <td class="py-4 px-4 font-semibold text-slate-900">Time to Deployment</td>
+              <td class="py-4 px-4 text-[#059669] font-bold bg-emerald-50/60">7 to 14 Days</td>
+              <td class="py-4 px-4 text-slate-500">3 to 6 Months</td>
+              <td class="py-4 px-4 text-slate-500">2 to 4 Months (Hiring)</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-4 font-semibold text-slate-900">Hindi & English Voice AI</td>
+              <td class="py-4 px-4 text-[#059669] font-bold bg-emerald-50/60">
+                <div class="flex items-center gap-1.5"><Check class="w-4 h-4 text-[#059669]" /> Native Fluency</div>
+              </td>
+              <td class="py-4 px-4 text-slate-500">
+                <div class="flex items-center gap-1.5"><X class="w-4 h-4 text-red-500" /> Rarely Supported</div>
+              </td>
+              <td class="py-4 px-4 text-slate-500">Manual Call Operators</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-4 font-semibold text-slate-900">Custom CRM & API Workflow Automation</td>
+              <td class="py-4 px-4 text-[#059669] font-bold bg-emerald-50/60">
+                <div class="flex items-center gap-1.5"><Check class="w-4 h-4 text-[#059669]" /> Plug-and-Play</div>
+              </td>
+              <td class="py-4 px-4 text-slate-500">Expensive Custom Code</td>
+              <td class="py-4 px-4 text-slate-500">Repetitive Manual Entry</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-4 font-semibold text-slate-900">24/7/365 Zero-Downtime</td>
+              <td class="py-4 px-4 text-[#059669] font-bold bg-emerald-50/60">
+                <div class="flex items-center gap-1.5"><Check class="w-4 h-4 text-[#059669]" /> 99.9% Uptime</div>
+              </td>
+              <td class="py-4 px-4 text-slate-500">Requires Maintenance</td>
+              <td class="py-4 px-4 text-slate-500">Leaves, Shifts, Overtime</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-4 font-semibold text-slate-900">Local Faridabad Consultation</td>
+              <td class="py-4 px-4 text-[#059669] font-bold bg-emerald-50/60">
+                <div class="flex items-center gap-1.5"><Check class="w-4 h-4 text-[#059669]" /> On-Site Available</div>
+              </td>
+              <td class="py-4 px-4 text-slate-500">Remote / Offshore</td>
+              <td class="py-4 px-4 text-slate-500">Office Overhead</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    {/* Local Service Hub Footprint Banner */}
+    <div class="p-6 sm:p-8 rounded-2xl bg-gradient-to-r from-emerald-50/80 via-slate-50 to-emerald-50/80 border border-emerald-200 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xs">
+      <div class="space-y-2">
+        <h4 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+          <MapPin class="w-5 h-5 text-[#059669]" />
+          Direct On-Site Consultation Available Across Faridabad
+        </h4>
+        <p class="text-xs sm:text-sm text-slate-600">
+          We can visit your office, factory, or showroom in Faridabad or Delhi NCR to understand your operational bottlenecks and workflow requirements in person.
+        </p>
+        <div class="flex flex-wrap gap-2 pt-1">
+          {localSectors.map((sector) => (
+            <span class="text-[11px] font-mono px-2.5 py-1 rounded bg-white text-slate-700 border border-slate-200 shadow-xs">
+              {sector}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div class="shrink-0">
+        <a
+          href="#audit-section"
+          class="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-bold text-black bg-[#00dc82] hover:bg-[#05df85] transition-all text-sm cursor-pointer shadow-md"
+        >
+          <span>Schedule On-Site Meeting</span>
+          <ArrowRight class="w-4 h-4" />
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,187 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer.astro";
+import { 
+  MapPin, 
+  PhoneCall, 
+  ArrowRight, 
+  Building2, 
+  CheckCircle2, 
+  Zap, 
+  ShieldCheck,
+  MessageSquare 
+} from "lucide-react";
+
+const pageFaqs = [
+  {
+    question: "What automation is useful for heavy industry and exporters in Ballabgarh?",
+    answer: "Common starting points include automated inbound call handling in Hindi and English, WhatsApp-based RFQ responses, and CRM update automations. We scope what fits your operation on a discovery call.",
+  },
+  {
+    question: "Can you come on-site to Ballabgarh?",
+    answer: "Yes. For clients in the Ballabgarh industrial zone, we can arrange an on-site visit after the initial call. Message us at +91 8287367640.",
+  },
+  {
+    question: "Who do we speak with at MooreRevenue?",
+    answer: "Message us on WhatsApp at +91 8287367640 to schedule a call or facility consultation.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": pageFaqs.map((f) => ({
+    "@type": "Question",
+    "name": f.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.answer,
+    },
+  })),
+};
+
+const breadcrumbs = [
+  { name: "Home", url: "https://moorerevenue.com/" },
+  { name: "Areas We Serve", url: "https://moorerevenue.com/areas-we-serve" },
+  { name: "Ballabgarh Faridabad", url: "https://moorerevenue.com/areas-we-serve/ballabgarh-faridabad" }
+];
+---
+
+<Layout
+  title="AI Automation & Voice Agents for Ballabgarh, Faridabad | MooreRevenue"
+  description="MooreRevenue works with manufacturing and export firms in Ballabgarh, Faridabad. AI voice agents, WhatsApp automation, and custom workflows. WhatsApp: +91 8287367640."
+  canonicalUrl="https://moorerevenue.com/areas-we-serve/ballabgarh-faridabad"
+  breadcrumbs={breadcrumbs}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <Navbar client:load />
+
+  <main class="pt-32 pb-24 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
+      <nav class="flex items-center gap-2 text-xs text-slate-500 font-mono">
+        <a href="/" class="hover:text-[#059669]">Home</a>
+        <span>/</span>
+        <a href="/areas-we-serve" class="hover:text-[#059669]">Areas We Serve</a>
+        <span>/</span>
+        <span class="text-slate-700 font-medium">Ballabgarh Faridabad</span>
+      </nav>
+    </div>
+
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-emerald-500/30 bg-emerald-50 text-[#059669] text-xs font-semibold uppercase tracking-wider shadow-xs">
+        <MapPin class="w-3.5 h-3.5" />
+        Ballabgarh Industrial Zone • Raja Nahar Singh Metro Hub
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+        AI Automation & Voice Agents in <span class="text-[#059669]">Ballabgarh, Faridabad</span>
+      </h1>
+
+      <div class="flex flex-wrap items-center justify-between gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm text-slate-700 shadow-xs">
+        <div class="flex items-center gap-2">
+          <MapPin class="w-4 h-4 text-[#059669]" />
+          <span>Serving Industrial Plants & Export Units Across the Ballabgarh Corridor</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="tel:+918287367640" class="text-slate-700 font-mono font-medium hover:underline">+91 8287367640</a>
+          <span class="text-slate-300">•</span>
+          <a href="https://wa.me/918287367640" target="_blank" rel="noopener noreferrer" class="text-[#059669] font-mono font-bold hover:underline">WhatsApp Chat</a>
+        </div>
+      </div>
+    </section>
+
+    <article class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-14 space-y-12 text-slate-600 leading-relaxed">
+      <section class="space-y-4">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+          Modernizing Heavy Industry & Logistics in Ballabgarh
+        </h2>
+        <p>
+          Ballabgarh’s heavy manufacturing corridor connects directly to national transit arteries. Companies manage extensive supply lines and must coordinate with domestic buyers and procurement managers. When potential partners call to check product availability or request technical spec sheets, human delays can cause valuable orders to slip away.
+        </p>
+        <p>
+          MooreRevenue deploys custom AI voice agents fluent in Hindi and English that pick up calls promptly, confirm transport availability, schedule sales meetings, and automatically log audio and text summaries into company databases.
+        </p>
+      </section>
+
+      <section class="space-y-6">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+          Services Deployed in Ballabgarh
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-2">
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+            <h3 class="text-lg font-bold text-slate-900">AI Voice Agents</h3>
+            <p class="text-xs text-slate-600">Handle supplier and buyer calls without missed inquiries, with bilingual fluency.</p>
+            <a href="/services/ai-voice-agent-faridabad" class="text-xs font-semibold text-[#059669] hover:underline block">Voice Agent Specs →</a>
+          </div>
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+            <h3 class="text-lg font-bold text-slate-900">Workflow Automation</h3>
+            <p class="text-xs text-slate-600">End-to-end RFQ processing and automatic PDF quotation dispatch via WhatsApp.</p>
+            <a href="/services/ai-automation-agency-faridabad" class="text-xs font-semibold text-[#059669] hover:underline block">Automation Specs →</a>
+          </div>
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+            <h3 class="text-lg font-bold text-slate-900">Modern Websites</h3>
+            <p class="text-xs text-slate-600">Modern digital platforms engineered to rank well on Google for Ballabgarh industrial searches.</p>
+            <a href="/services/website-development-faridabad" class="text-xs font-semibold text-[#059669] hover:underline block">Website Specs →</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="space-y-4">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+          Neighboring Faridabad Industrial & Commercial Hubs
+        </h2>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 text-xs font-mono">
+          <a href="/areas-we-serve/mathura-road-faridabad" class="p-3 rounded-xl bg-white hover:bg-emerald-50 border border-slate-200 text-slate-700 hover:text-[#059669] transition-colors shadow-xs">Mathura Road Corridor →</a>
+          <a href="/areas-we-serve/dlf-industrial-area-faridabad" class="p-3 rounded-xl bg-white hover:bg-emerald-50 border border-slate-200 text-slate-700 hover:text-[#059669] transition-colors shadow-xs">DLF Sector 24/25 →</a>
+          <a href="/areas-we-serve/greater-faridabad-neharpar" class="p-3 rounded-xl bg-white hover:bg-emerald-50 border border-slate-200 text-slate-700 hover:text-[#059669] transition-colors shadow-xs">Greater Faridabad →</a>
+          <a href="/areas-we-serve/sector-15-16-faridabad" class="p-3 rounded-xl bg-white hover:bg-emerald-50 border border-slate-200 text-slate-700 hover:text-[#059669] transition-colors shadow-xs">Sector 15 & 16 →</a>
+        </div>
+      </section>
+
+      <section class="space-y-6 pt-6 border-t border-slate-200">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+          Frequently Asked Questions: Ballabgarh Industrial Automation
+        </h2>
+        <div class="space-y-4">
+          {pageFaqs.map((faq) => (
+            <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
+              <h3 class="text-base font-bold text-slate-900">{faq.question}</h3>
+              <p class="text-sm text-slate-600 leading-relaxed">{faq.answer}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="mt-16 p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-emerald-50/80 via-white to-slate-50 border border-emerald-300 text-center space-y-6 shadow-xl">
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight max-w-2xl mx-auto">
+          Book an On-Site Audit for Your Ballabgarh Facility
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 max-w-xl mx-auto leading-relaxed">
+          Contact us (+91 8287367640) to arrange an on-premise review of your operations.
+        </p>
+        <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a
+            href="/#audit-section"
+            class="w-full sm:w-auto px-8 py-4 text-base font-bold text-black bg-[#00dc82] hover:bg-[#05df85] rounded-xl shadow-[0_4px_16px_rgba(0,220,130,0.3)] hover:shadow-[0_6px_24px_rgba(0,220,130,0.5)] transition-all flex items-center justify-center gap-2 cursor-pointer"
+          >
+            <span>Book Free AI Audit</span>
+            <ArrowRight class="w-4 h-4" />
+          </a>
+          <a
+            href="https://wa.me/918287367640"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full sm:w-auto px-6 py-4 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-800 font-mono font-semibold text-sm flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-xs"
+          >
+            <MessageSquare class="w-4 h-4 text-[#059669]" />
+            <span>WhatsApp +91 8287367640</span>
+          </a>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,139 @@
+---
+import {
+  PhoneCall,
+  MessageSquare,
+  Globe,
+  Workflow,
+  Check,
+  ArrowRight,
+  Layers
+} from "lucide-react";
+
+const services = [
+  {
+    title: "Bilingual AI Voice Calling Agents",
+    badge: "Hindi & English",
+    icon: PhoneCall,
+    description: "Never miss an inbound customer inquiry. Our voice agents answer promptly, speak natural Hindi and everyday English, answer common questions, and book meetings directly to your calendar.",
+    highlights: [
+      "Natural Hindi & English voice conversation",
+      "Handles bulk calls at the same time",
+      "Direct Google Calendar & CRM integration"
+    ],
+    link: "/services/ai-voice-agent-faridabad",
+    linkText: "Learn about Voice Agents"
+  },
+  {
+    title: "WhatsApp Business Automation",
+    badge: "Official Meta Cloud API",
+    icon: MessageSquare,
+    description: "Meet your customers on their favorite messaging app. Automatically answer incoming inquiries, share product brochures, deliver instant quotes, and re-engage leads 24/7.",
+    highlights: [
+      "Instant 24/7 replies to customer messages",
+      "Built on official Meta Cloud API (100% compliant)",
+      "Follow-up reminders & appointment notifications"
+    ],
+    link: "/services/whatsapp-automation-faridabad",
+    linkText: "Learn about WhatsApp Automation"
+  },
+  {
+    title: "Fast Website Development",
+    badge: "Modern & Mobile-First",
+    icon: Globe,
+    description: "Clean, fast-loading websites and landing pages built to convert visitors into direct phone calls and WhatsApp chats. Clean mobile design with built-in local Google SEO structure.",
+    highlights: [
+      "Fast page load speeds on mobile & desktop",
+      "Direct WhatsApp click-to-chat integration",
+      "Clean local SEO structure for Faridabad & NCR"
+    ],
+    link: "/services/website-development-faridabad",
+    linkText: "Learn about Web Development"
+  },
+  {
+    title: "Business Workflow Automation",
+    badge: "Custom Workflows",
+    icon: Workflow,
+    description: "Connect your day-to-day tools to eliminate repetitive manual work. Automatically route new leads, send team alerts, update spreadsheets, and keep your business running smoothly.",
+    highlights: [
+      "Connects forms, WhatsApp, and CRM databases",
+      "Automated lead routing",
+      "Simple setup with transparent 7–14 day delivery"
+    ],
+    link: "/services/ai-automation-agency-faridabad",
+    linkText: "Learn about Workflow Automation"
+  }
+];
+---
+
+<section id="capabilities" class="py-20 bg-slate-50/70 border-y border-slate-200/80 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    {/* Section Header */}
+    <div class="text-center max-w-3xl mx-auto mb-14 space-y-4">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-emerald-500/30 bg-emerald-50 text-[#059669] text-xs font-semibold uppercase tracking-wider shadow-xs">
+        <Layers class="w-3.5 h-3.5" />
+        Our Core Services
+      </div>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
+        Simple, Practical Solutions for <span class="text-[#059669]">Local Businesses</span>
+      </h2>
+      <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto">
+        We build systems that help businesses save hours of manual work and respond to customers faster and grow your Revenue
+      </p>
+    </div>
+
+    {/* Simple 2x2 Services Grid */}
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+      {services.map((svc) => {
+        const Icon = svc.icon;
+        return (
+          <a
+            href={svc.link}
+            class="group p-7 sm:p-8 rounded-2xl bg-white border border-slate-200 hover:border-emerald-400 hover:shadow-lg transition-all duration-300 flex flex-col justify-between block cursor-pointer text-inherit no-underline"
+          >
+            <div class="space-y-4">
+              <div class="flex items-center justify-between gap-3">
+                <div class="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-200/80 flex items-center justify-center text-[#059669] group-hover:scale-105 transition-transform duration-300">
+                  <Icon class="w-6 h-6" />
+                </div>
+                <span class="text-xs font-mono font-semibold text-[#059669] bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200/70">
+                  {svc.badge}
+                </span>
+              </div>
+
+              <h3 class="text-xl sm:text-2xl font-bold text-slate-900 group-hover:text-[#059669] transition-colors">
+                {svc.title}
+              </h3>
+
+              <p class="text-sm text-slate-600 leading-relaxed">
+                {svc.description}
+              </p>
+
+              {/* Simple Feature Checklist */}
+              <ul class="space-y-2 pt-2 border-t border-slate-100">
+                {svc.highlights.map((h) => (
+                  <li class="flex items-center gap-2.5 text-xs sm:text-sm text-slate-700">
+                    <div class="w-4 h-4 rounded-full bg-emerald-100 text-[#059669] flex items-center justify-center shrink-0">
+                      <Check class="w-2.5 h-2.5 stroke-[3]" />
+                    </div>
+                    <span>{h}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div class="pt-6 mt-6 border-t border-slate-100">
+              <div
+                class="inline-flex items-center gap-2 text-sm font-semibold text-[#059669] group-hover:text-emerald-700 transition-colors"
+              >
+                <span>{svc.linkText}</span>
+                <ArrowRight class="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </div>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+
+  </div>
+</section>

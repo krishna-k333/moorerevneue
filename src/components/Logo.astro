@@ -1,0 +1,77 @@
+---
+interface Props {
+  className?: string;
+  showText?: boolean;
+  size?: number;
+}
+
+const { className = "", showText = true, size = 36 } = Astro.props;
+---
+
+<div class={`inline-flex items-center gap-2.5 select-none ${className}`}>
+  <div 
+    class="relative flex items-center justify-center shrink-0"
+    style={`width: ${size}px; height: ${size}px;`}
+  >
+    <svg
+      viewBox="0 0 48 48"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      class="w-full h-full drop-shadow-[0_0_12px_rgba(0,220,130,0.4)] transition-transform duration-300 hover:scale-105"
+    >
+      <path
+        d="M24 4L40 18V42H32V23L24 16L16 23V42H8V18L24 4Z"
+        fill="url(#moore-emerald-grad-astro)"
+      />
+      <rect
+        x="14"
+        y="26"
+        width="4.5"
+        height="16"
+        rx="1.5"
+        fill="#05df85"
+        class="opacity-90"
+      />
+      <rect
+        x="21.75"
+        y="21"
+        width="4.5"
+        height="21"
+        rx="1.5"
+        fill="#10b981"
+        class="opacity-95"
+      />
+      <rect
+        x="29.5"
+        y="16"
+        width="4.5"
+        height="26"
+        rx="1.5"
+        fill="#34d399"
+      />
+
+      <defs>
+        <linearGradient
+          id="moore-emerald-grad-astro"
+          x1="8"
+          y1="4"
+          x2="40"
+          y2="42"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#00DC82"></stop>
+          <stop offset="0.6" stop-color="#10B981"></stop>
+          <stop offset="1" stop-color="#059669"></stop>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+
+  {showText && (
+    <div class="flex items-center tracking-tight font-sans">
+      <span class="text-xl font-bold text-slate-900 tracking-tight">
+        Moore<span class="text-[#00DC82]">Revenue</span>
+      </span>
+    </div>
+  )}
+</div>
