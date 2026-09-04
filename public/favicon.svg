@@ -1,12 +1,52 @@
-<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="48" height="48" rx="10" fill="#070C0F"/>
-  <path d="M24 6L38 18V38H31V23L24 17L17 23V38H10V18L24 6Z" fill="url(#fav-grad)"/>
-  <rect x="15" y="25" width="4" height="13" rx="1" fill="#05DF85"/>
-  <rect x="22" y="21" width="4" height="17" rx="1" fill="#10B981"/>
-  <rect x="29" y="17" width="4" height="21" rx="1" fill="#34D399"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <!-- High-contrast rounded background that pops on both light and dark browser themes -->
+  <rect width="48" height="48" rx="11" fill="#080d11"/>
+  <rect x="0.5" y="0.5" width="47" height="47" rx="10.5" stroke="#00dc82" stroke-opacity="0.25"/>
+  
+  <!-- MooreRevenue Signature "M" Arch -->
+  <path
+    d="M24 5L40 19V42H32V24L24 17L16 24V42H8V19L24 5Z"
+    fill="url(#moore-fav-grad)"
+  />
+  
+  <!-- Ascending Growth Revenue Bars -->
+  <rect
+    x="14"
+    y="27"
+    width="4.5"
+    height="15"
+    rx="1.5"
+    fill="#05df85"
+    opacity="0.95"
+  />
+  <rect
+    x="21.75"
+    y="22"
+    width="4.5"
+    height="20"
+    rx="1.5"
+    fill="#10b981"
+  />
+  <rect
+    x="29.5"
+    y="17"
+    width="4.5"
+    height="25"
+    rx="1.5"
+    fill="#34d399"
+  />
+
   <defs>
-    <linearGradient id="fav-grad" x1="10" y1="6" x2="38" y2="38" gradientUnits="userSpaceOnUse">
+    <linearGradient
+      id="moore-fav-grad"
+      x1="8"
+      y1="5"
+      x2="40"
+      y2="42"
+      gradientUnits="userSpaceOnUse"
+    >
       <stop stop-color="#00DC82"/>
+      <stop offset="0.5" stop-color="#10B981"/>
       <stop offset="1" stop-color="#059669"/>
     </linearGradient>
   </defs>
