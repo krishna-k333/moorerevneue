@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" width="900" height="480">
+  <defs>
+    <linearGradient id="compBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#1f2937" />
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="480" rx="16" fill="url(#compBg)" stroke="#374151" stroke-width="2" />
+
+  <!-- Title -->
+  <text x="40" y="50" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="22" font-weight="800" fill="#ffffff">
+    Why Inbound Phone Leads Are Won or Lost in Faridabad
+  </text>
+  <text x="40" y="76" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="13" fill="#9ca3af">
+    The harsh speed reality: What happens to callers within the first 60 seconds of dialing.
+  </text>
+
+  <!-- Split Comparison -->
+  <!-- Left Side: Missed Call Result -->
+  <g transform="translate(40, 110)">
+    <rect width="390" height="320" rx="12" fill="#18181b" stroke="#7f1d1d" stroke-width="1.5" />
+    <rect x="20" y="20" width="180" height="24" rx="6" fill="#ef4444" fill-opacity="0.2" />
+    <text x="30" y="36" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#f87171">TRADITIONAL TELECALLER</text>
+    
+    <text x="20" y="75" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="700" fill="#f87171">Line Busy or Rings Out</text>
+    <text x="20" y="98" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" fill="#a1a1aa">
+      Phone rings while owner is in a meeting or staff is on lunch. Rings 6 times, goes to voicemail (which nobody listens to in India).
+    </text>
+
+    <!-- Stat 1 -->
+    <rect x="20" y="160" width="350" height="42" rx="8" fill="#27272a" />
+    <text x="32" y="186" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" fill="#fca5a5">❌ 74% of buyers immediately call competitor</text>
+
+    <!-- Stat 2 -->
+    <rect x="20" y="212" width="350" height="42" rx="8" fill="#27272a" />
+    <text x="32" y="238" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" fill="#fca5a5">❌ Lead cost wasted on Google/Indiamart ads</text>
+
+    <!-- Stat 3 -->
+    <rect x="20" y="264" width="350" height="42" rx="8" fill="#27272a" />
+    <text x="32" y="290" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" fill="#fca5a5">❌ ₹25,000+ salary + continuous turnover</text>
+  </g>
+
+  <!-- Right Side: MooreRevenue Voice Agent -->
+  <g transform="translate(470, 110)">
+    <rect width="390" height="320" rx="12" fill="#064e3b" fill-opacity="0.4" stroke="#059669" stroke-width="2" />
+    <rect x="20" y="20" width="180" height="24" rx="6" fill="#059669" fill-opacity="0.3" />
+    <text x="30" y="36" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" fill="#34d399">AI VOICE AGENT (0 SECONDS)</text>
+    
+    <text x="20" y="75" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="700" fill="#34d399">Answers Instantly 24/7</text>
+    <text x="20" y="98" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" fill="#d1fae5">
+      Greets caller in friendly Hindi or English within 1 second. Answers common queries, takes specs, and locks appointment into Google Calendar.
+    </text>
+
+    <!-- Stat 1 -->
+    <rect x="20" y="160" width="350" height="42" rx="8" fill="#065f46" fill-opacity="0.6" />
+    <text x="32" y="186" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="600" fill="#6ee7b7">✓ 100% of inbound calls answered immediately</text>
+
+    <!-- Stat 2 -->
+    <rect x="20" y="212" width="350" height="42" rx="8" fill="#065f46" fill-opacity="0.6" />
+    <text x="32" y="238" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="600" fill="#6ee7b7">✓ Instant WhatsApp quote &amp; brochure sent</text>
+
+    <!-- Stat 3 -->
+    <rect x="20" y="264" width="350" height="42" rx="8" fill="#065f46" fill-opacity="0.6" />
+    <text x="32" y="290" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="600" fill="#6ee7b7">✓ Full audio recording + text transcript to CRM</text>
+  </g>
+</svg>

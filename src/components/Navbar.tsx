@@ -57,6 +57,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAudit }) => {
             Services
           </a>
           <a
+            href="/portfolio"
+            className="hover:text-[#059669] transition-colors duration-200"
+          >
+            Portfolio
+          </a>
+          <a
             href="/areas-we-serve"
             className="hover:text-[#059669] transition-colors duration-200 flex items-center gap-1.5"
           >
@@ -126,6 +132,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAudit }) => {
             className="block py-2 text-base font-semibold text-slate-800 hover:text-[#059669]"
           >
             All Services & Solutions
+          </a>
+          <a
+            href="/portfolio"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block py-2 text-base font-semibold text-slate-800 hover:text-[#059669]"
+          >
+            Website Portfolio & Work
           </a>
           <a
             href="/areas-we-serve"
