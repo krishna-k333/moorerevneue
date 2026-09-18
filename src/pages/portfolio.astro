@@ -204,9 +204,14 @@ const breadcrumbs = [
                     <span class="w-3 h-3 rounded-full bg-emerald-500/80 inline-block"></span>
                   </div>
 
-                  {/* URL Address Bar */}
-                  <div class="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-900/90 border border-slate-700/50 text-[11px] font-mono text-slate-300 max-w-[280px] truncate">
-                    <Globe class="w-3 h-3 text-emerald-400 shrink-0" />
+                  {/* URL Address Bar with Site Favicon */}
+                  <div class="flex items-center gap-2 px-3 py-1 rounded-lg bg-slate-900/90 border border-slate-700/50 text-[11px] font-mono text-slate-300 max-w-[280px] truncate">
+                    <img
+                      src={`https://www.google.com/s2/favicons?domain=${project.domain}&sz=32`}
+                      alt=""
+                      class="w-3.5 h-3.5 rounded-xs shrink-0"
+                      loading="lazy"
+                    />
                     <span class="truncate">https://{project.domain}</span>
                   </div>
 
