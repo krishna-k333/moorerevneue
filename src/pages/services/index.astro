@@ -7,12 +7,26 @@ import {
   Globe, 
   MessageSquare, 
   Workflow,
+  Search,
   Check,
   ArrowRight, 
   Layers 
 } from "lucide-react";
 
 const services = [
+  {
+    title: "Local SEO & AI Visibility (AEO)",
+    badge: "Google Maps & ChatGPT",
+    icon: Search,
+    description: "Rank in the Top 3 Google Maps pack within 90 days—guaranteed. Plus, get your business recommended by ChatGPT, Gemini, and Perplexity when local buyers search for your services.",
+    highlights: [
+      "Guaranteed Top 3 Google Maps ranking in 90 days",
+      "Optimized for ChatGPT, Gemini & Perplexity recommendations",
+      "Full citation syndication & Friday heatmap reports"
+    ],
+    link: "/services/local-seo-aeo-faridabad",
+    linkText: "Learn about Local SEO & AEO"
+  },
   {
     title: "Bilingual AI Voice Calling Agents",
     badge: "Hindi & English",
@@ -98,7 +112,7 @@ const breadcrumbs = [
 
     {/* Services Grid */}
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         {services.map((svc) => {
           const Icon = svc.icon;
           return (

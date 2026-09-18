@@ -1,0 +1,371 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer.astro";
+import { 
+  Search, 
+  Bot, 
+  MapPin, 
+  CheckCircle2, 
+  ArrowRight, 
+  PhoneCall, 
+  Zap, 
+  ShieldCheck, 
+  BarChart3, 
+  Globe, 
+  Target, 
+  Sparkles,
+  Layers
+} from "lucide-react";
+
+const pageFaqs = [
+  {
+    question: "What is the difference between Local SEO and Answer Engine Optimization (AEO)?",
+    answer: "Local SEO optimizes your Google Business Profile, citations, and website to rank in the Top 3 Google Maps pack when customers search locally. AEO (Answer Engine Optimization) goes a step further: it structures your brand data so conversational AI engines like ChatGPT, Gemini, and Perplexity actively name and recommend your business when prospective buyers ask for the best service in your city.",
+  },
+  {
+    question: "How does MooreRevenue's 90-day Google Maps Top 3 guarantee work?",
+    answer: "We perform a comprehensive 4-pillar optimization: consolidating Google Business Profile categories, building 30-99 rich service descriptions, deploying on-page local schema and topical neighborhood pages, and syndicating verified core citations (Apple Maps, Bing, navigation ecosystems). If we do not move your verified profile into the top 3 results within 90 days, you receive a 100% full refund.",
+  },
+  {
+    question: "Why are traditional SEO agencies failing to deliver local leads today?",
+    answer: "Traditional agencies sell generic monthly blog posts and low-quality spam backlinks that Google filters out. They ignore the Google Map pack (where 70%+ of local clicks happen) and completely overlook AI answer engines like ChatGPT and Gemini, which now capture over 58% of initial search consideration clicks.",
+  },
+  {
+    question: "How do you optimize a local business to be recommended by ChatGPT and Gemini?",
+    answer: "AI engines favor entities with strong brand consensus and clean machine-readable data. We ensure your robots.txt allows AI crawlers (GPTBot, ClaudeBot, PerplexityBot), format your web content with atomic BLUF (Bottom Line Up Front) answers, implement LocalBusiness schema, and build brand mentions across high-trust directories, local publications, and YouTube transcripts.",
+  },
+  {
+    question: "What is your weekly reporting and communication process?",
+    answer: "We establish Friday as our dedicated Client Update Day. Every Friday, you receive a clear, actionable progress report with updated geo-grid heatmaps, completed on-page milestones, and citation logs—so you never have to wonder what is happening with your account.",
+  },
+  {
+    question: "Do you offer geographic territory exclusivity?",
+    answer: "Yes. On our ongoing monthly maintenance retainers, we provide local radius exclusivity: we will never work with another direct competitor in your niche within your defined commercial territory as long as your retainer is active.",
+  },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": pageFaqs.map((f) => ({
+    "@type": "Question",
+    "name": f.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.answer,
+    },
+  })),
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "MooreRevenue - Local SEO & AI Visibility Agency",
+  "image": "https://moorerevenue.com/images/og-image.png",
+  "url": "https://moorerevenue.com/services/local-seo-aeo-faridabad",
+  "telephone": "+918287367640",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Faridabad",
+    "addressRegion": "Haryana",
+    "postalCode": "121002",
+    "addressCountry": "IN"
+  },
+  "areaServed": [
+    "Faridabad",
+    "Mathura Road",
+    "DLF Industrial Area Sector 24/25",
+    "Ballabgarh",
+    "Greater Faridabad",
+    "Sector 15 & 16",
+    "Delhi NCR"
+  ],
+  "description": "Dominant Local SEO and Answer Engine Optimization (AEO) in Faridabad. Guaranteed Top 3 Google Maps rankings and ChatGPT/Gemini AI recommendations for local businesses."
+};
+
+const breadcrumbs = [
+  { name: "Home", url: "https://moorerevenue.com/" },
+  { name: "Services", url: "https://moorerevenue.com/services" },
+  { name: "Local SEO & AEO Faridabad", url: "https://moorerevenue.com/services/local-seo-aeo-faridabad" }
+];
+---
+
+<Layout
+  title="Local SEO & AI Visibility (AEO) in Faridabad - Top 3 Google Maps & ChatGPT | MooreRevenue"
+  description="Dominate local search in Faridabad. Guaranteed Top 3 Google Maps rankings in 90 days plus AI Visibility on ChatGPT, Gemini & Perplexity. Get your free heatmap audit today."
+  canonicalUrl="https://moorerevenue.com/services/local-seo-aeo-faridabad"
+  breadcrumbs={breadcrumbs}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+
+  <Navbar client:load />
+
+  <main class="pt-32 pb-24 bg-white">
+    {/* Breadcrumbs */}
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
+      <nav class="flex items-center gap-2 text-xs text-slate-500 font-mono">
+        <a href="/" class="hover:text-[#059669]">Home</a>
+        <span>/</span>
+        <a href="/services" class="hover:text-[#059669]">Services</a>
+        <span>/</span>
+        <span class="text-slate-700 font-medium">Local SEO & AI Visibility (AEO)</span>
+      </nav>
+    </div>
+
+    {/* Hero & Header */}
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-emerald-500/30 bg-emerald-50 text-[#059669] text-xs font-semibold uppercase tracking-wider shadow-xs">
+        <Search class="w-3.5 h-3.5" />
+        Google Maps 90-Day Guarantee • AI Visibility Layer
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+        Local SEO & AI Visibility in Faridabad: <span class="text-[#059669]">Top 3 Google Maps</span> & ChatGPT Recommendation
+      </h1>
+
+      <p class="text-lg sm:text-xl text-slate-600 max-w-3xl leading-relaxed">
+        We help local businesses and industrial manufacturers in Faridabad & Delhi NCR rank in the Top 3 Google Maps pack within 90 days—guaranteed. Plus, we optimize your business to be recommended by ChatGPT, Gemini, and Perplexity when high-intent buyers search for your services.
+      </p>
+
+      {/* Contact & Benchmark Bar */}
+      <div class="flex flex-wrap items-center justify-between gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm text-slate-700 shadow-xs">
+        <div class="flex items-center gap-2">
+          <MapPin class="w-4 h-4 text-[#059669]" />
+          <span>Serving Faridabad, Mathura Road, DLF Ind. Area & Delhi NCR</span>
+        </div>
+        <div class="flex flex-wrap items-center gap-3">
+          <a href="tel:+918287367640" class="text-slate-700 font-mono font-medium hover:underline">+91 8287367640</a>
+          <span class="text-slate-300">•</span>
+          <a href="https://wa.me/918287367640?text=Hi%20Krishna,%20I%20want%20a%20free%20Google%20Maps%20%26%20AI%20ranking%20audit%20for%20my%20business." target="_blank" rel="noopener noreferrer" class="text-[#059669] font-mono font-bold hover:underline">
+            Request Free Heatmap Audit →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    {/* Detailed Article */}
+    <article class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-14 space-y-14 text-slate-600 leading-relaxed">
+      
+      {/* Section 1: The Modern Search Reality */}
+      <section class="space-y-5">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+          Search Has Split in Two: The Google Map Pack and Conversational AI
+        </h2>
+        <div class="p-6 rounded-2xl bg-emerald-50/50 border border-emerald-200/80 space-y-3">
+          <p class="text-slate-900 font-semibold text-base sm:text-lg">
+            <strong>BLUF (Bottom Line Up Front):</strong> Local search dominance no longer belongs to generic website links. 70%+ of local clicks go directly to the Google Maps 3-Pack, while conversational AI engines (ChatGPT, Gemini, Perplexity) take over 58% of initial recommendation queries.
+          </p>
+          <p class="text-sm text-slate-700">
+            If your business is not in the Top 3 map results and cannot be cited by AI search assistants, you are losing high-value inbound phone calls to competitors every single day. MooreRevenue solves both surfaces simultaneously through a unified 4-pillar local execution system.
+          </p>
+        </div>
+      </section>
+
+      {/* Section 2: The 4 Pillars */}
+      <section class="space-y-6">
+        <div class="space-y-2">
+          <span class="text-xs font-mono font-semibold uppercase tracking-wider text-[#059669]">Execution Blueprint</span>
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+            The 4 Pillars of MooreRevenue Local Search Dominance
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+          {/* Pillar 1 */}
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-[#059669]">
+                <Target class="w-5 h-5" />
+              </div>
+              <h3 class="text-lg font-bold text-slate-900">Pillar 1: Google Business Profile (GBP) Precision</h3>
+            </div>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              We eliminate category dilution by setting 1 laser-focused primary category and pruning subcategories. We build out 30 to 99 comprehensive service items with 300-character keyword descriptions, configure direct booking links, seed high-intent Q&As, and schedule geotagged location photos.
+            </p>
+          </div>
+
+          {/* Pillar 2 */}
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-[#059669]">
+                <Globe class="w-5 h-5" />
+              </div>
+              <h3 class="text-lg font-bold text-slate-900">Pillar 2: High-Leverage On-Page Local SEO</h3>
+            </div>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              We implement formulaic local title tags, matching H1/H2 structures, global NAP consistency, and embedded Google Maps. We expand your site to 30+ indexed pages with deep topical service hubs and hyperlocal neighborhood landing pages linked through clean contextual anchors.
+            </p>
+          </div>
+
+          {/* Pillar 3 */}
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-[#059669]">
+                <ShieldCheck class="w-5 h-5" />
+              </div>
+              <h3 class="text-lg font-bold text-slate-900">Pillar 3: The 80/20 Citation Foundation</h3>
+            </div>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Instead of worthless low-grade spam links, we secure Tier-1 authority citations: Apple Business Connect, Bing Places, Foursquare, automotive navigation networks (TomTom, Here Maps), and top-ranking industry directories. Mathematical NAP consistency builds unshakeable algorithm trust.
+            </p>
+          </div>
+
+          {/* Pillar 4 */}
+          <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-[#059669]">
+                <Bot class="w-5 h-5" />
+              </div>
+              <h3 class="text-lg font-bold text-slate-900">Pillar 4: Answer Engine Optimization (AEO / GEO)</h3>
+            </div>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              We unblock AI bots (GPTBot, ClaudeBot, PerplexityBot) in robots.txt, format key service pages into standalone atomic BLUF answer chunks, embed Schema.org structured data, and establish brand consensus so AI assistants confidently name your firm as the premier local choice.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 3: Comparison Table */}
+      <section class="space-y-6">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+          Comparison: MooreRevenue Local SEO & AEO vs Traditional Agencies
+        </h2>
+        
+        <div class="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-xs">
+          <table class="w-full text-left text-sm">
+            <thead>
+              <tr class="border-b border-slate-200 text-xs font-mono uppercase text-slate-500 bg-slate-50">
+                <th class="py-4 px-5">Search Strategy</th>
+                <th class="py-4 px-5 text-[#059669] font-bold bg-emerald-50/60">MooreRevenue Local SEO & AEO</th>
+                <th class="py-4 px-5 text-slate-600">Traditional SEO Agencies</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100 text-xs sm:text-sm text-slate-700">
+              <tr>
+                <td class="py-4 px-5 font-semibold text-slate-900">Performance Guarantee</td>
+                <td class="py-4 px-5 text-[#059669] font-bold bg-emerald-50/60">90-Day Top 3 Google Maps or 100% Refund</td>
+                <td class="py-4 px-5 text-slate-500">"No guarantees in SEO" (Keep paying monthly)</td>
+              </tr>
+              <tr>
+                <td class="py-4 px-5 font-semibold text-slate-900">AI Search Visibility (AEO)</td>
+                <td class="py-4 px-5 text-[#059669] font-bold bg-emerald-50/60">Full ChatGPT, Gemini & Perplexity Optimization</td>
+                <td class="py-4 px-5 text-slate-500">Zero AI strategy (Only 10 blue links)</td>
+              </tr>
+              <tr>
+                <td class="py-4 px-5 font-semibold text-slate-900">Google Business Profile Scope</td>
+                <td class="py-4 px-5 text-[#059669] font-bold bg-emerald-50/60">30–99 Services, Q&As, Geotagged Media & Pruning</td>
+                <td class="py-4 px-5 text-slate-500">Basic claim with 2-3 generic categories</td>
+              </tr>
+              <tr>
+                <td class="py-4 px-5 font-semibold text-slate-900">Reporting Cadence</td>
+                <td class="py-4 px-5 text-[#059669] font-bold bg-emerald-50/60">Every Friday with Geo-Grid Ranking Heatmaps</td>
+                <td class="py-4 px-5 text-slate-500">Confusing monthly PDF with vanity traffic stats</td>
+              </tr>
+              <tr>
+                <td class="py-4 px-5 font-semibold text-slate-900">Territory Exclusivity</td>
+                <td class="py-4 px-5 text-[#059669] font-bold bg-emerald-50/60">Complete Local Geographic Lockout on Retainers</td>
+                <td class="py-4 px-5 text-slate-500">Will sign your direct competitor down the street</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      {/* Section 4: Local Areas Covered in Faridabad */}
+      <section class="space-y-6">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+          Hyperlocal Authority Across Faridabad & NCR
+        </h2>
+        <p>
+          Local search algorithms reward proximity and local relevance. We build targeted neighborhood architecture and geotagged coverage across all key commercial and industrial hubs in Faridabad:
+        </p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-2">
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <span class="font-bold text-slate-900 block text-sm">Mathura Road Corridor</span>
+            <span class="text-xs text-slate-500">Industrial & Commercial Hubs</span>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <span class="font-bold text-slate-900 block text-sm">DLF Industrial Sectors</span>
+            <span class="text-xs text-slate-500">Sector 24, 25 & 27</span>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <span class="font-bold text-slate-900 block text-sm">Ballabgarh Zone</span>
+            <span class="text-xs text-slate-500">Manufacturing & Trade Units</span>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <span class="font-bold text-slate-900 block text-sm">Greater Faridabad (Neharpar)</span>
+            <span class="text-xs text-slate-500">Sectors 75–89 & Modern Hubs</span>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <span class="font-bold text-slate-900 block text-sm">Central Faridabad</span>
+            <span class="text-xs text-slate-500">Sector 15, 16 & Main Markets</span>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <span class="font-bold text-slate-900 block text-sm">Delhi NCR Outreaches</span>
+            <span class="text-xs text-slate-500">Okhla, Badarpur & South Delhi</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 5: FAQs */}
+      <section class="space-y-6">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+          Frequently Asked Questions About Local SEO & AEO
+        </h2>
+        <div class="space-y-4">
+          {pageFaqs.map((faq) => (
+            <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
+              <h3 class="text-base sm:text-lg font-bold text-slate-900">
+                {faq.question}
+              </h3>
+              <p class="text-sm text-slate-600 leading-relaxed">
+                {faq.answer}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Section 6: CTA Block */}
+      <section class="p-8 sm:p-12 rounded-3xl bg-slate-900 text-white relative overflow-hidden shadow-xl text-center space-y-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-semibold uppercase tracking-wider">
+          <Sparkles class="w-3.5 h-3.5" />
+          Zero Risk Guarantee
+        </div>
+
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight max-w-2xl mx-auto leading-tight">
+          Ready to Claim Your Spot in the <span class="text-emerald-400">Top 3 Google Maps</span>?
+        </h2>
+
+        <p class="text-slate-300 max-w-xl mx-auto text-sm sm:text-base leading-relaxed">
+          Request a free, no-obligation geo-grid ranking heatmap of your business. We will show you exactly where you rank today, where your competitors are stealing your calls, and how we will fix it.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+          <a
+            href="https://wa.me/918287367640?text=Hi%20Krishna,%20I'd%20like%20a%20free%20Google%20Maps%20%26%20AI%20ranking%20audit%20for%20my%20business."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#059669] hover:bg-[#047857] text-white font-bold text-sm shadow-md hover:shadow-lg transition-all"
+          >
+            Claim Free Heatmap Audit on WhatsApp
+            <ArrowRight class="w-4 h-4" />
+          </a>
+          <a
+            href="tel:+918287367640"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm border border-slate-700 transition-colors"
+          >
+            <PhoneCall class="w-4 h-4" />
+            Call +91 8287367640
+          </a>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <Footer />
+</Layout>
