@@ -1,4 +1,4 @@
-# robots.txt for MooreRevenue (https://moorerevenue.com)
+# robots.txt for MooreRevenue (https://www.moorerevenue.com)
 # Configured for Maximum Local SEO & Answer Engine Optimization (AEO / GEO)
 
 User-agent: *
@@ -32,4 +32,4 @@ User-agent: Bingbot
 Allow: /
 
 # Sitemap Index
-Sitemap: https://moorerevenue.com/sitemap.xml
+Sitemap: https://www.moorerevenue.com/sitemap.xml

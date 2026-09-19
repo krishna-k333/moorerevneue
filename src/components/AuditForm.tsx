@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import confetti from "canvas-confetti";
 import { MessageSquare, CheckCircle, ArrowRight, ExternalLink, Loader2 } from "lucide-react";
 
 export const AuditForm: React.FC = () => {
@@ -15,7 +14,7 @@ export const AuditForm: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
   const [whatsappUrl, setWhatsappUrl] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
 
@@ -24,32 +23,30 @@ export const AuditForm: React.FC = () => {
     const location = formData.location.trim() || "Faridabad";
     const service = formData.useCase.trim();
 
-    // Exact format requested by user:
-    // "Hi, Krishna. I am {{name}} from {{Company name}} we based in {{location}} and we are looking for {{service}} solutions."
     const message = `Hi, Krishna. I am ${name} from ${company} we based in ${location} and we are looking for ${service} solutions.`;
     const url = `https://wa.me/918287367640?text=${encodeURIComponent(message)}`;
 
     setWhatsappUrl(url);
 
+    // Dynamically import confetti to avoid shipping it in initial bundle
+    try {
+      const confettiModule = await import("canvas-confetti");
+      const confetti = confettiModule.default;
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: ["#00dc82", "#10b981", "#ffffff", "#05df85"],
+      });
+    } catch {
+      // Fallback if confetti fails or is blocked
+    }
+
     setTimeout(() => {
       setLoading(false);
       setSubmitted(true);
-
-      // Trigger celebration confetti
-      try {
-        confetti({
-          particleCount: 100,
-          spread: 70,
-          origin: { y: 0.6 },
-          colors: ["#00dc82", "#10b981", "#ffffff", "#05df85"],
-        });
-      } catch (err) {
-        // Fallback
-      }
-
-      // Open WhatsApp directly in new tab/app
       window.open(url, "_blank");
-    }, 600);
+    }, 400);
   };
 
   return (
@@ -63,12 +60,12 @@ export const AuditForm: React.FC = () => {
           {!submitted ? (
             <div>
               <div className="text-center max-w-2xl mx-auto mb-10 space-y-3">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-500/30 bg-emerald-50 text-[#059669] text-xs font-semibold uppercase tracking-wider">
-                  <MessageSquare className="w-3.5 h-3.5" />
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-emerald-600/30 bg-emerald-50 text-[#047857] text-xs font-semibold uppercase tracking-wider">
+                  <MessageSquare className="w-3.5 h-3.5 text-[#047857]" />
                   Free AI Audit Call
                 </div>
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-                  Book a AI Audit Call
+                  Book an AI Audit Call
                 </h2>
                 <p className="text-slate-600 text-sm sm:text-base">
                   Fill in your details below and click submit.
@@ -79,58 +76,67 @@ export const AuditForm: React.FC = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {/* Name */}
                   <div className="space-y-2">
-                    <label className="text-xs font-semibold text-slate-700">
+                    <label htmlFor="audit-name" className="text-xs font-semibold text-slate-800">
                       Your Full Name *
                     </label>
                     <input
+                      id="audit-name"
+                      name="name"
                       type="text"
                       required
                       placeholder="e.g. Vikram Sharma"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#059669] focus:ring-1 focus:ring-[#059669] text-sm transition-all"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#047857] focus:ring-1 focus:ring-[#047857] text-sm transition-all"
                     />
                   </div>
 
                   {/* Company Name */}
                   <div className="space-y-2">
-                    <label className="text-xs font-semibold text-slate-700">
+                    <label htmlFor="audit-company" className="text-xs font-semibold text-slate-800">
                       Company / Business Name *
                     </label>
                     <input
+                      id="audit-company"
+                      name="company"
                       type="text"
                       required
                       placeholder="e.g. Apex Engineering Works"
                       value={formData.company}
                       onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#059669] focus:ring-1 focus:ring-[#059669] text-sm transition-all"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#047857] focus:ring-1 focus:ring-[#047857] text-sm transition-all"
                     />
                   </div>
 
                   {/* Business Location */}
                   <div className="space-y-2">
-                    <label className="text-xs font-semibold text-slate-700">
+                    <label htmlFor="audit-location" className="text-xs font-semibold text-slate-800">
                       Location / Area *
                     </label>
                     <input
+                      id="audit-location"
+                      name="location"
                       type="text"
                       required
                       placeholder="e.g. Faridabad, DLF Phase 1, Ballabgarh"
                       value={formData.location}
                       onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#059669] focus:ring-1 focus:ring-[#059669] text-sm transition-all"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 placeholder-slate-400 focus:bg-white focus:outline-none focus:border-[#047857] focus:ring-1 focus:ring-[#047857] text-sm transition-all"
                     />
                   </div>
 
                   {/* Service Needed */}
                   <div className="space-y-2">
-                    <label className="text-xs font-semibold text-slate-700">
+                    <label htmlFor="audit-service" className="text-xs font-semibold text-slate-800">
                       Service / Solution You Need *
                     </label>
                     <select
+                      id="audit-service"
+                      name="service"
+                      aria-label="Service / Solution You Need"
                       value={formData.useCase}
                       onChange={(e) => setFormData({ ...formData, useCase: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-sm focus:bg-white focus:outline-none focus:border-[#059669] focus:ring-1 focus:ring-[#059669] transition-all"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-300 text-slate-900 text-sm focus:bg-white focus:outline-none focus:border-[#047857] focus:ring-1 focus:ring-[#047857] transition-all"
                     >
                       <option value="AI Voice Calling Agent">AI Voice Calling Agent</option>
                       <option value="WhatsApp Business Automation">WhatsApp Business Automation</option>
@@ -164,13 +170,13 @@ export const AuditForm: React.FC = () => {
             </div>
           ) : (
             <div className="text-center py-10 space-y-6">
-              <div className="w-16 h-16 rounded-full bg-emerald-100 border border-[#059669] flex items-center justify-center text-[#059669] mx-auto animate-bounce">
+              <div className="w-16 h-16 rounded-full bg-emerald-100 border border-[#047857] flex items-center justify-center text-[#047857] mx-auto animate-bounce">
                 <CheckCircle className="w-8 h-8" />
               </div>
 
               <div className="space-y-2">
                 <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900">
-                  Book a Free AI Audit
+                  Audit Request Received
                 </h3>
                 <p className="text-sm text-slate-600 max-w-md mx-auto">
                   If WhatsApp did not open automatically, click the button below to send your inquiry directly to Krishna.
@@ -185,7 +191,7 @@ export const AuditForm: React.FC = () => {
                   className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#00dc82] hover:bg-[#05df85] text-black font-bold text-sm shadow-md transition-all cursor-pointer"
                 >
                   <MessageSquare className="w-4 h-4 fill-current" />
-                  <span>Book a Free AI Audit</span>
+                  <span>Open WhatsApp Directly</span>
                   <ExternalLink className="w-4 h-4" />
                 </a>
 

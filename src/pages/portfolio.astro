@@ -27,7 +27,7 @@ const projects = [
     title: "Shri Krishna Sarees",
     domain: "sksshopping.com",
     liveUrl: "https://sksshopping.com",
-    screenshot: "/images/portfolio/sks.png",
+    screenshot: "/images/portfolio/sks.webp",
     accentColor: "from-amber-600/15 via-rose-500/10 to-transparent",
     badgeColor: "bg-amber-100 text-amber-900 border-amber-200",
     summary: "Bringing a beloved 30-year Ballabgarh saree heritage store into modern e-commerce.",
@@ -51,7 +51,7 @@ const projects = [
     title: "Story Night 4 Kids",
     domain: "storynight4kids.shop",
     liveUrl: "https://storynight4kids.shop",
-    screenshot: "/images/portfolio/storynight4kids.png",
+    screenshot: "/images/portfolio/storynight4kids.webp",
     accentColor: "from-sky-500/15 via-indigo-500/10 to-transparent",
     badgeColor: "bg-sky-100 text-sky-900 border-sky-200",
     summary: "A joyful web app where parents turn a photo into a personalized bedtime storybook.",
@@ -75,7 +75,7 @@ const projects = [
     title: "Stoic Origo",
     domain: "stoic-vert.vercel.app",
     liveUrl: "https://stoic-vert.vercel.app/",
-    screenshot: "/images/portfolio/stoic.png",
+    screenshot: "/images/portfolio/stoic.webp",
     accentColor: "from-stone-500/20 via-amber-900/15 to-transparent",
     badgeColor: "bg-stone-200 text-stone-900 border-stone-300",
     summary: "An immersive, cinematic web journey exploring ancient Stoic journals and timeless wisdom.",
@@ -94,15 +94,15 @@ const projects = [
 ];
 
 const breadcrumbs = [
-  { name: "Home", url: "https://moorerevenue.com/" },
-  { name: "Portfolio", url: "https://moorerevenue.com/portfolio" },
+  { name: "Home", url: "https://www.moorerevenue.com/" },
+  { name: "Portfolio", url: "https://www.moorerevenue.com/portfolio" },
 ];
 ---
 
 <Layout
   title="Our Website Portfolio - Real Websites Built For Real Businesses | MooreRevenue"
   description="Explore real websites built by MooreRevenue. Fast, friendly, and practical websites for e-commerce, custom web apps, and local businesses."
-  canonicalUrl="https://moorerevenue.com/portfolio"
+  canonicalUrl="https://www.moorerevenue.com/portfolio"
   breadcrumbs={breadcrumbs}
 >
   <Navbar client:load />
@@ -232,7 +232,10 @@ const breadcrumbs = [
                   <img
                     src={project.screenshot}
                     alt={`Screenshot of ${project.title} (${project.domain})`}
+                    width="800"
+                    height="500"
                     loading="lazy"
+                    decoding="async"
                     class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
                   />
                   <div class="absolute inset-0 ring-1 ring-inset ring-black/10 pointer-events-none"></div>

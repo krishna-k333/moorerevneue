@@ -7,37 +7,45 @@ interface Props {
   canonicalUrl?: string;
   image?: string;
   breadcrumbs?: Array<{ name: string; url: string }>;
+  faqSchema?: object;
 }
 
 const {
-  title = "AI Automation Agency Faridabad - AI Voice Agents, WhatsApp & Websites | MooreRevenue",
-  description = "AI Automation Agency in Faridabad. Practical AI Voice Agents, WhatsApp CRM Automation, and High-Converting Modern Websites.",
-  canonicalUrl = "https://moorerevenue.com",
+  title = "AI Automation Agency in Faridabad | MooreRevenue",
+  description = "AI automation agency in Faridabad building custom AI voice agents, WhatsApp bots, and fast modern websites. Book your free discovery call today!",
+  canonicalUrl = "https://www.moorerevenue.com",
   image = "/og-image.png",
   breadcrumbs = [],
+  faqSchema,
 } = Astro.props;
+
+const absoluteImageUrl = image.startsWith("http")
+  ? image
+  : `https://www.moorerevenue.com${image.startsWith("/") ? "" : "/"}${image}`;
 
 const jsonLdLocalBusiness = {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "ProfessionalService"],
-  "@id": "https://moorerevenue.com/#organization",
+  "@id": "https://www.moorerevenue.com/#organization",
   "name": "MooreRevenue - AI Automation & Voice Agent Agency",
   "alternateName": ["MooreRevenue", "Moore Revenue Faridabad"],
-  "url": "https://moorerevenue.com",
-  "logo": "https://moorerevenue.com/favicon.svg",
-  "image": "https://moorerevenue.com/og-image.png",
+  "url": "https://www.moorerevenue.com",
+  "logo": "https://www.moorerevenue.com/favicon.svg",
+  "image": "https://www.moorerevenue.com/og-image.png",
   "description": "AI Automation Agency in Faridabad, Haryana. Specializing in Bilingual AI Voice Calling Agents, Workflow Automation, WhatsApp CRM Systems, and High-Converting Modern Websites.",
   "founder": {
     "@type": "Person",
     "name": "Krishna Aggarwal",
     "jobTitle": "Founder",
-    "telephone": "+918287367640",
-    "url": "https://moorerevenue.com"
+    "telephone": "+91-8287367640",
+    "url": "https://www.moorerevenue.com"
   },
   "address": {
     "@type": "PostalAddress",
+    "streetAddress": "Mathura Road",
     "addressLocality": "Faridabad",
     "addressRegion": "Haryana",
+    "postalCode": "121003",
     "addressCountry": "IN"
   },
   "geo": {
@@ -57,7 +65,7 @@ const jsonLdLocalBusiness = {
     { "@type": "Country", "name": "India" }
   ],
   "priceRange": "$$",
-  "telephone": "+918287367640",
+  "telephone": "+91-8287367640",
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
@@ -146,7 +154,7 @@ const breadcrumbsSchema = breadcrumbs.length > 0 ? {
     <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
+    <meta property="og:image" content={absoluteImageUrl} />
     <meta property="og:locale" content="en_IN" />
     <meta property="og:site_name" content="MooreRevenue" />
 
@@ -155,18 +163,34 @@ const breadcrumbsSchema = breadcrumbs.length > 0 ? {
     <meta name="twitter:url" content={canonicalUrl} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={image} />
+    <meta name="twitter:image" content={absoluteImageUrl} />
 
-    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+    <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono (Non-render-blocking) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+      />
+    </noscript>
 
     <!-- LocalBusiness & Service Structured Data -->
     <script type="application/ld+json" set:html={JSON.stringify(jsonLdLocalBusiness)} />
+    {faqSchema && (
+      <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+    )}
     {breadcrumbsSchema && (
       <script type="application/ld+json" set:html={JSON.stringify(breadcrumbsSchema)} />
     )}

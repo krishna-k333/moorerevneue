@@ -1,5 +1,5 @@
 ---
-import { Play, Star, Quote, Award } from "lucide-react";
+import { Star, Quote, Award } from "lucide-react";
 ---
 
 <section id="testimonials" class="py-24 bg-slate-50/60 border-y border-slate-200/80 relative overflow-hidden">
@@ -9,31 +9,46 @@ import { Play, Star, Quote, Award } from "lucide-react";
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     {/* Section Header */}
     <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-emerald-500/30 bg-emerald-50 text-[#059669] text-xs font-semibold uppercase tracking-wider shadow-xs">
-        <Award class="w-3.5 h-3.5" />
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-emerald-500/30 bg-emerald-50 text-[#047857] text-xs font-semibold uppercase tracking-wider shadow-xs">
+        <Award class="w-3.5 h-3.5 text-[#047857]" />
         Client Testimonials & Case Studies
       </div>
 
       <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
-        See Real Impact Delivered Through <span class="text-[#059669]">AI Automation</span>
+        See Real Impact Delivered Through <span class="text-[#047857]">AI Automation</span>
       </h2>
-
     </div>
 
     {/* Featured Video Testimonial Card */}
     <div class="max-w-4xl mx-auto">
       <div class="bg-white rounded-3xl p-4 sm:p-6 md:p-8 border border-slate-200 shadow-xl space-y-6">
         
-        {/* Responsive Video Container */}
-        <div class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-md border border-slate-200/80 bg-slate-900">
-          <iframe
-            class="w-full h-full absolute inset-0"
-            src="https://www.youtube-nocookie.com/embed/NmS6j-tzLd8?rel=0"
-            title="Client Testimonial Video - MooreRevenue AI Automation"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
+        {/* Responsive Video Container with Ultra-Fast Lazy Facade */}
+        <div
+          id="testimonial-video-facade"
+          class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-md border border-slate-200/80 bg-slate-950 group cursor-pointer"
+          data-video-id="NmS6j-tzLd8"
+        >
+          <img
+            src="https://i.ytimg.com/vi/NmS6j-tzLd8/hqdefault.jpg"
+            alt="Client Testimonial Video - MooreRevenue AI Automation"
+            width="1280"
+            height="720"
+            loading="lazy"
+            decoding="async"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+          <div class="absolute inset-0 bg-black/35 group-hover:bg-black/25 transition-colors flex items-center justify-center">
+            <button
+              type="button"
+              aria-label="Play Client Testimonial Video"
+              class="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-[#00dc82] hover:bg-[#05df85] text-black flex items-center justify-center shadow-[0_0_35px_rgba(0,220,130,0.65)] group-hover:scale-110 transition-all cursor-pointer"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor" class="ml-1 text-black">
+                <polygon points="5 3 19 12 5 21 5 3"></polygon>
+              </svg>
+            </button>
+          </div>
         </div>
 
         {/* Video Details & Rating */}
@@ -52,8 +67,8 @@ import { Play, Star, Quote, Award } from "lucide-react";
             </h3>
           </div>
 
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-emerald-50 border border-emerald-200 text-[#059669] text-xs font-mono font-bold shrink-0">
-            <Quote class="w-3.5 h-3.5" />
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-emerald-50 border border-emerald-200 text-[#047857] text-xs font-mono font-bold shrink-0">
+            <Quote class="w-3.5 h-3.5 text-[#047857]" />
             <span>Verified Client Experience</span>
           </div>
         </div>
@@ -62,3 +77,21 @@ import { Play, Star, Quote, Award } from "lucide-react";
     </div>
   </div>
 </section>
+
+<script>
+  const facade = document.getElementById("testimonial-video-facade");
+  if (facade) {
+    facade.addEventListener("click", () => {
+      const videoId = facade.getAttribute("data-video-id");
+      const iframe = document.createElement("iframe");
+      iframe.setAttribute("class", "w-full h-full absolute inset-0");
+      iframe.setAttribute("src", `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`);
+      iframe.setAttribute("title", "Client Testimonial Video - MooreRevenue AI Automation");
+      iframe.setAttribute("frameborder", "0");
+      iframe.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
+      iframe.setAttribute("allowfullscreen", "true");
+      facade.innerHTML = "";
+      facade.appendChild(iframe);
+    }, { once: true });
+  }
+</script>

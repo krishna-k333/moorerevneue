@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar";
-import HeroInteractive from "../components/HeroInteractive";
+import Hero from "../components/Hero.astro";
 import ServicesGrid from "../components/ServicesGrid.astro";
 import Testimonials from "../components/Testimonials.astro";
 import AuditForm from "../components/AuditForm";
@@ -24,18 +24,17 @@ const faqSchema = {
 ---
 
 <Layout
-  title="AI Automation Agency Faridabad - AI Voice Agents, WhatsApp & Websites | MooreRevenue"
-  description="MooreRevenue is an AI automation agency in Faridabad. We build custom AI voice agents, WhatsApp automations, and modern websites for local businesses."
+  title="Best AI Automation Service Providers in Faridabad | MooreRevenue"
+  description="AI automation agency in Faridabad building custom AI voice agents, WhatsApp bots, and fast modern websites. Book your free discovery call today!"
+  canonicalUrl="https://www.moorerevenue.com"
+  faqSchema={faqSchema}
 >
-  <!-- Inject FAQ Schema into Page -->
-  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
-
-  <!-- Fixed Navigation Header -->
-  <Navbar client:load />
+  <!-- Fixed Navigation Header (Hydrates when browser is idle) -->
+  <Navbar client:idle />
 
   <main>
-    <!-- Hero Section with Interactive Agent Terminal -->
-    <HeroInteractive client:load />
+    <!-- Hero Section: Fast & Optimized Native Astro -->
+    <Hero />
 
     <!-- Services Grid: Core Services in Simple Manner -->
     <ServicesGrid />
@@ -46,7 +45,7 @@ const faqSchema = {
     <!-- Free AI Discovery Audit Lead Capture Form -->
     <AuditForm client:visible />
 
-    <!-- SEO Rich FAQ Section with Shadcn Accordion -->
+    <!-- SEO Rich FAQ Section with Accordion -->
     <FaqSection client:visible />
   </main>
 

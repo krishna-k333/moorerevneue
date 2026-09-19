@@ -2,86 +2,100 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Main Landing Page -->
   <url>
-    <loc>https://moorerevenue.com/</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://www.moorerevenue.com/</loc>
+    <lastmod>2026-09-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
+  <!-- Portfolio Page -->
+  <url>
+    <loc>https://www.moorerevenue.com/portfolio</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- Services Hub & Subpages -->
   <url>
-    <loc>https://moorerevenue.com/services</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://www.moorerevenue.com/services</loc>
+    <lastmod>2026-09-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://moorerevenue.com/services/ai-automation-agency-faridabad</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://www.moorerevenue.com/services/ai-automation-agency-faridabad</loc>
+    <lastmod>2026-09-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://moorerevenue.com/services/ai-voice-agent-faridabad</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://www.moorerevenue.com/services/ai-voice-agent-faridabad</loc>
+    <lastmod>2026-09-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://moorerevenue.com/services/website-development-faridabad</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://www.moorerevenue.com/services/website-development-faridabad</loc>
+    <lastmod>2026-09-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://moorerevenue.com/services/whatsapp-automation-faridabad</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://www.moorerevenue.com/services/whatsapp-automation-faridabad</loc>
+    <lastmod>2026-09-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.moorerevenue.com/services/local-seo-aeo-faridabad</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
 
   <!-- Areas We Serve Hub & Hyperlocal Pages -->
   <url>
-    <loc>https://moorerevenue.com/areas-we-serve</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://www.moorerevenue.com/areas-we-serve</loc>
+    <lastmod>2026-09-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://moorerevenue.com/areas-we-serve/mathura-road-faridabad</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://www.moorerevenue.com/areas-we-serve/mathura-road-faridabad</loc>
+    <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://moorerevenue.com/areas-we-serve/dlf-industrial-area-faridabad</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://www.moorerevenue.com/areas-we-serve/dlf-industrial-area-faridabad</loc>
+    <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://moorerevenue.com/areas-we-serve/ballabgarh-faridabad</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://www.moorerevenue.com/areas-we-serve/ballabgarh-faridabad</loc>
+    <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://moorerevenue.com/areas-we-serve/greater-faridabad-neharpar</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://www.moorerevenue.com/areas-we-serve/greater-faridabad-neharpar</loc>
+    <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://moorerevenue.com/areas-we-serve/sector-15-16-faridabad</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://www.moorerevenue.com/areas-we-serve/sector-15-16-faridabad</loc>
+    <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <!-- Comparison & Authority Hub -->
   <url>
-    <loc>https://moorerevenue.com/comparisons/ai-agency-vs-traditional-it-faridabad</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://www.moorerevenue.com/comparisons/ai-agency-vs-traditional-it-faridabad</loc>
+    <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

@@ -52,7 +52,7 @@ export const FaqSection: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-emerald-500/30 bg-emerald-50 text-[#059669] text-xs font-semibold tracking-wide uppercase">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-emerald-500/30 bg-emerald-50 text-[#047857] text-xs font-semibold tracking-wide uppercase">
             <HelpCircle className="w-3.5 h-3.5" />
             Everything You Need To Know
           </div>
@@ -82,7 +82,7 @@ export const FaqSection: React.FC = () => {
                     {faq.question}
                   </span>
                   <div
-                    className={`w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center shrink-0 text-[#059669] transition-transform duration-300 ${
+                    className={`w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center shrink-0 text-[#047857] transition-transform duration-300 ${
                       isOpen ? "rotate-180 bg-emerald-100" : ""
                     }`}
                   >
