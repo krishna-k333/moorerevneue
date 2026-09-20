@@ -10,7 +10,7 @@ export const faqsData: FaqItem[] = [
   {
     question: "Can your AI Voice Agents speak fluent Hindi and understand regional Indian accents?",
     answer:
-      "Yes, absolutely. Unlike robotic IVR phone menus, our next-generation Voice AI models are specially fine-tuned on natural conversational Hindi, Indian English, and everyday Hinglish. They understand local accents, booking appointments, answering service queries, and qualifying leads.",
+      "Yes, absolutely. Unlike robotic IVR phone menus, Voice AI models that we use are fine-tuned on natural conversational Hindi, Indian English, and everyday Hinglish. They understand local accents, booking appointments, answering service queries, and qualifying leads.",
   },
   {
     question: "Which CRMs, communication tools, and APIs do you integrate with?",
@@ -20,7 +20,7 @@ export const faqsData: FaqItem[] = [
   {
     question: "How long does it take from discovery audit to live deployment?",
     answer:
-      "Our sprint model deploys functional systems in 7 to 14 business days. Following our initial architecture review, we develop your custom voice agent or automation pipeline within week one.",
+      "We develop your custom voice agent or automation pipeline within week one and then deliver you on week two",
   },
   {
     question: "Which business processes can be automated with AI?",
@@ -30,7 +30,7 @@ export const faqsData: FaqItem[] = [
   {
     question: "Is AI automation suitable for small and mid-size businesses?",
     answer:
-      "Yes. Many mid-size companies start with one or two high-impact processes. Once they see time savings and fewer errors, they expand. You do not need a large technical team to begin.",
+      "Yes. Many mid-size companies start with one or two high-impact processes. Once they see time savings and positive impact, they expand. You do not need a large technical team to begin.",
   },
   {
     question: "Can the system handle documents and communication in Indian languages?",

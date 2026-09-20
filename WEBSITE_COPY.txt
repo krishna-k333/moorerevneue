@@ -144,20 +144,20 @@ Section Badge: "Got Questions? We Have Clear Answers"
 Section Heading: "Frequently Asked Questions"
 
 Q1: "Can your AI Voice Agents speak fluent Hindi and understand regional Indian accents?"
-A1: "Yes, absolutely. Unlike robotic IVR phone menus, our next-generation Voice AI models are specially fine-tuned on natural conversational Hindi, Indian English, and everyday Hinglish. They understand local accents, booking appointments, answering service queries, and qualifying leads."
+A1: "Yes, absolutely. Unlike robotic IVR phone menus, Voice AI models that we use are fine-tuned on natural conversational Hindi, Indian English, and everyday Hinglish. They understand local accents, booking appointments, answering service queries, and qualifying leads."
 
 Q2: "Which CRMs, communication tools, and APIs do you integrate with?"
 A2: "We integrate seamlessly with modern business stacks including WhatsApp Cloud API, Zoho CRM, Salesforce, HubSpot, Google Workspace, Calendly, Stripe, Razorpay, Slack, and custom REST/GraphQL APIs and webhooks. We don't force you to change your existing tools; we build the intelligent automation AI layer directly across them."
 
 
 Q3: "How long does it take from discovery audit to live deployment?"
-A3: "Our sprint model deploys functional systems in 7 to 14 business days. Following our initial architecture review, we develop your custom voice agent or automation pipeline within week one."
+A3: "We develop your custom voice agent or automation pipeline within week one and then deliver you on week two"
 
 Q4: "Which business processes can be automated with AI?
 A4: "Common areas include invoice and form processing, customer enquiry handling, approval workflows, report generation, inventory updates, appointment reminders, and data movement between different software tools."
 
 Q5: "Is AI automation suitable for small and mid-size businesses?
-A5: "Yes. Many mid-size companies start with one or two high-impact processes. Once they see time savings and fewer errors, they expand. You do not need a large technical team to begin."
+A5: "Yes. Many mid-size companies start with one or two high-impact processes. Once they see time savings and positive impact, they expand. You do not need a large technical team to begin."
 
 Q6:"Can the system handle documents and communication in Indian languages?"
 A6:"Yes. Automation solutions can be designed to work with English as well as major Indian languages commonly used."
