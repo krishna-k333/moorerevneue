@@ -192,7 +192,7 @@ CTA Box Description: "Reach out to us (+91 8287367640). We will review your curr
 [SERVICE 4: WHATSAPP AUTOMATION]
 URL: /services/whatsapp-automation-faridabad
 Title: "WhatsApp CRM Automation in Faridabad: Turn Inquiries Into Closed Deals 24/7"
-Contact Bar: "Serving Industrial Belts Across Mathura Road, DLF, Ballabgarh & Neharpar"
+Contact Bar: "Serving Industrial Belts Across Mathura Road, DLF, Ballabgarh & Greater Faridabad"
 CTA Box Title: "Start Closing Leads on WhatsApp Automatically"
 CTA Box Description: "Speak with us at +91 8287367640 for a 15-minute live demo of our WhatsApp sales pipeline."
 
@@ -224,10 +224,10 @@ URL: /areas-we-serve/ballabgarh-faridabad
 Title: "AI Automation & Voice Agents in Ballabgarh, Faridabad"
 Contact Bar: "Serving Industrial Plants & Export Units Across the Ballabgarh Corridor"
 
-[AREA 4: GREATER FARIDABAD (NEHARPAR)]
-URL: /areas-we-serve/greater-faridabad-neharpar
-Title: "AI Automation & Voice Agents in Greater Faridabad (Nehar Par)"
-Contact Bar: "Serving Real Estate, Healthcare & Retail Hubs Across Greater Faridabad (Nehar Par)"
+[AREA 4: GREATER FARIDABAD]
+URL: /areas-we-serve/greater-faridabad
+Title: "AI Automation & Voice Agents in Greater Faridabad"
+Contact Bar: "Serving Real Estate, Healthcare & Retail Hubs Across Greater Faridabad"
 
 [AREA 5: SECTOR 15 & 16]
 URL: /areas-we-serve/sector-15-16-faridabad

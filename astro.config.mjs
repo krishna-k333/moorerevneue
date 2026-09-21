@@ -9,6 +9,9 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://www.moorerevenue.com',
   trailingSlash: 'never',
+  redirects: {
+    '/areas-we-serve/greater-faridabad-neharpar': '/areas-we-serve/greater-faridabad',
+  },
   integrations: [react()],
 
   vite: {

@@ -30,13 +30,13 @@ An offer is not what you do; it is the transformation and risk profile you prese
 1. **It has to be FOR THEM**: Tailored specifically to their local service niche and geographic territory.
 2. **It has to be REAL**: Grounded in algorithmic reality (Google's local ranking factors have remained essentially unchanged for 10+ years).
 3. **It has to make FINANCIAL SENSE**: A single customer for a local contractor, roof repair, or clinic is often worth $500–$5,000+. Your fee should be recouped in 1–3 new clients.
-4. **It has to be EASY TO SAY YES TO**: Backed by a performance guarantee and zero perceived friction.
+4. **It has to be EASY TO SAY YES TO**: Backed by a performance milestone roadmap and zero perceived friction.
 
 ### The Core Flagship Offer
-> **"We help local [Service Businesses] get into the Top 3 Google Maps results within 90 days—guaranteed. If we don't get you there, you get a 100% refund."**
+> **"We help local [Service Businesses] get into the Top 3 Google Maps results within 90 days with a clear, milestone-driven execution roadmap."**
 
 ### The Modern Premium Layer: Local SEO + AEO
-> **"We guarantee top 3 Google Maps rankings in 90 days, PLUS we optimize your business to get named and recommended by ChatGPT, Gemini, and Google AI Search."**
+> **"We target top 3 Google Maps rankings within 90 days, PLUS we optimize your business to get named and recommended by ChatGPT, Gemini, and Google AI Search."**
 
 ---
 
@@ -83,7 +83,7 @@ Hi [Name],
 
 Noticed you're currently not showing up in the top 3 in [Location] for [Main Keyword].
 
-We help local businesses get into the top 3 Google Maps results within 90 days - guaranteed.
+We help local businesses get into the top 3 Google Maps results within 90 days.
 
 Based on your local competition, I'm confident we can do the same for you.
 
@@ -112,7 +112,7 @@ When they reply **"YES"**, record a bespoke 2-minute video:
 2. Sell to people who genuinely profit from it.
 3. Understand what they were doing before to confirm fit.
 4. Present your offer clearly, stating boundaries and expectations.
-5. Provide risk reversal (money-back guarantee).
+5. Provide risk reversal (performance milestones & weekly proof).
 6. Tell them exactly what to do next.
 
 ### Pricing Models & Recommendations
@@ -134,13 +134,13 @@ When they reply **"YES"**, record a bespoke 2-minute video:
 1. **Intro & Warm-Up (2 mins)**: Friendly connection, establish relaxed tone.
 2. **Discovery & Qualification (5 mins)**: How many calls do they currently get? What is an average customer worth? Have they done SEO before?
 3. **The Presentation (5 mins)**: "If I were in your shoes, here is what I would fix immediately..." (Demonstrate competence by being helpful, yet showing it requires technical execution).
-4. **The Offer & Guarantee (3 mins)**: State the 90-day guarantee and upfront fee without hesitation.
+4. **The Offer & Roadmap (3 mins)**: State the 90-day roadmap and upfront fee with clarity.
 5. **Close & Next Steps (2 mins)**: Explain: "I'll send a 1-page summary and payment link via email. Once settled, we launch onboarding immediately."
 
 ### Mastering Frame Control
 - **The Breadcrumb Technique**: Don't be needy. Share casual stories: *"I was helping a physiotherapist down the road who had a quiet month; we fixed their Google profile and citations, and now their phone rings all week."* Wait for them to ask: *"How did you do that?"*
 - **Crushing the Analyst Frame**: When prospects ask for endless case studies, blood samples, and 50-page audits:
-  > *"Everything we just discussed will be summarized in writing via email. We back this with a full money-back guarantee, so all the risk is on my shoulders, not yours."*
+  > *"Everything we just discussed will be summarized in writing via email with clear weekly milestones and deliverables, so expectations are 100% transparent."*
 - **Handling the Power Frame**: If a prospect speaks down to you condescendingly, remain calm, unbothered, and polite. Never argue. If they persist in being rude, politely disengage:
   > *"It sounds like we might not be the right fit for each other, and that's totally fine. Best of luck with your business!"*
 
@@ -150,7 +150,7 @@ When they reply **"YES"**, record a bespoke 2-minute video:
 
 ### Objection 1: "What if this doesn't work?"
 > **Battlecard:**
-> *"Google has ranked local businesses using the exact same core parameters for over a decade. We know this works because the algorithm is predictable. In the wildly unlikely scenario where Google decides tomorrow to completely wipe out 10 years of ranking infrastructure and we don't hit the top 3 within 90 days, we give you a 100% refund. The odds of that happening are about the same as a zombie apocalypse, so I’m happy to shoulder that risk."*
+> *"Google has ranked local businesses using the exact same core parameters for over a decade. We know this works because the algorithm is predictable. We focus strictly on the ranking inputs that matter: complete category mapping, rich service inventory, consistent core navigation citations, and on-page topical authority. We track your progress weekly with live geo-grid heatmaps so you see ranking expansion across your target territory."*
 
 ### Objection 2: "Isn't local SEO just fake reviews and spam?"
 > **Battlecard:**
@@ -182,7 +182,7 @@ Hi [Name],
 
 Great speaking with you today. Here is a quick summary of our agreement:
 
-- Target: Move [Business Name] into the Top 3 Google Maps results in [City] within 90 days (backed by our full money-back guarantee).
+- Target: Move [Business Name] into the Top 3 Google Maps results in [City] within 90 days with weekly geo-grid proof.
 - Scope: Full Google Business Profile optimization, website on-page SEO tuning, high-authority citations, and weekly progress monitoring.
 - Investment: $[Amount] (one-time setup fee).
 
