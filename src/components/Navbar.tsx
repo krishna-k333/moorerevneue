@@ -98,6 +98,19 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAudit }) => {
           {/* Social Channels */}
           <div className="flex items-center gap-1">
             <a
+              href="https://share.google/9eP7csF1sUEW5wZyT"
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Google Maps Profile"
+              aria-label="MooreRevenue on Google Maps"
+              className="p-2 text-slate-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+            >
+              <svg className="w-4 h-4 text-[#ea4335]" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+            </a>
+
+            <a
               href="https://youtube.com/@preparemytech"
               target="_blank"
               rel="noopener noreferrer"
@@ -194,8 +207,19 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAudit }) => {
           </a>
 
           {/* Social Channels Mobile */}
-          <div className="flex items-center gap-3 py-2 border-y border-slate-100">
-            <span className="text-xs font-semibold text-slate-500">Follow:</span>
+          <div className="flex flex-wrap items-center gap-3 py-2 border-y border-slate-100">
+            <span className="text-xs font-semibold text-slate-500">Profiles:</span>
+            <a
+              href="https://share.google/9eP7csF1sUEW5wZyT"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-700 hover:text-blue-600 transition-colors"
+            >
+              <svg className="w-4 h-4 text-[#ea4335]" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              <span>Google Maps</span>
+            </a>
             <a
               href="https://youtube.com/@preparemytech"
               target="_blank"

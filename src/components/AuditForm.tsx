@@ -205,8 +205,19 @@ export const AuditForm: React.FC = () => {
               </div>
 
               <div className="pt-6 border-t border-slate-100 flex flex-col items-center gap-2.5">
-                <span className="text-xs text-slate-500 font-medium">Follow tutorials & AI automation updates:</span>
+                <span className="text-xs text-slate-500 font-medium">Follow tutorials, reviews & updates:</span>
                 <div className="flex flex-wrap items-center justify-center gap-3">
+                  <a
+                    href="https://share.google/9eP7csF1sUEW5wZyT"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 text-xs font-semibold text-slate-700 hover:text-blue-600 hover:border-blue-200 transition-colors"
+                  >
+                    <svg className="w-4 h-4 text-[#ea4335]" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                    </svg>
+                    <span>Google Reviews & Profile</span>
+                  </a>
                   <a
                     href="https://youtube.com/@preparemytech"
                     target="_blank"
