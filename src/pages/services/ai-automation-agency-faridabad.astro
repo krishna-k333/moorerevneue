@@ -12,8 +12,6 @@ import {
   Clock, 
   TrendingUp, 
   ShieldCheck, 
-  MapPin, 
-  Building2,
   Zap,
   MessageSquare
 } from "lucide-react";
@@ -24,8 +22,8 @@ const pageFaqs = [
     answer: "We design, build, and connect automated systems that handle repeatable business tasks — things like answering inbound enquiries, routing leads, sending follow-up messages, or syncing data between tools. The goal is to reduce the manual steps your team handles daily so they can focus on higher-value work.",
   },
   {
-    question: "Which types of businesses in Faridabad typically work with you?",
-    answer: "We work with manufacturing units, trading companies, service firms, clinics, and real estate teams across Faridabad and NCR. Most clients come to us because they are losing enquiries outside business hours or spending too much time on repetitive coordination work.",
+    question: "Which types of businesses use workflow automation?",
+    answer: "Manufacturers, trading companies, service firms, clinics, and real estate teams use automation to route inquiries, coordinate routine tasks, and move information between their tools.",
   },
   {
     question: "What tools and systems can you connect or automate?",
@@ -61,13 +59,13 @@ const faqSchema = {
 const breadcrumbs = [
   { name: "Home", url: "https://www.moorerevenue.com/" },
   { name: "Services", url: "https://www.moorerevenue.com/services" },
-  { name: "AI Automation Agency Faridabad", url: "https://www.moorerevenue.com/services/ai-automation-agency-faridabad" }
+  { name: "AI Automation", url: "https://www.moorerevenue.com/services/ai-automation-agency-faridabad" }
 ];
 ---
 
 <Layout
-  title="Reduce Time and Scale Your Business with AI | MooreRevenue"
-  description="Reduce your workload and save time while scaling your business growth with AI and MooreRevenue."
+  title="AI Workflow Automation Services | MooreRevenue"
+  description="Automate repeatable business tasks, route inquiries, and connect your existing tools with MooreRevenue workflow automation."
   canonicalUrl="https://www.moorerevenue.com/services/ai-automation-agency-faridabad"
   breadcrumbs={breadcrumbs}
 >
@@ -84,7 +82,7 @@ const breadcrumbs = [
         <span>/</span>
         <a href="/services" class="hover:text-[#059669]">Services</a>
         <span>/</span>
-        <span class="text-slate-700 font-medium">AI Automation Agency in Faridabad</span>
+        <span class="text-slate-700 font-medium">AI Workflow Automation</span>
       </nav>
     </div>
 
@@ -93,19 +91,19 @@ const breadcrumbs = [
       {/* Target Pill */}
       <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-emerald-500/30 bg-emerald-50 text-[#059669] text-xs font-semibold uppercase tracking-wider shadow-xs">
         <Workflow class="w-3.5 h-3.5" />
-        AI Automation • Faridabad & NCR
+        AI workflow automation
       </div>
 
       {/* Target H1 */}
       <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
-        AI Automation Agency in Faridabad: <span class="text-[#059669]">Custom Systems</span> Built Around Your Workflow
+        AI workflow automation built around your process
       </h1>
 
       {/* Direct Contact & Founder Hook */}
       <div class="flex flex-wrap items-center justify-between gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm text-slate-700 shadow-xs">
         <div class="flex items-center gap-2">
-          <MapPin class="w-4 h-4 text-[#059669]" />
-          <span>Serving Clients Across Faridabad & Delhi NCR • Available for On-Site Consultations</span>
+          <Workflow class="w-4 h-4 text-[#059669]" />
+          <span>Lead routing, task automation, and connected business tools</span>
         </div>
         <div class="flex items-center gap-3">
           <a href="tel:+918287367640" class="text-slate-700 font-mono font-medium hover:underline">+91 8287367640</a>
@@ -120,10 +118,10 @@ const breadcrumbs = [
        {/* Section 1: The Problem */}
       <section class="space-y-4">
         <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
-          Where Most Businesses in Faridabad Lose Time and Enquiries
+          Reduce repetitive work across your business
         </h2>
         <p>
-          Faridabad has a wide mix of manufacturers, distributors, service firms, and clinics. Most of them share a common pattern: enquiries come in through phone and WhatsApp, but response depends entirely on whoever is available at that moment. Outside business hours, on weekends, or during busy periods, messages go unanswered and calls go missed.
+          Teams often handle inquiries, updates, and handoffs across phone, email, messaging apps, spreadsheets, and CRM systems. Re-entering the same details and coordinating routine steps takes time away from work that needs a person.
         </p>
         <p>
           This is not a staffing problem — it is a process problem. The fix is not always to hire more people. Sometimes it is to configure a system that handles the routine work reliably so your team can focus on the conversations that actually need them.
@@ -241,43 +239,6 @@ const breadcrumbs = [
         </div>
       </section>
 
-      {/* Section 4: Hyperlocal Authority & Coverage */}
-      <section class="space-y-4">
-        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
-          Serving All Key Industrial & Commercial Corridors in Faridabad
-        </h2>
-        <p>
-          We know that local business context matters. MooreRevenue provides tailored automation workflows and on-site engineering consultations across all major Faridabad zones:
-        </p>
-
-        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-sm">
-          <li class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-xs flex items-center justify-between">
-            <span class="font-medium text-slate-800">Mathura Road Heavy Industrial Zone</span>
-            <a href="/areas-we-serve/mathura-road-faridabad" class="text-[#059669] font-mono text-xs font-semibold hover:underline">View Zone →</a>
-          </li>
-          <li class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-xs flex items-center justify-between">
-            <span class="font-medium text-slate-800">DLF Industrial Area (Sectors 24 & 25)</span>
-            <a href="/areas-we-serve/dlf-industrial-area-faridabad" class="text-[#059669] font-mono text-xs font-semibold hover:underline">View Zone →</a>
-          </li>
-          <li class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-xs flex items-center justify-between">
-            <span class="font-medium text-slate-800">Ballabgarh Manufacturing Hub</span>
-            <a href="/areas-we-serve/ballabgarh-faridabad" class="text-[#059669] font-mono text-xs font-semibold hover:underline">View Zone →</a>
-          </li>
-          <li class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-xs flex items-center justify-between">
-            <span class="font-medium text-slate-800">Greater Faridabad (Sectors 75-89)</span>
-            <a href="/areas-we-serve/greater-faridabad" class="text-[#059669] font-mono text-xs font-semibold hover:underline">View Zone →</a>
-          </li>
-          <li class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-xs flex items-center justify-between">
-            <span class="font-medium text-slate-800">Sector 15 & 16 Corporate Centers</span>
-            <a href="/areas-we-serve/sector-15-16-faridabad" class="text-[#059669] font-mono text-xs font-semibold hover:underline">View Zone →</a>
-          </li>
-          <li class="p-3.5 rounded-xl bg-white border border-slate-200 shadow-xs flex items-center justify-between">
-            <span class="font-medium text-slate-800">Complete Faridabad Coverage Hub</span>
-            <a href="/areas-we-serve" class="text-[#059669] font-mono text-xs font-semibold hover:underline">All Hubs →</a>
-          </li>
-        </ul>
-      </section>
-
       {/* Section 5: Process */}
       <section class="space-y-4">
         <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
@@ -312,7 +273,7 @@ const breadcrumbs = [
       {/* Section 6: FAQ Section with Structured Content */}
       <section class="space-y-6 pt-6 border-t border-slate-200">
         <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
-          Frequently Asked Questions: AI Automation in Faridabad
+          Frequently Asked Questions About AI Automation
         </h2>
         
         <div class="space-y-4">

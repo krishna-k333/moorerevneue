@@ -10,12 +10,12 @@ export const faqsData: FaqItem[] = [
   {
     question: "Can your AI Voice Agents speak fluent Hindi and understand regional Indian accents?",
     answer:
-      "Yes, absolutely. Unlike robotic IVR phone menus, Voice AI models that we use are fine-tuned on natural conversational Hindi, Indian English, and everyday Hinglish. They understand local accents, booking appointments, answering service queries, and qualifying leads.",
+      "Voice agents can be configured for Hindi, English, and other supported language needs. Performance depends on the model, audio conditions, and the examples and information provided.",
   },
   {
     question: "Which CRMs, communication tools, and APIs do you integrate with?",
     answer:
-      "We integrate seamlessly with modern business stacks including WhatsApp Cloud API, Zoho CRM, Salesforce, HubSpot, Google Workspace, Calendly, Stripe, Razorpay, Slack, and custom REST/GraphQL APIs and webhooks. We don't force you to change your existing tools; we build the intelligent automation AI layer directly across them.",
+      "Integration options depend on your existing tools and their available APIs. We can review your current setup and discuss a suitable approach before work begins.",
   },
   {
     question: "How long does it take from discovery audit to live deployment?",

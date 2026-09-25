@@ -9,7 +9,6 @@ import {
   PhoneCall, 
   Zap, 
   ShieldCheck, 
-  MapPin, 
   LayoutDashboard, 
   Search,
   MessageSquare 
@@ -17,28 +16,28 @@ import {
 
 const pageFaqs = [
   {
-    question: "Why should a Faridabad business choose MooreRevenue for website development?",
-    answer: "Most local agencies build slow, bloated WordPress templates that take 5+ seconds to load and lack modern local schema markup. MooreRevenue engineers fast, clean websites built on Astro, React, and Tailwind CSS. Our sites feature clean code, fast mobile load speeds, solid local SEO foundations, and conversion-focused layouts that help turn visitors into genuine inquiries.",
+    question: "What does MooreRevenue include in website development?",
+    answer: "Website projects can include page structure, responsive layouts, content setup, contact paths, search metadata, and integrations selected for your business needs.",
   },
   {
-    question: "How does website speed directly impact local search rankings and conversions?",
-    answer: "Google's Core Web Vitals algorithms penalize slow websites. Over 53% of mobile visitors abandon a website that takes longer than 3 seconds to load. By delivering fast page loads and smooth mobile performance, MooreRevenue's websites reduce bounce rates, improve organic search visibility, and make it effortless for visitors to get in touch.",
+    question: "Can a website connect visitors with my business?",
+    answer: "A website can give visitors clear ways to call, send a message, request information, or complete another action that fits your business.",
   },
   {
-    question: "Are your websites optimized for local Faridabad SEO and AI Answer Engines (AEO)?",
-    answer: "Yes, comprehensively. Every website comes engineered with rich Schema.org structured data (LocalBusiness, Service, FAQPage), atomic BLUF content formatting, semantic HTML hierarchy, and complete robots.txt optimization to ensure maximum visibility on Google, ChatGPT, Perplexity, and Gemini.",
+    question: "Can a website include search-friendly content and structured data?",
+    answer: "We organize page content and technical details so search systems can better understand your services, business information, and the purpose of each page. Structured data can provide additional context about the content on your site.",
   },
   {
     question: "Can MooreRevenue integrate AI Voice and WhatsApp chat agents directly into our website?",
-    answer: "Absolutely. We seamlessly embed custom bilingual AI chat widgets, automated WhatsApp quotation links, and direct telephone click-to-call hooks connected to our voice agents.",
+    answer: "Depending on the project scope, a website can include chat widgets, WhatsApp links, or click-to-call links. Integrations are confirmed during planning.",
   },
   {
     question: "How long does a custom website development project take?",
-    answer: "Our standard modern website sprints are completed within 7 days—including design, copywriting, local SEO optimization, and live launch.",
+    answer: "The project timeline depends on the site size, content readiness, integrations, and feedback cycles. MooreRevenue will agree on a schedule after reviewing the requirements.",
   },
   {
     question: "Who owns the code and website assets upon completion?",
-    answer: "You do, 100%. We provide complete ownership of source code, domain configurations, assets, and hosting accounts with zero vendor lock-in or recurring hostage fees.",
+    answer: "Ownership, access, and handover details are agreed for each project and documented in its scope.",
   },
 ];
 
@@ -58,13 +57,13 @@ const faqSchema = {
 const breadcrumbs = [
   { name: "Home", url: "https://www.moorerevenue.com/" },
   { name: "Services", url: "https://www.moorerevenue.com/services" },
-  { name: "Website Development Faridabad", url: "https://www.moorerevenue.com/services/website-development-faridabad" }
+  { name: "Website Development", url: "https://www.moorerevenue.com/services/website-development-faridabad" }
 ];
 ---
 
 <Layout
-  title="Get a High-Converting Website That Brings Real Business | MooreRevenue"
-  description="We create highly optimized websites that not only look great but also bring you real business. Best website providers in Faridabad."
+  title="Website Design and Development Services | MooreRevenue"
+  description="Plan and build a business website with clear pages, responsive layouts, useful content, and practical contact paths."
   canonicalUrl="https://www.moorerevenue.com/services/website-development-faridabad"
   breadcrumbs={breadcrumbs}
 >
@@ -80,7 +79,7 @@ const breadcrumbs = [
         <span>/</span>
         <a href="/services" class="hover:text-[#059669]">Services</a>
         <span>/</span>
-        <span class="text-slate-700 font-medium">Website Development in Faridabad</span>
+        <span class="text-slate-700 font-medium">Website Development</span>
       </nav>
     </div>
 
@@ -88,18 +87,18 @@ const breadcrumbs = [
     <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
       <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-emerald-500/30 bg-emerald-50 text-[#059669] text-xs font-semibold uppercase tracking-wider shadow-xs">
         <Globe class="w-3.5 h-3.5" />
-        Modern Web Development • Faridabad
+        Website design and development
       </div>
 
       <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
-        Website Development in Faridabad: <span class="text-[#059669]">Modern, Fast Websites</span> Built to Convert
+        Websites Design & Development
       </h1>
 
       {/* Contact Bar */}
       <div class="flex flex-wrap items-center justify-between gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm text-slate-700 shadow-xs">
         <div class="flex items-center gap-2">
-          <MapPin class="w-4 h-4 text-[#059669]" />
-          <span>Engineering High-Speed Web Platforms Across Faridabad & Delhi NCR</span>
+          <Globe class="w-4 h-4 text-[#059669]" />
+          <span>Page structure, responsive design, content, and contact paths</span>
         </div>
         <div class="flex flex-wrap items-center gap-3">
           <a href="/portfolio" class="text-xs font-bold text-[#059669] bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 px-3 py-1.5 rounded-lg transition-colors">
@@ -118,20 +117,18 @@ const breadcrumbs = [
       {/* Section 1: Modern Web Engineering vs Outdated Templates */}
       <section class="space-y-4">
         <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
-          Why Traditional Websites Fail to Generate Revenue in Faridabad
+          A clear website for your business
         </h2>
         <p>
-          The vast majority of websites built by traditional Indian IT vendors suffer from terminal design flaws: they rely on bloated PHP themes, dozens of incompatible plugins, and sluggish shared hosting. As a result, when an industrial buyer or local customer clicks your link on mobile, they wait 4 to 8 seconds staring at a blank screen.
+          A useful business website explains what you offer, who it helps, and how a visitor can take the next step. MooreRevenue builds page layouts and content around those needs, with responsive design and the technical structure selected for the project.
         </p>
-        <p>
-          At <strong>MooreRevenue</strong>, we take an engineering-first approach. We build websites using modern static-site generation (SSG) and server-side rendering (SSR) frameworks. Every page compiles into clean, pre-rendered HTML and CSS delivered via global content delivery networks (CDNs). The result is instantaneous page loading, pristine mobile responsiveness, and flawless user engagement.
-        </p>
+        
       </section>
 
       {/* Section 2: Core Web Pillars */}
       <section class="space-y-6">
         <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
-          The 4 Pillars of MooreRevenue Website Architecture
+          What a website project can include
         </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
@@ -148,10 +145,10 @@ const breadcrumbs = [
           <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-3">
             <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
               <Search class="w-5 h-5 text-[#059669]" />
-              Built-in Local SEO & Structured Data
+              Search-friendly page structure
             </h3>
             <p class="text-sm text-slate-600 leading-relaxed">
-              Every page is coded with complete Schema.org structured data for LocalBusiness, Service catalogs, Breadcrumbs, and FAQs. Optimized for both Google search and AI answer engines like Perplexity and ChatGPT.
+              We add relevant structured data to describe your business, services, and page content in a format search systems can interpret.
             </p>
           </div>
 
@@ -161,7 +158,7 @@ const breadcrumbs = [
               Conversion-Focused User Journey
             </h3>
             <p class="text-sm text-slate-600 leading-relaxed">
-              Clear visual hierarchy, trust badges, ROI calculators, interactive product previews, and strategic call-to-action buttons that convert passive visitors into hot phone calls and form leads.
+              Clear navigation, useful page sections, and contact actions that help visitors find relevant information and get in touch.
             </p>
           </div>
 
@@ -171,68 +168,22 @@ const breadcrumbs = [
               AI & WhatsApp Integration
             </h3>
             <p class="text-sm text-slate-600 leading-relaxed">
-              Pre-integrated with our bilingual AI voice agents and WhatsApp CRM pipelines. Inquiries submitted on your site trigger instant automated customer responses in seconds.
+              Websites can include links or integrations with voice and WhatsApp workflows where these fit the project. Response timing depends on the connected systems and configuration.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Section 3: Technical Comparison Table */}
-      <section class="space-y-6">
-        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
-          Comparison: MooreRevenue Modern Web Stack vs Generic WordPress Agency
-        </h2>
-        
-        <div class="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-xs">
-          <table class="w-full text-left text-sm">
-            <thead>
-              <tr class="border-b border-slate-200 text-xs font-mono uppercase text-slate-500 bg-slate-50">
-                <th class="py-4 px-5">Feature</th>
-                <th class="py-4 px-5 text-[#059669] font-bold bg-emerald-50/60">MooreRevenue Web Architecture</th>
-                <th class="py-4 px-5 text-slate-600">Generic Local Agency (WordPress)</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-slate-100 text-xs sm:text-sm text-slate-700">
-              <tr>
-                <td class="py-4 px-5 font-semibold text-slate-900">Google Core Web Vitals</td>
-                <td class="py-4 px-5 text-[#059669] font-bold bg-emerald-50/60">Optimized Performance</td>
-                <td class="py-4 px-5 text-slate-500">Often fails Core Web Vitals</td>
-              </tr>
-              <tr>
-                <td class="py-4 px-5 font-semibold text-slate-900">Average Mobile Load Time</td>
-                <td class="py-4 px-5 text-[#059669] font-bold bg-emerald-50/60">Fast & Responsive (&lt; 2s)</td>
-                <td class="py-4 px-5 text-slate-500">Slow & Bloated (5 - 9 Seconds)</td>
-              </tr>
-              <tr>
-                <td class="py-4 px-5 font-semibold text-slate-900">Local Schema.org Code</td>
-                <td class="py-4 px-5 text-[#059669] font-bold bg-emerald-50/60">Hand-coded JSON-LD on all pages</td>
-                <td class="py-4 px-5 text-slate-500">Generic or Missing</td>
-              </tr>
-              <tr>
-                <td class="py-4 px-5 font-semibold text-slate-900">Security & Maintenance</td>
-                <td class="py-4 px-5 text-[#059669] font-bold bg-emerald-50/60">Modern Clean Code / Minimal Maintenance</td>
-                <td class="py-4 px-5 text-slate-500">Constant plugin vulnerabilities & hacks</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      {/* Section 4: Local Coverage Links */}
+      {/* Section 4: Related Services */}
       <section class="space-y-4">
         <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
-          Web Development Services Delivered Across All Faridabad Zones
+          Related services
         </h2>
         <p>
-          We provide localized web design and conversion optimization for businesses located across:
+          Websites can work alongside other business tools and customer workflows.
         </p>
 
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 text-xs font-mono">
-          <a href="/areas-we-serve/mathura-road-faridabad" class="p-3 rounded-xl bg-white hover:bg-emerald-50 border border-slate-200 text-slate-700 hover:text-[#059669] transition-colors shadow-xs">Mathura Road Industrial →</a>
-          <a href="/areas-we-serve/dlf-industrial-area-faridabad" class="p-3 rounded-xl bg-white hover:bg-emerald-50 border border-slate-200 text-slate-700 hover:text-[#059669] transition-colors shadow-xs">DLF Sector 24/25 →</a>
-          <a href="/areas-we-serve/ballabgarh-faridabad" class="p-3 rounded-xl bg-white hover:bg-emerald-50 border border-slate-200 text-slate-700 hover:text-[#059669] transition-colors shadow-xs">Ballabgarh Hub →</a>
-          <a href="/areas-we-serve/greater-faridabad" class="p-3 rounded-xl bg-white hover:bg-emerald-50 border border-slate-200 text-slate-700 hover:text-[#059669] transition-colors shadow-xs">Greater Faridabad →</a>
-          <a href="/areas-we-serve/sector-15-16-faridabad" class="p-3 rounded-xl bg-white hover:bg-emerald-50 border border-slate-200 text-slate-700 hover:text-[#059669] transition-colors shadow-xs">Sector 15 & 16 →</a>
           <a href="/services/ai-voice-agent-faridabad" class="p-3 rounded-xl bg-white hover:bg-emerald-50 border border-slate-200 text-slate-700 hover:text-[#059669] transition-colors shadow-xs">AI Voice Agents →</a>
         </div>
       </section>
@@ -240,7 +191,7 @@ const breadcrumbs = [
       {/* Section 5: FAQs */}
       <section class="space-y-6 pt-6 border-t border-slate-200">
         <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
-          Frequently Asked Questions: Website Development in Faridabad
+          Frequently Asked Questions About Website Development
         </h2>
         
         <div class="space-y-4">
@@ -261,13 +212,13 @@ const breadcrumbs = [
       <section class="mt-16 p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-emerald-50/80 via-white to-slate-50 border border-emerald-300 text-center space-y-6 shadow-xl">
         <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-emerald-500/30 bg-emerald-50 text-[#059669] text-xs font-semibold uppercase tracking-wider shadow-xs">
           <Globe class="w-3.5 h-3.5" />
-          Dominate Your Local Search Category
+          Website review for your business
         </div>
         <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight max-w-2xl mx-auto">
-          Ready for a Website That Actually Drives Customer Revenue?
+          Discuss a website for your business
         </h2>
         <p class="text-sm sm:text-base text-slate-600 max-w-xl mx-auto leading-relaxed">
-          Reach out to us (+91 8287367640) for an actionable website review and honest feedback on your current setup.
+          Tell us what your website needs to explain or help visitors do.
         </p>
         <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
