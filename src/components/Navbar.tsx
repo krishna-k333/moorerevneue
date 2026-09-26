@@ -76,12 +76,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAudit }) => {
             Areas We Serve
           </a>
           <a
-            href="/#capabilities"
-            className="hover:text-[#059669] transition-colors duration-200"
-          >
-            AI Systems
-          </a>
-          <a
             href="/#faq"
             className="hover:text-[#059669] transition-colors duration-200"
           >
@@ -201,13 +195,6 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAudit }) => {
             className="block py-2 text-base font-semibold text-slate-800 hover:text-[#059669]"
           >
             Areas We Serve (Faridabad Hub)
-          </a>
-          <a
-            href="/#capabilities"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block py-2 text-base font-semibold text-slate-800 hover:text-[#059669]"
-          >
-            AI Capabilities
           </a>
           <a
             href="https://wa.me/918287367640"
