@@ -44,16 +44,16 @@ You can self-host n8n for free using the Community edition, which is available u
 ## Frequently asked questions
 
 ### How does n8n compare to Zapier?
-n8n and Zapier both connect apps and automate workflows, but they differ in three key areas. n8n is open-source and can be self-hosted, giving you full control over your data and infrastructure, while Zapier is a closed-source SaaS that runs entirely on Zapier’s servers. n8n’s pricing is based on your own hosting costs (or a cloud plan) with no per-task fees, whereas Zapier charges per task or per operation, which can get expensive as volume grows. n8n also lets you write custom code inside nodes, which gives you more flexibility for complex logic.
+The biggest differences are cost and data privacy. Zapier charges you per task, which gets expensive fast as your volume grows, and runs entirely on Zapier's servers. n8n lets you self-host for free on your own server with unlimited workflows and zero per-task fees. You can also write custom JavaScript or Python directly inside nodes when you need complex logic.
 
 ### Is n8n really free?
-Yes, the self-hosted Community edition is free to use for internal workflows that you or your organization create or modify. You do not pay a license fee for that scenario. However, you must provide and maintain the server yourself, so there are infrastructure costs. The cloud-hosted version has a free tier with limited executions, and paid plans for higher usage. If you want to offer n8n as a service to clients where they don’t create or modify the workflows themselves, the Sustainable Use License may require a commercial agreement.
+Yes, 100% free if you run it yourself. The self-hosted Community edition has no license fees for your own company's workflows. You only pay for your server (a $4–$6/month VPS is plenty). If you'd rather not manage a server, n8n also offers paid cloud plans.
 
 ### Can I use n8n for client projects?
-It depends on how you deliver the project. If you build a workflow for a client and hand it over for them to run and modify on their own self-hosted instance, that typically falls under the free license because the client is using it for their internal purposes. If you host n8n yourself and sell access to workflows as a service, or if you embed n8n in a product you sell, you likely need an Enterprise License. Always review the latest license terms on n8n’s website.
+Yes, as long as the workflows run on the client's own instance. Setting up automations on a client's server is fully covered under the free license. You only need an Enterprise license if you're reselling n8n as a multi-tenant cloud service or packaging it inside a product you sell.
 
 ### What kind of server do I need to self‑host n8n?
-For light usage and testing, a small VPS with 1 CPU, 1 GB of RAM, and 20 GB of storage can run n8n comfortably. As you add more workflows and concurrent executions, you may need 2 GB of RAM or more. n8n recommends using a PostgreSQL database for production instead of the default SQLite, which requires a bit more resources. Docker makes it easy to run n8n on Linux, macOS, or Windows (via WSL), and you can scale horizontally if needed.
+A basic VPS with 1 CPU, 2 GB of RAM, and 20 GB SSD storage is plenty to run n8n smoothly for thousands of tasks a day. We recommend running it via Docker and connecting PostgreSQL for production reliability.
 
 ### Does n8n support AI and large language models?
-Yes, n8n has native nodes for OpenAI, Anthropic, Google Gemini, and other AI services. You can build workflows that call a language model to summarize text, classify leads, generate replies, or even create multi-step AI agents that reason and use tools. The AI nodes integrate directly into the visual editor, so you can combine AI steps with traditional automation like sending emails or updating a CRM. This makes n8n a practical choice for building AI-powered business automations without writing complex orchestration code.
+Yes. n8n has built-in nodes for OpenAI, Claude, Gemini, and local models via Ollama. You can build autonomous AI agents that read customer emails, qualify leads, query your CRM, and reply on WhatsApp without writing complex code.

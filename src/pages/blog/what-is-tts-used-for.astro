@@ -14,7 +14,8 @@ import {
   ShieldCheck, 
   HelpCircle,
   Share2,
-  ExternalLink
+  ExternalLink,
+  ChevronDown
 } from "lucide-react";
 
 // Page Title & Meta Description adhering strictly to SEO best practices:
@@ -31,23 +32,23 @@ const publishDate = "2026-09-26";
 const blogFaqs = [
   {
     question: "What is the difference between text-to-speech and speech-to-text?",
-    answer: "Text-to-speech (TTS) converts written text into spoken audio. Speech-to-text (STT) does the opposite: it takes spoken audio and transcribes it into text. Many customer-service systems use both: STT to understand what a caller says, and TTS to speak a response back."
+    answer: "Text-to-speech (TTS) reads text out loud as spoken audio. Speech-to-text (STT) does the opposite—it listens to spoken words and transcribes them into written text. Conversational AI voice callers use both: STT to understand the caller, and TTS to answer back naturally."
   },
   {
     question: "Can TTS voices sound natural and human-like?",
-    answer: "Modern neural TTS engines produce voices that are remarkably natural, with realistic pauses, intonation, and emotion. While they are not indistinguishable from a human speaker in every situation, they are good enough for most business use cases like answering FAQs, reading order confirmations, or guiding callers through a menu."
+    answer: "Yes. Modern neural speech models sound remarkably human, complete with realistic pauses, natural inflection, and conversational emotion. Callers often cannot tell the difference during standard customer service inquiries or appointment bookings."
   },
   {
     question: "Is it expensive to add TTS to a small business phone system?",
-    answer: "Cloud TTS services typically charge per character, often just a few rupees for thousands of characters. The larger cost is the setup of the voice agent logic and integration with your phone system. MooreRevenue provides custom AI voice agents with transparent project scopes so you know the exact investment before any work begins."
+    answer: "No. Cloud voice synthesis only costs a fraction of a cent per minute. The main investment is setting up the call logic and connecting it to your CRM. It generally costs 70–80% less than hiring a full-time telecaller."
   },
   {
     question: "How do I get started with TTS for my business website or app?",
-    answer: "Start by identifying the specific task TTS should handle, like answering calls, reading product descriptions, or generating audio versions of blog posts. Then evaluate whether a ready-made cloud TTS API fits or if you need a custom voice agent. MooreRevenue offers a free discovery call to map out the right approach for your business."
+    answer: "Start with one high-impact workflow—like an AI phone receptionist that answers missed calls or an automated WhatsApp voice responder. MooreRevenue sets up end-to-end voice agents tailored to your business in 7–14 days."
   },
   {
     question: "Does TTS require an internet connection?",
-    answer: "It depends on the implementation. Some TTS engines run entirely on the device without internet, which is common in screen readers and smartphone accessibility features. Cloud-based TTS services, however, need an active internet connection to send text to the server and receive audio back. Most business phone integrations use cloud TTS for the highest voice quality and language support."
+    answer: "On smartphones and accessibility screen readers, basic TTS runs offline on the device. For natural-sounding business phone agents, cloud TTS is used over an internet connection to guarantee realistic accents, multilingual support (like Hindi and English), and low latency."
   }
 ];
 
@@ -276,19 +277,26 @@ const breadcrumbs = [
             </h2>
           </div>
 
-          <div class="space-y-4">
+          <div class="space-y-3">
             {blogFaqs.map((faq, idx) => (
-              <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2">
-                <h3 class="text-base font-bold text-slate-900 flex items-start gap-2">
-                  <span class="text-xs font-mono font-bold text-[#047857] px-2 py-0.5 rounded bg-emerald-100/60 mt-0.5">
-                    Q{idx + 1}
-                  </span>
-                  <span>{faq.question}</span>
-                </h3>
-                <p class="text-sm text-slate-600 leading-relaxed pl-8">
+              <details class="group rounded-2xl border border-slate-200 bg-white p-5 transition-all duration-200 hover:border-slate-300 open:border-emerald-500/30 open:bg-slate-50/50" open={idx === 0}>
+                <summary class="flex cursor-pointer items-center justify-between gap-4 font-bold text-slate-900 list-none select-none [&::-webkit-details-marker]:hidden">
+                  <div class="flex items-center gap-3">
+                    <span class="text-xs font-mono font-bold text-[#047857] px-2 py-0.5 rounded bg-emerald-50 border border-emerald-100/80 shrink-0">
+                      Q{idx + 1}
+                    </span>
+                    <span class="text-base font-bold text-slate-900 group-hover:text-[#047857] transition-colors text-left">
+                      {faq.question}
+                    </span>
+                  </div>
+                  <div class="w-7 h-7 rounded-full bg-slate-100 group-hover:bg-emerald-50 text-slate-500 group-open:text-[#047857] flex items-center justify-center shrink-0 transition-transform duration-200 group-open:rotate-180">
+                    <ChevronDown class="w-4 h-4" />
+                  </div>
+                </summary>
+                <div class="mt-3.5 pt-3 border-t border-slate-100 text-sm text-slate-600 leading-relaxed pl-1 sm:pl-10">
                   {faq.answer}
-                </p>
-              </div>
+                </div>
+              </details>
             ))}
           </div>
         </section>
