@@ -6,7 +6,6 @@ n8n is a fair-code workflow automation platform that lets you visually connect a
 - n8n is a visual workflow automation tool with 400+ integrations, self-hosting and cloud options, and code extensibility.
 - You can use it to automate lead routing, CRM syncing, AI assistants, and more.
 - It remains actively developed in 2026 with native AI agent nodes and a growing community.
-- A beginner tutorial playlist on MooreRevenue’s YouTube channel walks you through the first steps.
 - Self-hosting is free under the Sustainable Use License if you manage your own server.
 
 ## What exactly is n8n?
