@@ -1,0 +1,194 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer.astro";
+import { 
+  Volume2, 
+  Clock, 
+  Calendar, 
+  ArrowRight, 
+  BookOpen, 
+  Sparkles,
+  PhoneCall,
+  Search,
+  MessageSquare,
+  Bot
+} from "lucide-react";
+
+const pageTitle = "Blog & Practical AI Guides | MooreRevenue";
+const pageDescription = "Practical guides, tutorials, and playbooks on AI voice agents, WhatsApp automations, modern web development, and local SEO for business owners.";
+const canonicalUrl = "https://www.moorerevenue.com/blog";
+
+const breadcrumbs = [
+  { name: "Home", url: "https://www.moorerevenue.com/" },
+  { name: "Blog", url: canonicalUrl }
+];
+
+const articles = [
+  {
+    title: "What Is TTS Used For? Practical Applications for Businesses and Beyond",
+    slug: "what-is-tts-used-for",
+    excerpt: "Explore what text-to-speech (TTS) is used for in 2026. From AI voice agents that answer customer calls 24/7 to automated video voiceovers and accessibility tools.",
+    category: "AI & Voice Technology",
+    icon: Volume2,
+    readTime: "5 min read",
+    publishDate: "Sept 26, 2026",
+    featured: true
+  }
+];
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+  breadcrumbs={breadcrumbs}
+>
+  <Navbar client:idle />
+
+  <main class="pt-32 pb-24 bg-white text-slate-800">
+    
+    {/* Breadcrumbs */}
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
+      <nav class="flex items-center gap-2 text-xs text-slate-500 font-mono">
+        <a href="/" class="hover:text-[#059669] transition-colors">Home</a>
+        <span>/</span>
+        <span class="text-slate-800 font-medium">Blog</span>
+      </nav>
+    </div>
+
+    {/* Hero Header */}
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6 pb-12 border-b border-slate-200">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-emerald-500/30 bg-emerald-50 text-[#047857] text-xs font-semibold uppercase tracking-wider font-mono">
+        <BookOpen class="w-3.5 h-3.5 text-[#00dc82]" />
+        Practical Agency Insights
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+        Insights, Guides & <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#047857] via-[#059669] to-[#00dc82]">AI Playbooks</span>
+      </h1>
+
+      <p class="text-lg text-slate-600 max-w-2xl font-normal leading-relaxed">
+        Straightforward, jargon-free guides on deploying AI voice agents, automating lead pipelines, ranking in local search, and building high-performance websites.
+      </p>
+
+      {/* Category Filter Pills */}
+      <div class="flex flex-wrap items-center gap-2 pt-2">
+        <span class="px-3.5 py-1.5 rounded-lg bg-slate-900 text-white text-xs font-semibold shadow-xs">
+          All Guides
+        </span>
+        <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold hover:bg-slate-200 transition-colors cursor-pointer">
+          AI Voice Agents
+        </span>
+        <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold hover:bg-slate-200 transition-colors cursor-pointer">
+          WhatsApp Automation
+        </span>
+        <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold hover:bg-slate-200 transition-colors cursor-pointer">
+          Local SEO & AEO
+        </span>
+        <span class="px-3.5 py-1.5 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold hover:bg-slate-200 transition-colors cursor-pointer">
+          Website Development
+        </span>
+      </div>
+    </section>
+
+    {/* Articles Grid */}
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 space-y-10">
+      
+      {/* Featured Article Card */}
+      {articles.filter(a => a.featured).map((article) => {
+        const IconComponent = article.icon;
+        return (
+          <div class="group relative rounded-3xl bg-gradient-to-br from-slate-50 via-white to-emerald-50/30 border border-slate-200 p-6 sm:p-10 shadow-lg hover:shadow-xl hover:border-emerald-500/40 transition-all duration-300">
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+              
+              <div class="space-y-4 max-w-2xl">
+                <div class="flex items-center gap-3">
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold font-mono bg-emerald-100/70 text-[#047857]">
+                    <IconComponent class="w-3.5 h-3.5 text-[#00dc82]" />
+                    {article.category}
+                  </span>
+                  <span class="text-xs font-mono text-slate-400">Featured Article</span>
+                </div>
+
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 group-hover:text-[#047857] transition-colors leading-tight">
+                  <a href={`/blog/${article.slug}`}>
+                    {article.title}
+                  </a>
+                </h2>
+
+                <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+                  {article.excerpt}
+                </p>
+
+                <div class="flex items-center gap-4 text-xs font-mono text-slate-500 pt-2">
+                  <span class="flex items-center gap-1">
+                    <Calendar class="w-3.5 h-3.5" />
+                    {article.publishDate}
+                  </span>
+                  <span>•</span>
+                  <span class="flex items-center gap-1">
+                    <Clock class="w-3.5 h-3.5" />
+                    {article.readTime}
+                  </span>
+                  <span>•</span>
+                  <span class="text-slate-700 font-semibold">By Krishna Aggarwal</span>
+                </div>
+              </div>
+
+              <div class="shrink-0">
+                <a
+                  href={`/blog/${article.slug}`}
+                  class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-slate-900 group-hover:bg-[#00dc82] text-white group-hover:text-black font-bold text-xs sm:text-sm shadow-md transition-all duration-200"
+                >
+                  <span>Read Full Article</span>
+                  <ArrowRight class="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </a>
+              </div>
+
+            </div>
+          </div>
+        );
+      })}
+
+      {/* Free Audit & Consultation Card */}
+      <div class="p-8 sm:p-10 rounded-3xl bg-slate-950 text-white relative overflow-hidden shadow-2xl flex flex-col md:flex-row items-center justify-between gap-8 mt-16">
+        <div class="absolute -right-20 -top-20 w-72 h-72 bg-[#00dc82]/15 rounded-full blur-3xl pointer-events-none" />
+        
+        <div class="relative z-10 space-y-2 max-w-xl text-center md:text-left">
+          <span class="text-xs font-mono font-bold uppercase tracking-wider text-[#00dc82]">
+            Custom Business Solutions
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white leading-tight">
+            Have questions about applying AI to your business?
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            Book a free 30-minute discovery consultation with Krishna to discuss AI voice calling, WhatsApp lead pipelines, or custom web development.
+          </p>
+        </div>
+
+        <div class="relative z-10 shrink-0 flex flex-col sm:flex-row items-center gap-3 w-full md:w-auto">
+          <a
+            href="/#audit-section"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#00dc82] hover:bg-[#05df85] text-black font-bold text-xs sm:text-sm shadow-md transition-all cursor-pointer"
+          >
+            <PhoneCall class="w-4 h-4" />
+            <span>Book Free AI Audit</span>
+          </a>
+          <a
+            href="https://wa.me/918287367640"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl border border-white/20 bg-white/5 hover:bg-white/10 text-white font-semibold text-xs sm:text-sm transition-colors"
+          >
+            <span>WhatsApp Us</span>
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <Footer />
+</Layout>
