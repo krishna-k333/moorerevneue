@@ -1,0 +1,211 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer.astro";
+import { 
+  FileText, 
+  ShieldCheck, 
+  Scale, 
+  CheckCircle2, 
+  ArrowLeft,
+  Calendar,
+  AlertCircle
+} from "lucide-react";
+
+const lastUpdated = "September 27, 2026";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Terms of Service", url: "/terms-of-service" }
+];
+---
+
+<Layout
+  title="Terms of Service | MooreRevenue - AI Automation & Web Development"
+  description="Read the Terms of Service governing engagements, client deliverables, website builds, and AI automation systems provided by MooreRevenue."
+  canonicalUrl="https://www.moorerevenue.com/terms-of-service"
+  breadcrumbs={breadcrumbs}
+>
+  <Navbar client:load />
+
+  <main class="pt-24 pb-20 overflow-hidden bg-slate-50/50">
+    {/* Breadcrumbs */}
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-2">
+      <nav aria-label="Breadcrumb" class="text-xs text-slate-500 flex items-center gap-1.5">
+        <a href="/" class="hover:text-[#059669] transition-colors">Home</a>
+        <span>/</span>
+        <span class="text-slate-800 font-semibold">Terms of Service</span>
+      </nav>
+    </div>
+
+    {/* Header */}
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-10">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-[#059669] text-xs font-semibold mb-4">
+        <Scale class="w-4 h-4 text-emerald-600" />
+        <span>Client Agreement & Legal Terms</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight mb-4">
+        Terms of Service
+      </h1>
+      <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+        These Terms of Service govern your use of the MooreRevenue website, our free audit discovery sessions, and professional engagements for custom AI voice agents, business automation pipelines, and web engineering.
+      </p>
+      <div class="flex items-center gap-4 text-xs text-slate-500 mt-4 pt-4 border-t border-slate-200">
+        <span class="flex items-center gap-1.5">
+          <Calendar class="w-3.5 h-3.5 text-slate-400" />
+          Last Updated: <strong class="text-slate-700">{lastUpdated}</strong>
+        </span>
+        <span>•</span>
+        <span>Entity: MooreRevenue (Faridabad, NCR, India)</span>
+      </div>
+    </div>
+
+    {/* Main Content Card */}
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-2xl border border-slate-200/80 shadow-xs p-6 sm:p-10 md:p-12 space-y-10 text-slate-700 leading-relaxed text-sm sm:text-base">
+        
+        {/* 1. Acceptance */}
+        <section class="space-y-3">
+          <div class="flex items-center gap-2.5 text-slate-900 font-bold text-lg sm:text-xl">
+            <span class="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center text-sm font-mono font-bold">1</span>
+            <h2>Acceptance of Terms</h2>
+          </div>
+          <p>
+            By accessing or browsing this website (<a href="https://www.moorerevenue.com" class="text-emerald-700 underline underline-offset-2 hover:text-emerald-800">moorerevenue.com</a>), booking an audit, or executing a Statement of Work (SOW) with MooreRevenue ("we", "us", or "our"), you agree to be bound by these Terms of Service. If you do not agree to these terms, you should not access our website or engage our services.
+          </p>
+        </section>
+
+        <hr class="border-slate-100" />
+
+        {/* 2. Services Offered */}
+        <section class="space-y-3">
+          <div class="flex items-center gap-2.5 text-slate-900 font-bold text-lg sm:text-xl">
+            <span class="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center text-sm font-mono font-bold">2</span>
+            <h2>Services & Deliverables</h2>
+          </div>
+          <p>MooreRevenue specializes in professional technology services including, but not limited to:</p>
+          <ul class="space-y-1.5 list-disc list-inside text-slate-600 pl-1 text-xs sm:text-sm">
+            <li>AI Voice Agent architecture, prompt design, and telephony integration (Twilio/Plivo/ElevenLabs).</li>
+            <li>Workflow automation pipelines (n8n, Make, custom webhooks, CRM sync).</li>
+            <li>WhatsApp Business API automated workflows and messaging funnels.</li>
+            <li>Custom website design, development, and migration (Astro, Next.js, modern web stacks).</li>
+            <li>Local SEO, technical search optimization, and AI Engine Optimization (AEO).</li>
+          </ul>
+          <p class="text-xs sm:text-sm text-slate-600 pt-1">
+            Specific deliverables, project milestones, delivery timelines, and fees are defined individually in project proposals, invoices, or written engagement contracts.
+          </p>
+        </section>
+
+        <hr class="border-slate-100" />
+
+        {/* 3. Intellectual Property */}
+        <section class="space-y-3">
+          <div class="flex items-center gap-2.5 text-slate-900 font-bold text-lg sm:text-xl">
+            <span class="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center text-sm font-mono font-bold">3</span>
+            <h2>Intellectual Property & Ownership</h2>
+          </div>
+          <div class="space-y-2 text-xs sm:text-sm text-slate-600">
+            <p>
+              <strong>Client Deliverables:</strong> Upon receipt of full payment according to the agreed terms, the client owns all final custom code, custom copy, visual branding assets, and proprietary workflow logic created specifically for their engagement.
+            </p>
+            <p>
+              <strong>Pre-Existing Frameworks & Open Source:</strong> MooreRevenue retains ownership of proprietary internal boilerplates, developer toolkits, or open-source scaffolding used across projects. The client receives an irrevocable, non-exclusive license to use and modify such assets as part of their delivered project.
+            </p>
+          </div>
+        </section>
+
+        <hr class="border-slate-100" />
+
+        {/* 4. Third-Party Services & Usage Costs */}
+        <section class="space-y-3">
+          <div class="flex items-center gap-2.5 text-slate-900 font-bold text-lg sm:text-xl">
+            <span class="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center text-sm font-mono font-bold">4</span>
+            <h2>Third-Party APIs & Ongoing Usage Costs</h2>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-600">
+            AI voice agents and automation pipelines depend on third-party platform providers (e.g. OpenAI, Anthropic, Twilio, WhatsApp Cloud API, ElevenLabs, Vercel). Unless explicitly included in an active monthly management retainer:
+          </p>
+          <ul class="space-y-1.5 list-disc list-inside text-slate-600 pl-1 text-xs sm:text-sm">
+            <li>Clients are responsible for their own third-party API accounts, usage consumption, and billing directly with those providers.</li>
+            <li>MooreRevenue is not responsible for outages, rate limits, price changes, or service interruptions caused by third-party APIs.</li>
+          </ul>
+        </section>
+
+        <hr class="border-slate-100" />
+
+        {/* 5. Warranties & Limitation of Liability */}
+        <section class="space-y-3">
+          <div class="flex items-center gap-2.5 text-slate-900 font-bold text-lg sm:text-xl">
+            <span class="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center text-sm font-mono font-bold">5</span>
+            <h2>Limitation of Liability</h2>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-600">
+            We build and test all custom code and automations to high industry standards. However, services and software are provided on an "as is" and "as available" basis. To the maximum extent permitted by law:
+          </p>
+          <ul class="space-y-1.5 list-disc list-inside text-slate-600 pl-1 text-xs sm:text-sm">
+            <li>MooreRevenue is not liable for indirect, incidental, or consequential business damages resulting from downtime, algorithm changes, or carrier disruptions.</li>
+            <li>Our total cumulative liability under any claim arising out of our services shall not exceed the total fees paid by the client to MooreRevenue under the applicable statement of work in the preceding three (3) months.</li>
+          </ul>
+        </section>
+
+        <hr class="border-slate-100" />
+
+        {/* 6. Governing Law */}
+        <section class="space-y-3">
+          <div class="flex items-center gap-2.5 text-slate-900 font-bold text-lg sm:text-xl">
+            <span class="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center text-sm font-mono font-bold">6</span>
+            <h2>Governing Law & Jurisdiction</h2>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-600">
+            These terms shall be governed by and construed in accordance with the laws of India. Any disputes arising in connection with these Terms shall be subject to the exclusive jurisdiction of the competent courts in Faridabad / Haryana, India.
+          </p>
+        </section>
+
+        <hr class="border-slate-100" />
+
+        {/* 7. Contact */}
+        <section class="space-y-4">
+          <div class="flex items-center gap-2.5 text-slate-900 font-bold text-lg sm:text-xl">
+            <span class="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center text-sm font-mono font-bold">7</span>
+            <h2>Contact Us</h2>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-600">
+            For any questions or clarification regarding these terms, contact us directly:
+          </p>
+          <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-1.5 text-xs sm:text-sm">
+            <p class="font-bold text-slate-900">MooreRevenue</p>
+            <p class="text-slate-600">Founder: Krishna Aggarwal</p>
+            <p class="text-slate-600">Address: Mathura Road, Faridabad, Haryana 121003, India</p>
+            <p class="text-slate-600">
+              WhatsApp / Phone:{" "}
+              <a href="https://wa.me/918287367640" class="text-emerald-700 font-mono font-bold hover:underline" target="_blank" rel="noopener noreferrer">
+                +91 8287367640
+              </a>
+            </p>
+          </div>
+        </section>
+
+      </div>
+
+      {/* Back button */}
+      <div class="pt-8 pb-4 flex justify-between items-center">
+        <a 
+          href="/" 
+          class="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-600 hover:text-emerald-700 transition-colors"
+        >
+          <ArrowLeft class="w-4 h-4" />
+          <span>Back to Homepage</span>
+        </a>
+
+        <a 
+          href="/privacy-policy" 
+          class="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-600 hover:text-emerald-700 transition-colors"
+        >
+          <span>View Privacy Policy</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

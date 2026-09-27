@@ -1,0 +1,330 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer.astro";
+import { 
+  ShieldCheck, 
+  Lock, 
+  Eye, 
+  Server, 
+  Cpu, 
+  FileText, 
+  Mail, 
+  Phone, 
+  ArrowLeft,
+  Calendar,
+  CheckCircle2
+} from "lucide-react";
+
+const lastUpdated = "September 27, 2026";
+
+const breadcrumbs = [
+  { name: "Home", url: "/" },
+  { name: "Privacy Policy", url: "/privacy-policy" }
+];
+---
+
+<Layout
+  title="Privacy Policy | MooreRevenue - Data Protection & AI Privacy Standards"
+  description="Learn how MooreRevenue collects, protects, and handles your data across our website, AI voice agent solutions, workflow automations, and web development services."
+  canonicalUrl="https://www.moorerevenue.com/privacy-policy"
+  breadcrumbs={breadcrumbs}
+>
+  <Navbar client:load />
+
+  <main class="pt-24 pb-20 overflow-hidden bg-slate-50/50">
+    {/* Breadcrumbs */}
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 pb-2">
+      <nav aria-label="Breadcrumb" class="text-xs text-slate-500 flex items-center gap-1.5">
+        <a href="/" class="hover:text-[#059669] transition-colors">Home</a>
+        <span>/</span>
+        <span class="text-slate-800 font-semibold">Privacy Policy</span>
+      </nav>
+    </div>
+
+    {/* Header */}
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-10">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-[#059669] text-xs font-semibold mb-4">
+        <ShieldCheck class="w-4 h-4 text-emerald-600" />
+        <span>Your Privacy & Data Trust</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight mb-4">
+        Privacy Policy
+      </h1>
+      <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+        At MooreRevenue, we develop enterprise-grade AI voice agents, business automation pipelines, and custom high-performance websites. Because our work touches operational data, we uphold the highest standard of data privacy, client confidentiality, and transparent information security.
+      </p>
+      <div class="flex items-center gap-4 text-xs text-slate-500 mt-4 pt-4 border-t border-slate-200">
+        <span class="flex items-center gap-1.5">
+          <Calendar class="w-3.5 h-3.5 text-slate-400" />
+          Last Updated: <strong class="text-slate-700">{lastUpdated}</strong>
+        </span>
+        <span>•</span>
+        <span>Entity: MooreRevenue (Faridabad, NCR, India)</span>
+      </div>
+    </div>
+
+    {/* Main Content Card */}
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-2xl border border-slate-200/80 shadow-xs p-6 sm:p-10 md:p-12 space-y-10 text-slate-700 leading-relaxed text-sm sm:text-base">
+        
+        {/* 1. Introduction */}
+        <section class="space-y-3">
+          <div class="flex items-center gap-2.5 text-slate-900 font-bold text-lg sm:text-xl">
+            <span class="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center text-sm font-mono font-bold">1</span>
+            <h2>Introduction & Scope</h2>
+          </div>
+          <p>
+            This Privacy Policy explains how <strong>MooreRevenue</strong> ("we", "us", or "our"), operated by founder Krishna Aggarwal, collects, uses, discloses, and protects your information when you visit our website (<a href="https://www.moorerevenue.com" class="text-emerald-700 underline underline-offset-2 hover:text-emerald-800">moorerevenue.com</a>), engage with our audit forms, request discovery calls, or collaborate with us for AI voice agent systems, workflow automations, and web development.
+          </p>
+          <p>
+            By accessing our website or utilizing our services, you acknowledge the terms outlined in this Privacy Policy.
+          </p>
+        </section>
+
+        <hr class="border-slate-100" />
+
+        {/* 2. Information We Collect */}
+        <section class="space-y-3">
+          <div class="flex items-center gap-2.5 text-slate-900 font-bold text-lg sm:text-xl">
+            <span class="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center text-sm font-mono font-bold">2</span>
+            <h2>Information We Collect</h2>
+          </div>
+          <p>We only collect information that is strictly necessary to communicate with you and successfully engineer your projects:</p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80">
+              <h3 class="font-bold text-slate-900 text-sm flex items-center gap-2 mb-2">
+                <FileText class="w-4 h-4 text-emerald-600" />
+                Information You Provide Voluntarily
+              </h3>
+              <ul class="text-xs sm:text-sm space-y-1.5 text-slate-600 list-disc list-inside">
+                <li>Full name, company name, and job role</li>
+                <li>Email address and WhatsApp / phone number</li>
+                <li>Project scope, technical goals, and budget preferences</li>
+                <li>Discovery notes and answers submitted through audit intake forms</li>
+              </ul>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80">
+              <h3 class="font-bold text-slate-900 text-sm flex items-center gap-2 mb-2">
+                <Server class="w-4 h-4 text-emerald-600" />
+                Technical & Automated Data
+              </h3>
+              <ul class="text-xs sm:text-sm space-y-1.5 text-slate-600 list-disc list-inside">
+                <li>IP address and general geographic location (city / country level)</li>
+                <li>Browser type, device architecture, and operating system</li>
+                <li>Referral pages, visit duration, and navigation patterns on our site</li>
+                <li>Anonymous website performance and traffic telemetry</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <hr class="border-slate-100" />
+
+        {/* 3. AI & Automation Data Handling */}
+        <section class="space-y-3">
+          <div class="flex items-center gap-2.5 text-slate-900 font-bold text-lg sm:text-xl">
+            <span class="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center text-sm font-mono font-bold">3</span>
+            <h2>AI Models, Voice Agents & Data Confidentiality</h2>
+          </div>
+          <p>
+            As an AI automation agency, we take special precautions regarding artificial intelligence model providers and client pipelines:
+          </p>
+          <div class="space-y-2.5 pt-1">
+            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-emerald-50/50 border border-emerald-200/60 text-xs sm:text-sm">
+              <CheckCircle2 class="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+              <span><strong>Zero Model Training On Your Data:</strong> We do not allow third-party foundational models (e.g., OpenAI, Anthropic) to train public models on your proprietary business logic, documents, or customer phone calls. We enforce zero-data-retention API policies where supported.</span>
+            </div>
+            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-emerald-50/50 border border-emerald-200/60 text-xs sm:text-sm">
+              <CheckCircle2 class="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+              <span><strong>Client-Owned Automation Workflows:</strong> Whenever we build automation architectures using n8n or Make, we prioritize self-hosted deployment models on your own servers or dedicated virtual machines so your customer data remains inside your own boundary.</span>
+            </div>
+            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-emerald-50/50 border border-emerald-200/60 text-xs sm:text-sm">
+              <CheckCircle2 class="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+              <span><strong>Secure API Key Management:</strong> Credentials, WhatsApp Cloud tokens, database URLs, and API tokens are never hardcoded in client-side code and are isolated using industry-standard environment variable vaults.</span>
+            </div>
+          </div>
+        </section>
+
+        {/* 4. Meta & Social Advertising Lead Forms */}
+        <section class="space-y-3">
+          <div class="flex items-center gap-2.5 text-slate-900 font-bold text-lg sm:text-xl">
+            <span class="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center text-sm font-mono font-bold">4</span>
+            <h2>Meta (Facebook & Instagram) Lead Ads & Social Campaigns</h2>
+          </div>
+          <p>
+            When you interact with our advertisements or submit an Instant Lead Form on Meta platforms (Facebook, Instagram, Messenger), we collect the details you provide (such as your full name, business email, phone or WhatsApp number, and specific AI automation inquiries).
+          </p>
+          <div class="space-y-2.5 pt-1">
+            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 text-xs sm:text-sm">
+              <CheckCircle2 class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+              <span><strong>Purpose of Lead Form Data:</strong> Information submitted via Meta Lead Forms is used exclusively by MooreRevenue to deliver your requested AI audit, send proposal details, and contact you via phone call, WhatsApp, SMS, or email regarding your inquiry.</span>
+            </div>
+            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 text-xs sm:text-sm">
+              <CheckCircle2 class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+              <span><strong>No Unauthorized Resale:</strong> Your lead details are strictly confidential. We will never sell, rent, or distribute your lead data to unaffiliated third parties or external marketing networks.</span>
+            </div>
+            <div class="flex items-start gap-3 p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 text-xs sm:text-sm">
+              <CheckCircle2 class="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+              <span><strong>Unsubscribe & Opt-Out:</strong> You may opt out of further communications at any time by replying "STOP" on WhatsApp or sending an email/message to our team. We immediately honor deletion and opt-out requests.</span>
+            </div>
+          </div>
+        </section>
+
+        <hr class="border-slate-100" />
+
+        {/* 5. How We Use Information */}
+        <section class="space-y-3">
+          <div class="flex items-center gap-2.5 text-slate-900 font-bold text-lg sm:text-xl">
+            <span class="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center text-sm font-mono font-bold">5</span>
+            <h2>How We Use Your Information</h2>
+          </div>
+          <p>The information we collect is strictly utilized for legitimate operational and business purposes, including:</p>
+          <ul class="space-y-2 list-disc list-inside text-slate-600 pl-1">
+            <li>Responding to your audit submissions, project inquiries, and WhatsApp consultation requests.</li>
+            <li>Conducting technical viability evaluations and scoping custom automation or website solutions.</li>
+            <li>Delivering, configuring, testing, and debugging active client engagements.</li>
+            <li>Maintaining the security, performance, and uptime of our digital assets.</li>
+            <li>Complying with contractual obligations and applicable Indian statutory laws.</li>
+          </ul>
+          <p class="font-medium text-slate-900 pt-1">
+            We will never sell, rent, or trade your personal or business data to third-party data brokers or marketing list aggregators.
+          </p>
+        </section>
+
+        <hr class="border-slate-100" />
+
+        {/* 6. Sharing with Third-Party Infrastructure */}
+        <section class="space-y-3">
+          <div class="flex items-center gap-2.5 text-slate-900 font-bold text-lg sm:text-xl">
+            <span class="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center text-sm font-mono font-bold">6</span>
+            <h2>Third-Party Infrastructure & Sub-processors</h2>
+          </div>
+          <p>
+            To run high-availability web applications and AI solutions, we work with vetted, tier-1 cloud and technology providers. Depending on your solution, these may include:
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm pt-1">
+            <div class="border border-slate-200 p-3 rounded-lg">
+              <strong class="text-slate-900 block mb-0.5">Hosting & Compute</strong>
+              <span class="text-slate-600">Vercel, Cloudflare, AWS, or client-specified VPS hosts.</span>
+            </div>
+            <div class="border border-slate-200 p-3 rounded-lg">
+              <strong class="text-slate-900 block mb-0.5">Telephony & AI Audio</strong>
+              <span class="text-slate-600">Twilio, Plivo, Deepgram, ElevenLabs for voice agent synthesis.</span>
+            </div>
+            <div class="border border-slate-200 p-3 rounded-lg">
+              <strong class="text-slate-900 block mb-0.5">Automations & Databases</strong>
+              <span class="text-slate-600">n8n, Supabase, PostgreSQL, Meta WhatsApp Cloud API.</span>
+            </div>
+            <div class="border border-slate-200 p-3 rounded-lg">
+              <strong class="text-slate-900 block mb-0.5">Analytics & Communication</strong>
+              <span class="text-slate-600">Google Workspace, Google Analytics (privacy-mode), Cal.com.</span>
+            </div>
+          </div>
+        </section>
+
+        <hr class="border-slate-100" />
+
+        {/* 7. Data Security & Storage */}
+        <section class="space-y-3">
+          <div class="flex items-center gap-2.5 text-slate-900 font-bold text-lg sm:text-xl">
+            <span class="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center text-sm font-mono font-bold">7</span>
+            <h2>Data Security & Retention</h2>
+          </div>
+          <p>
+            We implement technical and organizational controls designed to secure your personal data from accidental loss and unauthorized access, alteration, or disclosure. All web traffic to our servers is encrypted using modern Transport Layer Security (TLS/HTTPS).
+          </p>
+          <p>
+            We retain information only as long as necessary to fulfill the purposes for which it was gathered, support active engagements, or satisfy legal and accounting requirements. Following project conclusion or upon verified request, client-specific access tokens and test data are purged securely.
+          </p>
+        </section>
+
+        <hr class="border-slate-100" />
+
+        {/* 8. Your Data Rights */}
+        <section class="space-y-3">
+          <div class="flex items-center gap-2.5 text-slate-900 font-bold text-lg sm:text-xl">
+            <span class="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center text-sm font-mono font-bold">8</span>
+            <h2>Your Privacy Rights</h2>
+          </div>
+          <p>
+            Depending on your jurisdiction (including the Digital Personal Data Protection Act in India and relevant international regulations), you have rights regarding your personal information, including:
+          </p>
+          <ul class="space-y-1.5 list-disc list-inside text-slate-600 pl-1">
+            <li>The right to request confirmation of whether we process your personal data.</li>
+            <li>The right to access, update, or rectify inaccurate information.</li>
+            <li>The right to request deletion of your information from our direct databases.</li>
+            <li>The right to opt-out of recurring communications at any time.</li>
+          </ul>
+        </section>
+
+        <hr class="border-slate-100" />
+
+        {/* 9. Cookies */}
+        <section class="space-y-3">
+          <div class="flex items-center gap-2.5 text-slate-900 font-bold text-lg sm:text-xl">
+            <span class="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center text-sm font-mono font-bold">9</span>
+            <h2>Cookies & Tracking Technologies</h2>
+          </div>
+          <p>
+            Our website uses minimal cookies and tracking technologies (such as anonymous telemetry, Google Analytics, or Meta Pixel when active) to assess advertising campaign performance and maintain site responsiveness. You can instruct your browser to refuse all cookies or adjust your advertising preferences inside Meta's platform settings.
+          </p>
+        </section>
+
+        <hr class="border-slate-100" />
+
+        {/* 10. Contact Details */}
+        <section class="space-y-4">
+          <div class="flex items-center gap-2.5 text-slate-900 font-bold text-lg sm:text-xl">
+            <span class="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-700 flex items-center justify-center text-sm font-mono font-bold">10</span>
+            <h2>Contact Us & Data Inquiries</h2>
+          </div>
+          <p>
+            If you have questions regarding this Privacy Policy, wish to exercise your data rights, or need an enterprise Data Processing Agreement (DPA) signed for custom AI engagements, please reach out to us directly:
+          </p>
+
+          <div class="p-5 rounded-xl bg-slate-50 border border-slate-200 space-y-2 text-xs sm:text-sm">
+            <p class="font-bold text-slate-900">MooreRevenue</p>
+            <p class="text-slate-600">Founder & Data Lead: Krishna Aggarwal</p>
+            <p class="text-slate-600">Location: Mathura Road, Faridabad, Haryana 121003, India</p>
+            <p class="text-slate-600">
+              WhatsApp / Direct Line:{" "}
+              <a href="https://wa.me/918287367640" class="text-emerald-700 font-mono font-bold hover:underline" target="_blank" rel="noopener noreferrer">
+                +91 8287367640
+              </a>
+            </p>
+            <p class="text-slate-600">
+              Website:{" "}
+              <a href="https://www.moorerevenue.com" class="text-emerald-700 hover:underline">
+                https://www.moorerevenue.com
+              </a>
+            </p>
+          </div>
+        </section>
+
+      </div>
+
+      {/* Back button */}
+      <div class="pt-8 pb-4 flex justify-between items-center">
+        <a 
+          href="/" 
+          class="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-600 hover:text-emerald-700 transition-colors"
+        >
+          <ArrowLeft class="w-4 h-4" />
+          <span>Back to Homepage</span>
+        </a>
+
+        <a 
+          href="/#audit-section" 
+          class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#047857] hover:bg-[#065f46] text-white text-xs sm:text-sm font-semibold shadow-xs transition-colors"
+        >
+          <span>Book Free AI Audit</span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</Layout>
