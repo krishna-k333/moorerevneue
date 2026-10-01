@@ -1,7 +1,12 @@
 ---
+import { BUSINESS } from "../../lib/business";
 import Layout from "../../layouts/Layout.astro";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer.astro";
+import ServiceFirstFold from "../../components/ServiceFirstFold.astro";
+import ServiceAreasBlock from "../../components/ServiceAreasBlock.astro";
+import CostFactors from "../../components/CostFactors.astro";
+import { serviceSchema } from "../../lib/schema";
 import { 
   Workflow,
   Calendar,
@@ -41,6 +46,18 @@ const pageFaqs = [
     question: "Who handles the technical work at MooreRevenue?",
     answer: "Krishna Aggarwal leads all builds directly. You work with the same person from the first call to launch, not a support ticket system.",
   },
+  {
+    question: "How much do AI automation agencies charge?",
+    answer: "It depends on the number of tools, the steps in the workflow and where it is hosted. We scope the work in a free audit and agree the cost before anything starts.",
+  },
+  {
+    question: "How do AI agents work in a business workflow?",
+    answer: "An AI agent receives an input such as an enquiry, decides the next step using rules and a language model, and calls the tools you connect, for example a CRM or a spreadsheet. We define the rules and limits, test them with you and keep a person in the loop for exceptions.",
+  },
+  {
+    question: "Do you offer AI automation services in Faridabad?",
+    answer: "Yes. MooreRevenue is based in Faridabad, Haryana, and serves businesses across Faridabad and Delhi NCR, in person after the first call or remotely.",
+  },
 ];
 
 const faqSchema = {
@@ -64,10 +81,11 @@ const breadcrumbs = [
 ---
 
 <Layout
-  title="AI Workflow Automation Services | MooreRevenue"
-  description="Automate repeatable business tasks, route inquiries, and connect your existing tools with MooreRevenue workflow automation."
+  title="AI Workflow Automation Agency in Faridabad | MooreRevenue"
+  description="AI workflow automation agency in Faridabad: lead routing, CRM sync and task automation. Book a free workflow audit with MooreRevenue."
   canonicalUrl="https://www.moorerevenue.com/services/ai-automation-agency-faridabad"
   breadcrumbs={breadcrumbs}
+  schemas={[serviceSchema({ name: "AI Workflow Automation", serviceType: "AI workflow automation, lead routing and CRM synchronisation", path: "/services/ai-automation-agency-faridabad", description: "AI workflow automation agency in Faridabad: lead routing, CRM sync and task automation. Book a free workflow audit with MooreRevenue." })]}
 >
   <!-- Inject Subpage FAQ Schema -->
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
@@ -96,25 +114,26 @@ const breadcrumbs = [
 
       {/* Target H1 */}
       <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
-        AI workflow automation built around your process
+        AI Workflow Automation Agency in Faridabad
       </h1>
 
       {/* Direct Contact & Founder Hook */}
-      <div class="flex flex-wrap items-center justify-between gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm text-slate-700 shadow-xs">
-        <div class="flex items-center gap-2">
-          <Workflow class="w-4 h-4 text-[#059669]" />
-          <span>Lead routing, task automation, and connected business tools</span>
-        </div>
-        <div class="flex items-center gap-3">
-          <a href="tel:+918287367640" class="text-slate-700 font-mono font-medium hover:underline">+91 8287367640</a>
-          <span class="text-slate-300">•</span>
-          <a href="https://wa.me/918287367640" target="_blank" rel="noopener noreferrer" class="text-[#059669] font-mono font-bold hover:underline">WhatsApp Chat</a>
-        </div>
-      </div>
+      <ServiceFirstFold
+        ctaText="Book a free workflow audit"
+        blurb="Lead routing, task automation, and connected business tools"
+        trust="Go-live in 7 to 14 days"
+      ></ServiceFirstFold>
     </section>
 
     {/* In-Depth Article Content */}
     <article class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-14 space-y-12 text-slate-600 leading-relaxed">
+
+      {/* Local intro */}
+      <section>
+        <p class="text-lg text-slate-700 leading-relaxed">
+          MooreRevenue is an AI workflow automation agency in Faridabad. We connect the tools your team already uses, route enquiries to the right person and remove repeated data entry. We start with one process and expand once it works.
+        </p>
+      </section>
        {/* Section 1: The Problem */}
       <section class="space-y-4">
         <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
@@ -270,6 +289,14 @@ const breadcrumbs = [
         </div>
       </section>
 
+      <CostFactors
+        heading="How much do AI automation agencies charge in Faridabad?"
+        intro="Prices vary with the size of the job, so we do not publish a fixed rate. These are the things that change it:"
+        factors={["The number of tools and systems to connect","How many steps and exceptions the workflow has","Where the data comes from: forms, email, WhatsApp or calls","Hosting choice, for example self-hosted n8n or a managed service","Training and handover for your team"]}
+      />
+
+      <ServiceAreasBlock service="AI workflow automation" />
+
       {/* Section 6: FAQ Section with Structured Content */}
       <section class="space-y-6 pt-6 border-t border-slate-200">
         <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
@@ -311,13 +338,13 @@ const breadcrumbs = [
             <ArrowRight class="w-4 h-4" />
           </a>
           <a
-            href="https://wa.me/918287367640"
+            href={BUSINESS.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
             class="w-full sm:w-auto px-6 py-4 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-800 font-mono font-semibold text-sm flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-xs"
           >
             <MessageSquare class="w-4 h-4 text-[#059669]" />
-            <span>WhatsApp +91 8287367640</span>
+            <span>WhatsApp {BUSINESS.phoneDisplay}</span>
           </a>
         </div>
       </section>

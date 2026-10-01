@@ -1,4 +1,5 @@
 ---
+import { BUSINESS } from "../../lib/business";
 import Layout from "../../layouts/Layout.astro";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer.astro";
@@ -50,8 +51,8 @@ const breadcrumbs = [
 ---
 
 <Layout
-  title="AI Automation Agency vs Traditional IT Companies in Faridabad | MooreRevenue"
-  description="Honest comparison between modern AI Automation Agencies and traditional IT vendors in Faridabad. Speed, cost, and ROI comparison."
+  title="AI Agency vs Traditional IT in Faridabad | MooreRevenue"
+  description="AI automation agency or a traditional IT company in Faridabad? A plain comparison of speed, cost and fit from MooreRevenue."
   canonicalUrl="https://www.moorerevenue.com/comparisons/ai-agency-vs-traditional-it-faridabad"
   breadcrumbs={breadcrumbs}
 >
@@ -166,7 +167,7 @@ const breadcrumbs = [
           Not Sure Which Approach Fits?
         </h2>
         <p class="text-sm sm:text-base text-slate-600 max-w-xl mx-auto leading-relaxed">
-          Book a free 30-minute discovery call (+91 8287367640). We will look at your current setup and give you an honest view of what automation can and cannot do for your business.
+          Book a free 30-minute discovery call ({BUSINESS.phoneDisplay}). We will look at your current setup and give you an honest view of what automation can and cannot do for your business.
         </p>
         <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
@@ -177,13 +178,13 @@ const breadcrumbs = [
             <ArrowRight class="w-4 h-4" />
           </a>
           <a
-            href="https://wa.me/918287367640"
+            href={BUSINESS.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
             class="w-full sm:w-auto px-6 py-4 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-800 font-mono font-semibold text-sm flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-xs"
           >
             <MessageSquare class="w-4 h-4 text-[#059669]" />
-            <span>WhatsApp +91 8287367640</span>
+            <span>WhatsApp {BUSINESS.phoneDisplay}</span>
           </a>
         </div>
       </section>

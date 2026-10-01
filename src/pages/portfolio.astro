@@ -1,4 +1,5 @@
 ---
+import { BUSINESS } from "../lib/business";
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer.astro";
@@ -100,8 +101,8 @@ const breadcrumbs = [
 ---
 
 <Layout
-  title="Our Website Portfolio - Real Websites Built For Real Businesses | MooreRevenue"
-  description="Explore real websites built by MooreRevenue. Fast, friendly, and practical websites for e-commerce, custom web apps, and local businesses."
+  title="Website Design Portfolio | MooreRevenue"
+  description="Websites built by MooreRevenue for e-commerce, custom web apps and local businesses. See the work and book a free website audit."
   canonicalUrl="https://www.moorerevenue.com/portfolio"
   breadcrumbs={breadcrumbs}
 >
@@ -324,7 +325,7 @@ const breadcrumbs = [
                 </a>
 
                 <a
-                  href={`https://wa.me/918287367640?text=${encodeURIComponent(`Hi Krishna, I saw your portfolio project for ${project.title} and would like to discuss a website for my business.`)}`}
+                  href={`${BUSINESS.whatsappUrl}?text=${encodeURIComponent(`Hi Krishna, I saw your portfolio project for ${project.title} and would like to discuss a website for my business.`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   class="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 font-semibold text-xs sm:text-sm transition-colors"
@@ -392,7 +393,7 @@ const breadcrumbs = [
           <!-- Bottom CTA -->
           <div class="pt-6 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
             <a
-              href="https://wa.me/918287367640?text=Hi%20Krishna%2C%20I&#x27;d%20like%20to%20chat%20about%20building%20a%20website%20for%20my%20business."
+              href={`${BUSINESS.whatsappUrl}?text=Hi%20Krishna%2C%20I%27d%20like%20to%20chat%20about%20building%20a%20website%20for%20my%20business.`}
               target="_blank"
               rel="noopener noreferrer"
               class="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#00dc82] hover:bg-[#05df85] text-black font-bold text-sm transition-all shadow-[0_4px_16px_rgba(0,220,130,0.3)] hover:shadow-[0_6px_24px_rgba(0,220,130,0.5)] cursor-pointer active:scale-95"

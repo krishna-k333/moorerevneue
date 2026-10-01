@@ -1,4 +1,5 @@
 ---
+import { BUSINESS, telHref } from "../../lib/business";
 import Layout from "../../layouts/Layout.astro";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer.astro";
@@ -20,7 +21,7 @@ const pageFaqs = [
   },
   {
     question: "Do you offer on-site visits for businesses along Mathura Road?",
-    answer: "Yes. For clients in this area we can arrange an on-site meeting after the initial call. Message us at +91 8287367640 to get started.",
+    answer: `Yes. For clients in this area we can arrange an on-site meeting after the initial call. Message us at ${BUSINESS.phoneDisplay} to get started.`,
   },
   {
     question: "How do your voice agents help industrial suppliers?",
@@ -28,7 +29,7 @@ const pageFaqs = [
   },
   {
     question: "Who can we speak with at MooreRevenue?",
-    answer: "Message us on WhatsApp at +91 8287367640 to schedule a call or facility visit.",
+    answer: `Message us on WhatsApp at ${BUSINESS.phoneDisplay} to schedule a call or facility visit.`,
   },
 ];
 
@@ -53,8 +54,8 @@ const breadcrumbs = [
 ---
 
 <Layout
-  title="AI Automation & Voice Agents for Mathura Road, Faridabad | MooreRevenue"
-  description="MooreRevenue works with industrial firms on Mathura Road, Faridabad. AI voice agents, WhatsApp automation, and custom workflows. On-site consultations available. WhatsApp: +91 8287367640."
+  title="AI Automation in Mathura Road, Faridabad | MooreRevenue"
+  description="AI voice agents, WhatsApp automation and workflow tools for industrial firms on Mathura Road, Faridabad. Book a free consultation."
   canonicalUrl="https://www.moorerevenue.com/areas-we-serve/mathura-road-faridabad"
   breadcrumbs={breadcrumbs}
 >
@@ -89,9 +90,9 @@ const breadcrumbs = [
           <span>Serving Industrial Plants & Suppliers Across Mathura Road (NH-19), Faridabad</span>
         </div>
         <div class="flex items-center gap-3">
-          <a href="tel:+918287367640" class="text-slate-700 font-mono font-medium hover:underline">+91 8287367640</a>
+          <a href={telHref} class="text-slate-700 font-mono font-medium hover:underline">{BUSINESS.phoneDisplay}</a>
           <span class="text-slate-300">•</span>
-          <a href="https://wa.me/918287367640" target="_blank" rel="noopener noreferrer" class="text-[#059669] font-mono font-bold hover:underline">WhatsApp Chat</a>
+          <a href={BUSINESS.whatsappUrl} target="_blank" rel="noopener noreferrer" class="text-[#059669] font-mono font-bold hover:underline">WhatsApp Chat</a>
         </div>
       </div>
     </section>
@@ -193,13 +194,13 @@ const breadcrumbs = [
             <ArrowRight class="w-4 h-4" />
           </a>
           <a
-            href="https://wa.me/918287367640"
+            href={BUSINESS.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
             class="w-full sm:w-auto px-6 py-4 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-800 font-mono font-semibold text-sm flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-xs"
           >
             <MessageSquare class="w-4 h-4 text-[#059669]" />
-            <span>WhatsApp +91 8287367640</span>
+            <span>WhatsApp {BUSINESS.phoneDisplay}</span>
           </a>
         </div>
       </section>

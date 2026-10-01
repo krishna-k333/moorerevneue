@@ -1,0 +1,44 @@
+---
+import { ArrowRight, PhoneCall } from "lucide-react";
+import { BUSINESS, telHref } from "../lib/business";
+
+interface Props {
+  /** Button text: one clear action for this service. */
+  ctaText: string;
+  /** Short line describing what the service handles. */
+  blurb: string;
+  /** Extra trust fact shown after the Google rating. Must be a fact already stated on the site. */
+  trust?: string;
+  ctaHref?: string;
+}
+
+const { ctaText, blurb, trust, ctaHref = "/#audit-section" } = Astro.props;
+---
+
+<div class="space-y-4">
+  <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+    <a
+      href={ctaHref}
+      class="w-full sm:w-auto px-8 py-4 text-base font-bold text-black bg-[#00dc82] hover:bg-[#05df85] rounded-xl shadow-[0_4px_16px_rgba(0,220,130,0.3)] hover:shadow-[0_6px_24px_rgba(0,220,130,0.5)] transition-all flex items-center justify-center gap-2 cursor-pointer"
+    >
+      <span>{ctaText}</span>
+      <ArrowRight class="w-4 h-4" />
+    </a>
+    <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-slate-700">
+      <a href={telHref} class="font-mono font-bold hover:underline">Call {BUSINESS.phoneDisplay}</a>
+      <span class="text-slate-300">•</span>
+      <a href={BUSINESS.whatsappUrl} target="_blank" rel="noopener noreferrer" class="text-[#059669] font-mono font-bold hover:underline">WhatsApp</a>
+    </div>
+  </div>
+
+  <div class="flex flex-wrap items-center justify-between gap-3 p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm text-slate-700 shadow-xs">
+    <div class="flex items-center gap-2">
+      <PhoneCall class="w-4 h-4 text-[#059669]" />
+      <span>{blurb}</span>
+    </div>
+    <a href={BUSINESS.mapsUrl} target="_blank" rel="noopener noreferrer" class="font-medium hover:underline">
+      Rated {BUSINESS.rating.value} on {BUSINESS.rating.source} ({BUSINESS.rating.count} review){trust ? ` · ${trust}` : ""}
+    </a>
+    <slot />
+  </div>
+</div>

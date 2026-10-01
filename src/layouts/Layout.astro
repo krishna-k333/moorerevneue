@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import { BUSINESS } from "../lib/business";
 
 interface Props {
   title?: string;
@@ -8,6 +9,7 @@ interface Props {
   image?: string;
   breadcrumbs?: Array<{ name: string; url: string }>;
   faqSchema?: object;
+  schemas?: object[];
 }
 
 const {
@@ -17,6 +19,7 @@ const {
   image = "/og-image.png",
   breadcrumbs = [],
   faqSchema,
+  schemas = [],
 } = Astro.props;
 
 const absoluteImageUrl = image.startsWith("http")
@@ -26,63 +29,49 @@ const absoluteImageUrl = image.startsWith("http")
 const jsonLdLocalBusiness = {
   "@context": "https://schema.org",
   "@type": ["LocalBusiness", "ProfessionalService"],
-  "@id": "https://www.moorerevenue.com/#organization",
-  "name": "MooreRevenue - AI Automation & Voice Agent Agency",
-  "alternateName": ["MooreRevenue", "Moore Revenue Faridabad"],
-  "url": "https://www.moorerevenue.com",
+  "@id": `${BUSINESS.url}/#organization`,
+  "name": BUSINESS.name,
+  "alternateName": [...BUSINESS.alternateNames],
+  "url": BUSINESS.url,
   "logo": "https://www.moorerevenue.com/favicon.svg",
   "image": "https://www.moorerevenue.com/og-image.png",
   "description": "MooreRevenue provides AI voice agents, workflow automation, WhatsApp business automation, website development, and local SEO services.",
   "sameAs": [
-    "https://share.google/9eP7csF1sUEW5wZyT",
+    BUSINESS.mapsUrl,
     "https://youtube.com/@preparemytech",
     "https://instagram.com/aiwkrishna"
   ],
-  "hasMap": "https://share.google/9eP7csF1sUEW5wZyT",
+  "hasMap": BUSINESS.mapsUrl,
   "founder": {
     "@type": "Person",
     "name": "Krishna Aggarwal",
     "jobTitle": "Founder",
-    "telephone": "+91-8287367640",
     "url": "https://www.moorerevenue.com"
   },
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Mathura Road",
-    "addressLocality": "Faridabad",
-    "addressRegion": "Haryana",
-    "postalCode": "121003",
-    "addressCountry": "IN"
+    ...(BUSINESS.address.public && {
+      "streetAddress": BUSINESS.address.streetAddress,
+      "postalCode": BUSINESS.address.postalCode,
+    }),
+    "addressLocality": BUSINESS.address.addressLocality,
+    "addressRegion": BUSINESS.address.addressRegion,
+    "addressCountry": BUSINESS.address.addressCountry,
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": 28.4089,
-    "longitude": 77.3178
+    "latitude": BUSINESS.geo.latitude,
+    "longitude": BUSINESS.geo.longitude,
   },
-  "areaServed": [
-    { "@type": "AdministrativeArea", "name": "Faridabad" },
-    { "@type": "AdministrativeArea", "name": "Mathura Road Industrial Area" },
-    { "@type": "AdministrativeArea", "name": "DLF Industrial Area Sector 24/25" },
-    { "@type": "AdministrativeArea", "name": "Ballabgarh" },
-    { "@type": "AdministrativeArea", "name": "Greater Faridabad" },
-    { "@type": "AdministrativeArea", "name": "Sector 15 & 16 Faridabad" },
-    { "@type": "AdministrativeArea", "name": "NIT Faridabad" },
-    { "@type": "AdministrativeArea", "name": "Delhi NCR" },
-    { "@type": "Country", "name": "India" },
-    { "@type": "Place", "name": "Worldwide / Global Remote" }
-  ],
+  "areaServed": BUSINESS.serviceAreas.map((area) => ({ "@type": area.type, "name": area.name })),
   "priceRange": "$$",
-  "telephone": "+91-8287367640",
-  "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": [
-        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
-      ],
-      "opens": "09:00",
-      "closes": "20:00"
-    }
-  ],
+  "telephone": BUSINESS.phoneDisplay,
+  "openingHoursSpecification": BUSINESS.hours.map((h) => ({
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [...h.days],
+    "opens": h.opens,
+    "closes": h.closes,
+  })),
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "AI Automation, Voice Agents & Web Development",
@@ -117,6 +106,14 @@ const jsonLdLocalBusiness = {
           "@type": "Service",
           "name": "WhatsApp CRM & Lead Pipeline Automation",
           "description": "Configured lead follow-up, catalog information, and messaging workflows across selected channels."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Local SEO and AI Search Visibility",
+          "description": "Local SEO and AI search visibility work covering business profiles, website content, listings, and structured information."
         }
       }
     ]
@@ -156,7 +153,7 @@ const breadcrumbsSchema = breadcrumbs.length > 0 ? {
       name="keywords"
       content="AI automation, AI voice agents, WhatsApp automation, website development, workflow automation, local SEO services, MooreRevenue"
     />
-    <meta name="author" content="Krishna Aggarwal - MooreRevenue" />
+    <meta name="author" content={`Krishna Aggarwal - ${BUSINESS.name}`} />
     <meta name="robots" content="index, follow, max-image-preview:large" />
 
     <!-- Open Graph / Facebook -->
@@ -166,7 +163,7 @@ const breadcrumbsSchema = breadcrumbs.length > 0 ? {
     <meta property="og:description" content={description} />
     <meta property="og:image" content={absoluteImageUrl} />
     <meta property="og:locale" content="en_IN" />
-    <meta property="og:site_name" content="MooreRevenue" />
+    <meta property="og:site_name" content={BUSINESS.name} />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -201,6 +198,9 @@ const breadcrumbsSchema = breadcrumbs.length > 0 ? {
     {faqSchema && (
       <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
     )}
+    {schemas.map((schema) => (
+      <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    ))}
     {breadcrumbsSchema && (
       <script type="application/ld+json" set:html={JSON.stringify(breadcrumbsSchema)} />
     )}

@@ -1,0 +1,30 @@
+---
+import { CheckCircle2 } from "lucide-react";
+
+interface Props {
+  /** Question-style H2, for example "How much does an AI voice agent cost in Faridabad?" */
+  heading: string;
+  intro: string;
+  factors: string[];
+}
+
+const { heading, intro, factors } = Astro.props;
+---
+
+<section class="space-y-4">
+  <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+    {heading}
+  </h2>
+  <p>{intro}</p>
+  <ul class="space-y-2">
+    {factors.map((f) => (
+      <li class="flex items-start gap-2.5 text-sm text-slate-700">
+        <CheckCircle2 class="w-4 h-4 text-[#059669] shrink-0 mt-0.5" />
+        <span>{f}</span>
+      </li>
+    ))}
+  </ul>
+  <p>
+    We agree scope, timeline and cost before any work starts. <a href="/#audit-section" class="text-[#059669] font-semibold hover:underline">Request a free quote</a> and we will reply with a figure for your case.
+  </p>
+</section>

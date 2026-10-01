@@ -1,3 +1,4 @@
+import { BUSINESS } from "../lib/business";
 import React, { useState } from "react";
 import { MessageSquare, CheckCircle, ArrowRight, ExternalLink, Loader2 } from "lucide-react";
 
@@ -24,7 +25,7 @@ export const AuditForm: React.FC = () => {
     const service = formData.useCase.trim();
 
     const message = `Hi, Krishna. I am ${name} from ${company} we based in ${location} and we are looking for ${service} solutions.`;
-    const url = `https://wa.me/918287367640?text=${encodeURIComponent(message)}`;
+    const url = `${BUSINESS.whatsappUrl}?text=${encodeURIComponent(message)}`;
 
     setWhatsappUrl(url);
 
@@ -208,7 +209,7 @@ export const AuditForm: React.FC = () => {
                 <span className="text-xs text-slate-500 font-medium">Follow tutorials, reviews & updates:</span>
                 <div className="flex flex-wrap items-center justify-center gap-3">
                   <a
-                    href="https://share.google/9eP7csF1sUEW5wZyT"
+                    href={BUSINESS.mapsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 text-xs font-semibold text-slate-700 hover:text-blue-600 hover:border-blue-200 transition-colors"

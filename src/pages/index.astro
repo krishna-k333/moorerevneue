@@ -21,13 +21,24 @@ const faqSchema = {
     },
   })),
 };
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://www.moorerevenue.com/#website",
+  "url": "https://www.moorerevenue.com/",
+  "name": "MooreRevenue",
+  "publisher": { "@id": "https://www.moorerevenue.com/#organization" },
+  "inLanguage": "en-IN",
+};
 ---
 
 <Layout
-  title="AI Automation and Web Development in Faridabad | MooreRevenue"
-  description="AI automation agency in Faridabad building custom AI voice agents, WhatsApp bots, and fast modern websites. Book your free discovery call today!"
-  canonicalUrl="https://www.moorerevenue.com"
+  title="AI Automation Agency in Faridabad | MooreRevenue"
+  description="AI voice agents, WhatsApp automation and fast websites for businesses in Faridabad and Delhi NCR. Book a free discovery call with MooreRevenue."
+  canonicalUrl="https://www.moorerevenue.com/"
   faqSchema={faqSchema}
+  schemas={[websiteSchema]}
 >
   <!-- Fixed Navigation Header (Hydrates when browser is idle) -->
   <Navbar client:idle />

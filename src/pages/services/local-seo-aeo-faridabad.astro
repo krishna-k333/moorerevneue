@@ -1,7 +1,11 @@
 ---
+import { BUSINESS, telHref } from "../../lib/business";
 import Layout from "../../layouts/Layout.astro";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer.astro";
+import ServiceFirstFold from "../../components/ServiceFirstFold.astro";
+import ServiceAreasBlock from "../../components/ServiceAreasBlock.astro";
+import CostFactors from "../../components/CostFactors.astro";
 import { 
   Search, 
   Bot, 
@@ -43,6 +47,18 @@ const pageFaqs = [
     question: "Do you offer geographic territory exclusivity?",
     answer: "Any geographic or industry exclusivity would need to be discussed and clearly included in a written project agreement.",
   },
+  {
+    question: "How do I choose an SEO provider in Faridabad?",
+    answer: "Ask exactly what will be done each month, how results are measured and who owns your Google Business Profile and website. Be wary of anyone who guarantees a ranking. We start with a free audit so you can see what we would change before you commit.",
+  },
+  {
+    question: "Is SEO replaced by AI?",
+    answer: "No. AI search tools such as Google AI Overviews and ChatGPT draw on the same signals as local search: a clear website, accurate business information and consistent listings. Answer Engine Optimization adds work on top of local SEO rather than replacing it.",
+  },
+  {
+    question: "Where can I find AI SEO services in Faridabad?",
+    answer: "MooreRevenue offers local SEO and AI search visibility from Faridabad, Haryana. Message us on WhatsApp or request a free audit.",
+  },
 ];
 
 const faqSchema = {
@@ -61,15 +77,13 @@ const faqSchema = {
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
+  "@id": "https://www.moorerevenue.com/services/local-seo-aeo-faridabad#service",
   "name": "Local SEO and AI Search Visibility",
   "serviceType": "Local SEO, Answer Engine Optimization, and Generative Engine Optimization",
-  "provider": {
-    "@type": "Organization",
-    "name": "MooreRevenue",
-    "url": "https://www.moorerevenue.com"
-  },
+  "provider": { "@id": "https://www.moorerevenue.com/#organization" },
+  "areaServed": { "@type": "City", "name": "Faridabad" },
   "url": "https://www.moorerevenue.com/services/local-seo-aeo-faridabad",
-  "description": "Local SEO and AI search visibility work covering business profiles, website content, listings, and structured information."
+  "description": "Local SEO in Faridabad: Google Business Profile, website content and AI search visibility. Book a free local SEO audit."
 };
 
 const breadcrumbs = [
@@ -80,8 +94,8 @@ const breadcrumbs = [
 ---
 
 <Layout
-  title="Local SEO and AI Search Visibility Services | MooreRevenue"
-  description="Improve local search visibility with Google Business Profile, website content, business listing, and structured information support."
+  title="Local SEO in Faridabad | MooreRevenue"
+  description="Local SEO in Faridabad: Google Business Profile, website content and AI search visibility. Book a free local SEO audit."
   canonicalUrl="https://www.moorerevenue.com/services/local-seo-aeo-faridabad"
   breadcrumbs={breadcrumbs}
 >
@@ -110,27 +124,29 @@ const breadcrumbs = [
       </div>
 
       <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
-        Local SEO and AI search visibility
+        Local SEO in Faridabad
       </h1>
 
       <p class="text-lg sm:text-xl text-slate-600 max-w-3xl leading-relaxed">
-        We improve local search visibility through Local SEO & Answer Engine Optimization (AEO) 
+        Local SEO and AI search visibility for Faridabad businesses: Google Business Profile, website content and listings.
       </p>
 
       {/* Contact & Benchmark Bar */}
-      <div class="flex flex-wrap items-center justify-between gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm text-slate-700 shadow-xs">
-        <div class="flex items-center gap-2">
-          <MapPin class="w-4 h-4 text-[#059669]" />
-          <span>Google Business Profile, website content, and business listings</span>
-        </div>
-        <div class="flex flex-wrap items-center gap-3">
-          <a href="tel:+918287367640" class="text-slate-700 font-mono font-medium hover:underline">+91 8287367640</a>
-        </div>
-      </div>
+      <ServiceFirstFold
+        ctaText="Book a free local SEO audit"
+        blurb="Google Business Profile, website content, and business listings"
+      ></ServiceFirstFold>
     </section>
 
     {/* Detailed Article */}
     <article class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-14 space-y-14 text-slate-600 leading-relaxed">
+
+      {/* Local intro */}
+      <section>
+        <p class="text-lg text-slate-700 leading-relaxed">
+          MooreRevenue does local SEO in Faridabad. We improve how your business shows up on Google Maps, in search results and in AI answers by fixing your Google Business Profile, website content and business listings.
+        </p>
+      </section>
       
       {/* Section 1: The Modern Search Reality */}
       
@@ -238,6 +254,14 @@ const breadcrumbs = [
         </div>
       </section>
 
+      <CostFactors
+        heading="How much does local SEO cost?"
+        intro="Local SEO is priced to the work needed, so we do not publish a fixed fee. These are the things that change it:"
+        factors={["The number of locations or service areas","The current state of your Google Business Profile and website","How competitive your category is in Faridabad","The content and listing work needed","How often you want reporting"]}
+      />
+
+      <ServiceAreasBlock service="Local SEO and AI search visibility" />
+
       {/* Section 5: FAQs */}
       <section class="space-y-6">
         <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
@@ -274,7 +298,7 @@ const breadcrumbs = [
 
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
           <a
-            href="https://wa.me/918287367640?text=Hi%20Krishna,%20I'd%20like%20a%20free%20Google%20Maps%20%26%20AI%20ranking%20audit%20for%20my%20business."
+            href={`${BUSINESS.whatsappUrl}?text=Hi%20Krishna,%20I'd%20like%20a%20free%20Google%20Maps%20%26%20AI%20ranking%20audit%20for%20my%20business.`}
             target="_blank"
             rel="noopener noreferrer"
             class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-[#059669] hover:bg-[#047857] text-white font-bold text-sm shadow-md hover:shadow-lg transition-all"
@@ -283,11 +307,11 @@ const breadcrumbs = [
             <ArrowRight class="w-4 h-4" />
           </a>
           <a
-            href="tel:+918287367640"
+            href={telHref}
             class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm border border-slate-700 transition-colors"
           >
             <PhoneCall class="w-4 h-4" />
-            Call +91 8287367640
+            Call {BUSINESS.phoneDisplay}
           </a>
         </div>
       </section>

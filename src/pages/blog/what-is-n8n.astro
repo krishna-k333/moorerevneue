@@ -1,4 +1,5 @@
 ---
+import { BUSINESS } from "../../lib/business";
 import Layout from "../../layouts/Layout.astro";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer.astro";
@@ -503,12 +504,12 @@ const breadcrumbs = [
                 <span>Book Free Discovery Call</span>
               </a>
               <a
-                href="https://wa.me/918287367640?text=Hi%20Krishna,%20I%20read%20your%20n8n%20guide%20and%20want%20to%20automate%20my%20workflows."
+                href={`${BUSINESS.whatsappUrl}?text=Hi%20Krishna,%20I%20read%20your%20n8n%20guide%20and%20want%20to%20automate%20my%20workflows.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-white/20 bg-white/5 hover:bg-white/10 text-white font-semibold text-xs transition-colors"
               >
-                <span>WhatsApp +91 8287367640</span>
+                <span>WhatsApp {BUSINESS.phoneDisplay}</span>
               </a>
             </div>
           </div>

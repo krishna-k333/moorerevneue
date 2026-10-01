@@ -1,4 +1,5 @@
 ---
+import { BUSINESS, telHref } from "../../lib/business";
 import Layout from "../../layouts/Layout.astro";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer.astro";
@@ -24,7 +25,7 @@ const pageFaqs = [
   },
   {
     question: "How do we arrange a demo for our clinic or firm in Sector 15 or 16?",
-    answer: "Message us on WhatsApp at +91 8287367640. We will schedule a short call to understand your workflow and show you how the system would work for your practice.",
+    answer: `Message us on WhatsApp at ${BUSINESS.phoneDisplay}. We will schedule a short call to understand your workflow and show you how the system would work for your practice.`,
   },
 ];
 
@@ -49,8 +50,8 @@ const breadcrumbs = [
 ---
 
 <Layout
-  title="AI Automation & Voice Agents for Sector 15 & 16, Faridabad | MooreRevenue"
-  description="MooreRevenue works with clinics, consultancies, and corporate firms in Sector 15 & 16, Faridabad. AI voice agents and WhatsApp automation. WhatsApp: +91 8287367640."
+  title="AI Automation in Sector 15 & 16, Faridabad | MooreRevenue"
+  description="AI voice agents and WhatsApp automation for clinics, consultancies and corporate firms in Sector 15 & 16, Faridabad. Book a free audit."
   canonicalUrl="https://www.moorerevenue.com/areas-we-serve/sector-15-16-faridabad"
   breadcrumbs={breadcrumbs}
 >
@@ -85,9 +86,9 @@ const breadcrumbs = [
           <span>Serving Corporate Offices, Clinics & Consultancies in Sector 15 & Sector 16</span>
         </div>
         <div class="flex items-center gap-3">
-          <a href="tel:+918287367640" class="text-slate-700 font-mono font-medium hover:underline">+91 8287367640</a>
+          <a href={telHref} class="text-slate-700 font-mono font-medium hover:underline">{BUSINESS.phoneDisplay}</a>
           <span class="text-slate-300">•</span>
-          <a href="https://wa.me/918287367640" target="_blank" rel="noopener noreferrer" class="text-[#059669] font-mono font-bold hover:underline">WhatsApp Chat</a>
+          <a href={BUSINESS.whatsappUrl} target="_blank" rel="noopener noreferrer" class="text-[#059669] font-mono font-bold hover:underline">WhatsApp Chat</a>
         </div>
       </div>
     </section>
@@ -159,7 +160,7 @@ const breadcrumbs = [
           Upgrade Your Sector 15/16 Front-Desk Experience
         </h2>
         <p class="text-sm sm:text-base text-slate-600 max-w-xl mx-auto leading-relaxed">
-          Message or call us (+91 8287367640) to test an AI phone receptionist configured for your practice.
+          Message or call us ({BUSINESS.phoneDisplay}) to test an AI phone receptionist configured for your practice.
         </p>
         <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
@@ -170,13 +171,13 @@ const breadcrumbs = [
             <ArrowRight class="w-4 h-4" />
           </a>
           <a
-            href="https://wa.me/918287367640"
+            href={BUSINESS.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
             class="w-full sm:w-auto px-6 py-4 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-800 font-mono font-semibold text-sm flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-xs"
           >
             <MessageSquare class="w-4 h-4 text-[#059669]" />
-            <span>WhatsApp +91 8287367640</span>
+            <span>WhatsApp {BUSINESS.phoneDisplay}</span>
           </a>
         </div>
       </section>

@@ -1,7 +1,12 @@
 ---
+import { BUSINESS } from "../../lib/business";
 import Layout from "../../layouts/Layout.astro";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer.astro";
+import ServiceFirstFold from "../../components/ServiceFirstFold.astro";
+import ServiceAreasBlock from "../../components/ServiceAreasBlock.astro";
+import CostFactors from "../../components/CostFactors.astro";
+import { serviceSchema } from "../../lib/schema";
 import { 
   MessageSquare, 
   CheckCircle2, 
@@ -29,6 +34,26 @@ const pageFaqs = [
     question: "How does it connect to our sales team's workflow?",
     answer: "When a high-intent commercial lead is qualified or requests a site inspection, the bot automatically alerts your sales director with a full lead brief, calendar booking link, and customer contact record synced to your CRM.",
   },
+  {
+    question: "How much does WhatsApp automation cost?",
+    answer: "It depends on message volume, the workflows you need and Meta's current charges for the message types you use. We scope it in a free audit and confirm the cost before work starts.",
+  },
+  {
+    question: "What is the WhatsApp Business API?",
+    answer: "It is Meta's interface that lets a business connect its WhatsApp number to software for automated and shared-team messaging, instead of relying on the phone app alone. We set it up and connect it for you.",
+  },
+  {
+    question: "Is the WhatsApp API free or paid?",
+    answer: "Meta charges for some message types, and software providers may add their own fee. Rates change, so we confirm current rates for your use case when we scope the work.",
+  },
+  {
+    question: "Can a WhatsApp Business number be banned?",
+    answer: "Numbers can be restricted if a business messages people who did not agree to hear from it, or if many users report the messages. We build consent, approved templates and opt-out handling into each workflow to lower that risk.",
+  },
+  {
+    question: "Do you offer WhatsApp automation in Faridabad?",
+    answer: "Yes. MooreRevenue is based in Faridabad, Haryana, and builds WhatsApp workflows for businesses across Faridabad and Delhi NCR.",
+  },
 ];
 
 const faqSchema = {
@@ -52,10 +77,11 @@ const breadcrumbs = [
 ---
 
 <Layout
-  title="WhatsApp Business Automation Services | MooreRevenue"
-  description="Automate WhatsApp inquiry responses, product information sharing, follow-ups, and conversation routing with MooreRevenue."
+  title="WhatsApp Automation in Faridabad | MooreRevenue"
+  description="WhatsApp Business automation in Faridabad for replies, follow-ups and lead routing. Book a free automation audit with MooreRevenue."
   canonicalUrl="https://www.moorerevenue.com/services/whatsapp-automation-faridabad"
   breadcrumbs={breadcrumbs}
+  schemas={[serviceSchema({ name: "WhatsApp Business Automation", serviceType: "WhatsApp Business automation, follow-ups and lead routing", path: "/services/whatsapp-automation-faridabad", description: "WhatsApp Business automation in Faridabad for replies, follow-ups and lead routing. Book a free automation audit with MooreRevenue." })]}
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
@@ -79,23 +105,23 @@ const breadcrumbs = [
       </div>
 
       <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
-        WhatsApp Business automation for customer conversations
+        WhatsApp Business Automation in Faridabad
       </h1>
 
-      <div class="flex flex-wrap items-center justify-between gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm text-slate-700 shadow-xs">
-        <div class="flex items-center gap-2">
-          <MessageSquare class="w-4 h-4 text-[#059669]" />
-          <span>Inquiry responses, product information, and follow-up workflows</span>
-        </div>
-        <div class="flex items-center gap-3">
-          <a href="tel:+918287367640" class="text-slate-700 font-mono font-medium hover:underline">+91 8287367640</a>
-          <span class="text-slate-300">•</span>
-          <a href="https://wa.me/918287367640" target="_blank" rel="noopener noreferrer" class="text-[#059669] font-mono font-bold hover:underline">WhatsApp Chat</a>
-        </div>
-      </div>
+      <ServiceFirstFold
+        ctaText="Book a free WhatsApp automation audit"
+        blurb="Inquiry responses, product information, and follow-up workflows"
+      ></ServiceFirstFold>
     </section>
 
     <article class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-14 space-y-12 text-slate-600 leading-relaxed">
+
+      {/* Local intro */}
+      <section>
+        <p class="text-lg text-slate-700 leading-relaxed">
+          MooreRevenue sets up WhatsApp Business automation for businesses in Faridabad: automatic first replies, product and service information, follow-up messages, and routing of conversations to your sales team.
+        </p>
+      </section>
       <section class="space-y-4">
         <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
           What WhatsApp automation can do
@@ -118,6 +144,14 @@ const breadcrumbs = [
           <a href="/services/website-development-faridabad" class="p-3 rounded-xl bg-white hover:bg-emerald-50 border border-slate-200 text-slate-700 hover:text-[#059669] transition-colors shadow-xs">Web Development →</a>
         </div>
       </section>
+
+      <CostFactors
+        heading="How much does WhatsApp automation cost?"
+        intro="The cost depends on how you use WhatsApp, so we do not publish a fixed price. These are the things that change it:"
+        factors={["Message volume and the kinds of conversations you run","Meta's charges for some message types on the WhatsApp Business Platform, which change over time","The number of workflows and integrations, such as a CRM, spreadsheet or calendar","How many message templates need approval","Setup, testing and handover"]}
+      />
+
+      <ServiceAreasBlock service="WhatsApp automation" />
 
       <section class="space-y-6 pt-6 border-t border-slate-200">
         <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
@@ -153,13 +187,13 @@ const breadcrumbs = [
             <ArrowRight class="w-4 h-4" />
           </a>
           <a
-            href="https://wa.me/918287367640"
+            href={BUSINESS.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
             class="w-full sm:w-auto px-6 py-4 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-800 font-mono font-semibold text-sm flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-xs"
           >
             <MessageSquare class="w-4 h-4 text-[#059669]" />
-            <span>WhatsApp +91 8287367640</span>
+            <span>WhatsApp {BUSINESS.phoneDisplay}</span>
           </a>
         </div>
       </section>

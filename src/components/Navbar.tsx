@@ -1,3 +1,4 @@
+import { BUSINESS } from "../lib/business";
 import React, { useState, useEffect } from "react";
 import Logo from "./Logo";
 import { ArrowRight, Menu, X, MessageSquare, Calendar } from "lucide-react";
@@ -42,14 +43,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAudit }) => {
           : "bg-transparent py-5"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-6">
         {/* Logo */}
-        <a href="/" className="group flex items-center gap-2">
+        <a href="/" className="group flex items-center gap-2 shrink-0">
           <Logo size={34} />
         </a>
 
         {/* Desktop Nav Links */}
-        <nav className="hidden md:flex items-center gap-7 text-sm font-semibold text-slate-600">
+        <nav className="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-semibold text-slate-600 whitespace-nowrap">
           <a
             href="/services"
             className="hover:text-[#059669] transition-colors duration-200"
@@ -69,40 +70,39 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAudit }) => {
             Blog
           </a>
           <a
-            href="/areas-we-serve"
-            className="hover:text-[#059669] transition-colors duration-200 flex items-center gap-1.5"
-          >
-            <span className="w-2 h-2 rounded-full bg-[#059669] animate-ping" />
-            Areas We Serve
-          </a>
-          <a
             href="/#faq"
             className="hover:text-[#059669] transition-colors duration-200"
           >
             FAQ
           </a>
+          <a
+            href="/contact"
+            className="hover:text-[#059669] transition-colors duration-200"
+          >
+            Contact
+          </a>
         </nav>
 
         {/* Right CTA Group */}
-        <div className="hidden lg:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-3 shrink-0 whitespace-nowrap">
           <a
-            href="https://wa.me/918287367640"
+            href={BUSINESS.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-xs font-semibold text-slate-700 hover:text-slate-900 transition-colors px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 shadow-xs"
+            className="hidden xl:flex items-center gap-2 text-xs font-semibold text-slate-700 hover:text-slate-900 transition-colors px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 shadow-xs"
           >
             <MessageSquare className="w-3.5 h-3.5 text-[#059669]" />
-            <span className="font-mono">WhatsApp +91 8287367640</span>
+            <span className="font-mono whitespace-nowrap">WhatsApp {BUSINESS.phoneDisplay}</span>
           </a>
 
           {/* Social Channels */}
-          <div className="flex items-center gap-1">
+          <div className="hidden xl:flex items-center gap-1">
             <a
-              href="https://share.google/9eP7csF1sUEW5wZyT"
+              href={BUSINESS.mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
               title="Google Maps Profile"
-              aria-label="MooreRevenue on Google Maps"
+              aria-label={`${BUSINESS.name} on Google Maps`}
               className="p-2 text-slate-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
             >
               <svg className="w-4 h-4 text-[#ea4335]" viewBox="0 0 24 24" fill="currentColor">
@@ -139,7 +139,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAudit }) => {
 
           <button
             onClick={handleAuditClick}
-            className="relative group inline-flex items-center justify-center px-4 py-2.5 text-sm font-semibold text-black bg-[#00dc82] hover:bg-[#05df85] rounded-xl transition-all duration-200 shadow-[0_4px_16px_rgba(0,220,130,0.3)] hover:shadow-[0_6px_24px_rgba(0,220,130,0.5)] cursor-pointer active:scale-95"
+            className="relative group inline-flex items-center justify-center whitespace-nowrap px-4 py-2.5 text-sm font-semibold text-black bg-[#00dc82] hover:bg-[#05df85] rounded-xl transition-all duration-200 shadow-[0_4px_16px_rgba(0,220,130,0.3)] hover:shadow-[0_6px_24px_rgba(0,220,130,0.5)] cursor-pointer active:scale-95"
           >
             <Calendar className="w-4 h-4 mr-2 text-black/80" />
             <span>Book Free AI Audit</span>
@@ -190,27 +190,27 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAudit }) => {
             Blog & Guides
           </a>
           <a
-            href="/areas-we-serve"
+            href="/contact"
             onClick={() => setMobileMenuOpen(false)}
             className="block py-2 text-base font-semibold text-slate-800 hover:text-[#059669]"
           >
-            Areas We Serve (Faridabad Hub)
+            Contact
           </a>
           <a
-            href="https://wa.me/918287367640"
+            href={BUSINESS.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 py-2 text-sm text-[#059669] font-mono font-semibold"
           >
             <MessageSquare className="w-4 h-4" />
-            <span>WhatsApp +91 8287367640</span>
+            <span>WhatsApp {BUSINESS.phoneDisplay}</span>
           </a>
 
           {/* Social Channels Mobile */}
           <div className="flex flex-wrap items-center gap-3 py-2 border-y border-slate-100">
             <span className="text-xs font-semibold text-slate-500">Profiles:</span>
             <a
-              href="https://share.google/9eP7csF1sUEW5wZyT"
+              href={BUSINESS.mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-700 hover:text-blue-600 transition-colors"

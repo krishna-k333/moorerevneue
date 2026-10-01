@@ -1,0 +1,329 @@
+---
+import { BUSINESS } from "../../lib/business";
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer.astro";
+import {
+  PhoneCall,
+  Clock,
+  Calendar,
+  Sparkles,
+  Stethoscope,
+} from "lucide-react";
+
+// Title: 53 characters. Meta description: under 155 characters.
+const pageTitle = "AI Receptionist for Clinics: Benefits and How It Works";
+const pageDescription = "How an AI receptionist helps a clinic: answers calls, books appointments by voice and records every booking. See how one is made and used.";
+
+const canonicalUrl = "https://www.moorerevenue.com/blog/ai-receptionist-for-clinics";
+const publishDate = "2026-10-01";
+
+const blogFaqs = [
+  {
+    question: "What is an AI receptionist for a clinic?",
+    answer: "An AI receptionist is a voice agent that answers a clinic's phone calls, understands what the caller needs, and completes tasks such as checking a doctor's availability and booking an appointment. Unlike a phone menu, it holds a spoken conversation.",
+  },
+  {
+    question: "Can an AI receptionist book appointments?",
+    answer: "Yes. In the demo, the agent looks up the patient, offers the available doctors, checks open slots, books the appointment and reads the confirmation back to the caller. The booking is written to the clinic's appointment table.",
+  },
+  {
+    question: "What do I need to build one with n8n and Vapi?",
+    answer: "You need a Vapi voice agent for the call, an n8n workflow that receives the agent's tool requests, and a place to store patients, doctors, treatments and appointments. The demo uses n8n data tables for that.",
+  },
+  {
+    question: "Can an AI receptionist speak Hindi?",
+    answer: "The demo call is in English. Voice agents can be configured for Hindi, English and Hinglish, but performance depends on the model, the audio quality and the examples provided, so we test with your own call scripts before launch.",
+  },
+  {
+    question: "Is an AI receptionist safe for patient data?",
+    answer: "That depends on how it is set up. Patient names and history are personal data, so the build needs access controls, a clear policy on call recording and consent, and a handoff to staff for anything urgent. Get advice on India's Digital Personal Data Protection Act, 2023 before going live.",
+  },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
+  "headline": pageTitle,
+  "description": pageDescription,
+  "image": "https://www.moorerevenue.com/og-image.png",
+  "author": {
+    "@type": "Person",
+    "name": "Krishna Aggarwal",
+    "jobTitle": "Founder and CEO",
+    "url": "https://www.moorerevenue.com",
+    "sameAs": ["https://youtube.com/@preparemytech", "https://instagram.com/aiwkrishna"],
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MooreRevenue",
+    "url": "https://www.moorerevenue.com",
+    "logo": { "@type": "ImageObject", "url": "https://www.moorerevenue.com/favicon.svg" },
+  },
+  "datePublished": publishDate,
+  "dateModified": publishDate,
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": blogFaqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": { "@type": "Answer", "text": faq.answer },
+  })),
+};
+
+const breadcrumbs = [
+  { name: "Home", url: "https://www.moorerevenue.com/" },
+  { name: "Blog", url: "https://www.moorerevenue.com/blog" },
+  { name: "AI Receptionist for Clinics", url: canonicalUrl },
+];
+
+const link = "text-[#047857] font-semibold underline hover:text-[#059669]";
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+  breadcrumbs={breadcrumbs}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <Navbar client:idle />
+
+  <main class="pt-32 pb-24 bg-white text-slate-800">
+
+    {/* Breadcrumbs */}
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+      <nav class="flex items-center gap-2 text-xs text-slate-500 font-mono flex-wrap">
+        <a href="/" class="hover:text-[#059669] transition-colors">Home</a>
+        <span>/</span>
+        <a href="/blog" class="hover:text-[#059669] transition-colors">Blog</a>
+        <span>/</span>
+        <span class="text-slate-800 font-medium truncate max-w-xs sm:max-w-md">AI Receptionist for Clinics</span>
+      </nav>
+    </div>
+
+    {/* Article Header */}
+    <header class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      <div class="flex flex-wrap items-center gap-2.5">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold font-mono tracking-wide bg-emerald-50 text-[#047857] border border-emerald-200">
+          <Stethoscope class="w-3.5 h-3.5 text-[#00dc82]" />
+          AI Voice Agents
+        </span>
+        <span class="inline-flex items-center gap-1 text-xs text-slate-500 font-mono">
+          <Clock class="w-3.5 h-3.5" />
+          4 min read
+        </span>
+        <span class="inline-flex items-center gap-1 text-xs text-slate-500 font-mono">
+          <Calendar class="w-3.5 h-3.5" />
+          October 1, 2026
+        </span>
+      </div>
+
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.2]">
+        AI Receptionist for Clinics: Benefits and How It Is Made
+      </h1>
+
+      <p class="text-lg text-slate-600 leading-relaxed font-normal">
+        An AI receptionist answers a clinic's calls, finds the right doctor, checks open slots and books the appointment, all in one spoken conversation. This guide explains how it helps a clinic, how one is made and how a clinic uses it day to day, with a demo call as an example.
+      </p>
+
+      <div class="flex items-center justify-between py-4 border-y border-slate-100">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-[#00dc82] to-[#047857] flex items-center justify-center text-white font-bold text-sm shadow-xs">
+            KA
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-900">Krishna Aggarwal</div>
+            <div class="text-xs text-slate-500">Founder and CEO at MooreRevenue</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-2 text-xs font-mono text-slate-500">
+          <span class="hidden sm:inline">Follow:</span>
+          <a href="https://youtube.com/@preparemytech" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors font-semibold">YouTube</a>
+          <span>•</span>
+          <a href="https://instagram.com/aiwkrishna" target="_blank" rel="noopener noreferrer" class="hover:text-pink-600 transition-colors font-semibold">Instagram</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+      <article class="space-y-10 prose prose-slate max-w-none">
+
+        {/* TL;DR */}
+        <div class="p-6 rounded-2xl bg-gradient-to-br from-emerald-50/80 via-slate-50 to-white border-2 border-emerald-500/20 shadow-xs space-y-3">
+          <div class="flex items-center gap-2 text-sm font-bold text-[#047857] uppercase font-mono tracking-wider">
+            <Sparkles class="w-4 h-4 text-[#00dc82]" />
+            <span>Key Takeaways (TL;DR)</span>
+          </div>
+          <ul class="space-y-2 text-sm text-slate-700 pl-4 list-disc marker:text-[#00dc82]">
+            <li><strong>What it does:</strong> answers a clinic's calls, finds the right doctor, checks open slots and books the appointment in one spoken conversation.</li>
+            <li><strong>Why it helps:</strong> no missed calls when the front desk is busy, bookings recorded automatically, and staff time freed for patients in the clinic.</li>
+            <li><strong>How it is made:</strong> a voice agent with a prompt for your clinic, tools to look up patients and book, a place to store the data, then testing before go-live.</li>
+            <li><strong>Who builds it:</strong> <strong>MooreRevenue</strong> builds this kind of agent for clinics in Faridabad and across Delhi NCR.</li>
+          </ul>
+        </div>
+
+        {/* Section: definition */}
+        <section id="what-is-it" class="space-y-4">
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight pt-4">
+            What is an AI receptionist for a clinic?
+          </h2>
+          <p class="text-base text-slate-600 leading-relaxed">
+            An AI receptionist is a voice agent that picks up a clinic's phone, understands what the caller says, and completes the front-desk task: asking who the patient is, offering a doctor, checking a slot and confirming the booking. A traditional phone menu asks the caller to press numbers. An AI receptionist holds a normal conversation.
+          </p>
+          <p class="text-base text-slate-600 leading-relaxed">
+            For a clinic this matters at the moments the front desk is busy: when several calls arrive together or the team is with patients. The caller still gets an answer and a booking, and the team gets a record of what was agreed. If you want the business-side view, see our <a href="/services/ai-voice-agent-faridabad" class={link}>AI voice agent service in Faridabad</a>.
+          </p>
+        </section>
+
+        {/* Section: demo call */}
+        <section id="demo-call" class="space-y-4">
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight pt-4">
+            What does the demo call show?
+          </h2>
+          <p class="text-base text-slate-600 leading-relaxed">
+            The demo is a clinic called City Care Clinic. The caller says a tooth has been aching since the previous night. From there the agent runs the whole booking:
+          </p>
+          <ol class="list-decimal pl-6 space-y-2 text-base text-slate-600 leading-relaxed">
+            <li>It responds with empathy and offers to book a dentist straight away.</li>
+            <li>It asks whether the caller is an existing patient. The caller is new, so the agent asks for a full name.</li>
+            <li>It offers the two available dentists, with each one's experience and specialities such as root canals, implants and cosmetic dentistry.</li>
+            <li>The caller picks a dentist and says Friday works. The agent checks availability and offers open slots.</li>
+            <li>It repeats the choice (Friday, October 2nd, 11:00 to 11:30) and asks the caller to confirm.</li>
+            <li>It books the appointment, reads back the doctor, date and time, and asks the patient to arrive a few minutes early.</li>
+          </ol>
+          <p class="text-base text-slate-600 leading-relaxed">
+            Afterwards, the booking appears in the appointments table, confirmed, for the same doctor and time the caller chose.
+          </p>
+        </section>
+
+        {/* Section: benefits */}
+        <section id="benefits" class="space-y-4">
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight pt-4">
+            How can an AI receptionist help a clinic?
+          </h2>
+          <ul class="list-disc pl-6 space-y-2 text-base text-slate-600 leading-relaxed marker:text-[#00dc82]">
+            <li><strong>No missed calls.</strong> Every caller is answered, even when the front desk is busy with patients or the clinic is closed.</li>
+            <li><strong>Appointments booked on the call.</strong> The agent finds the right doctor, checks open slots and confirms the booking in one conversation.</li>
+            <li><strong>New and returning patients.</strong> It can recognise a returning patient and use their earlier records to make follow-ups easier.</li>
+            <li><strong>A record of every call.</strong> Bookings and patient details are saved, so the team sees what was agreed.</li>
+            <li><strong>Staff time back.</strong> The front desk spends less time on routine booking calls and more on patients in the clinic.</li>
+          </ul>
+        </section>
+
+        {/* Section: how it is made */}
+        <section id="how-made" class="space-y-4">
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight pt-4">
+            How is an AI receptionist for a clinic made?
+          </h2>
+          <p class="text-base text-slate-600 leading-relaxed">
+            In plain terms, there are four pieces of work:
+          </p>
+          <ol class="list-decimal pl-6 space-y-2 text-base text-slate-600 leading-relaxed">
+            <li><strong>A voice agent</strong> that listens, speaks and follows a prompt written around your clinic: your doctors, treatments and how you want callers handled.</li>
+            <li><strong>Tools</strong> that let it act, such as looking up a patient, checking a doctor's availability and booking an appointment.</li>
+            <li><strong>A place to store the data</strong>: patients, doctors, treatments and appointments, or a connection to the software your clinic already uses.</li>
+            <li><strong>Testing and go-live.</strong> Try it on your own call scripts and in the languages your patients use, then connect a phone number.</li>
+          </ol>
+          <p class="text-base text-slate-600 leading-relaxed">
+            The demo above is built with Vapi for the voice and n8n for the logic. For more on the platform, read <a href="/blog/what-is-n8n" class={link}>what n8n is and how self-hosting works</a> or see our <a href="/services/ai-automation-agency-faridabad" class={link}>AI workflow automation service</a>.
+          </p>
+        </section>
+
+        {/* Section: day to day */}
+        <section id="how-used" class="space-y-4">
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight pt-4">
+            How does a clinic use it day to day?
+          </h2>
+          <p class="text-base text-slate-600 leading-relaxed">
+            Once it is live, the agent answers incoming calls on its own. Your team checks the appointment list each day, sees who booked and with which doctor, and handles anything the agent passed on. When doctors, timings or treatments change, update them so the agent stays accurate. A real clinic often already has patient records in other software, so we check what that system offers when we scope a project.
+          </p>
+        </section>
+
+        {/* Section: before launch */}
+        <section id="before-launch" class="space-y-4">
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight pt-4">
+            What should a clinic check before using one?
+          </h2>
+          <p class="text-base text-slate-600 leading-relaxed">
+            The demo shows the booking flow. These are the points we add when we set one up for a real clinic:
+          </p>
+          <ul class="list-disc pl-6 space-y-2 text-base text-slate-600 leading-relaxed marker:text-[#00dc82]">
+            <li><strong>Urgent calls.</strong> The agent should not give medical advice. Define what counts as urgent and when the call goes to a person.</li>
+            <li><strong>Patient data.</strong> Names and history are personal data. Decide who can see them, how long calls are kept and how patients are told about recording. Get advice on India's Digital Personal Data Protection Act, 2023.</li>
+            <li><strong>Language.</strong> The demo is in English. For Hindi or Hinglish callers, test the agent on your own scripts and accents before launch.</li>
+            <li><strong>Handoff.</strong> Decide what happens when the agent cannot answer, such as transferring to staff or sending a WhatsApp message.</li>
+          </ul>
+        </section>
+
+        {/* Section: cost */}
+        <section id="cost" class="space-y-4">
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight pt-4">
+            How much does an AI receptionist for a clinic cost?
+          </h2>
+          <p class="text-base text-slate-600 leading-relaxed">
+            It depends on call volume, the languages needed, which systems it must connect to and how much testing you want before launch. We do not publish a fixed price. See the factors on our <a href="/services/ai-voice-agent-faridabad" class={link}>AI voice agent page</a> and request a free quote. We cover clinics in <a href="/areas-we-serve/sector-15-16-faridabad" class={link}>Sector 15 and 16, Faridabad</a> and across Delhi NCR.
+          </p>
+        </section>
+
+        {/* FAQ */}
+        <section id="faq" class="space-y-6 pt-6 border-t border-slate-200">
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+            Frequently asked questions
+          </h2>
+          <div class="space-y-4">
+            {blogFaqs.map((faq) => (
+              <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
+                <h3 class="text-base font-bold text-slate-900">{faq.question}</h3>
+                <p class="text-sm text-slate-600 leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section class="p-8 sm:p-10 rounded-3xl bg-slate-950 text-white relative overflow-hidden shadow-2xl text-center sm:text-left mt-12">
+          <div class="absolute -right-16 -top-16 w-64 h-64 bg-[#00dc82]/20 rounded-full blur-3xl pointer-events-none" />
+          <div class="relative z-10 space-y-4 max-w-xl">
+            <span class="text-xs font-mono font-bold uppercase tracking-wider text-[#00dc82]">
+              Want an AI receptionist for your clinic?
+            </span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white leading-tight">
+              We will build and test one around your doctors, treatments and calendar.
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Hear a demo configured for your clinic. We agree scope, timeline and cost before any work starts.
+            </p>
+            <div class="pt-2 flex flex-col sm:flex-row items-center gap-3">
+              <a
+                href="/#audit-section"
+                class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#00dc82] hover:bg-[#05df85] text-black font-bold text-xs shadow-md transition-all cursor-pointer"
+              >
+                <PhoneCall class="w-4 h-4" />
+                <span>Book a free voice agent demo</span>
+              </a>
+              <a
+                href={`${BUSINESS.whatsappUrl}?text=Hi%20Krishna,%20I%20read%20your%20AI%20receptionist%20for%20clinics%20guide%20and%20would%20like%20a%20demo%20for%20my%20clinic.`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-white/20 bg-white/5 hover:bg-white/10 text-white font-semibold text-xs transition-colors"
+              >
+                <span>WhatsApp {BUSINESS.phoneDisplay}</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,7 +1,12 @@
 ---
+import { BUSINESS } from "../../lib/business";
 import Layout from "../../layouts/Layout.astro";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer.astro";
+import ServiceFirstFold from "../../components/ServiceFirstFold.astro";
+import ServiceAreasBlock from "../../components/ServiceAreasBlock.astro";
+import CostFactors from "../../components/CostFactors.astro";
+import { serviceSchema } from "../../lib/schema";
 import { 
   Globe, 
   CheckCircle2, 
@@ -39,6 +44,18 @@ const pageFaqs = [
     question: "Who owns the code and website assets upon completion?",
     answer: "Ownership, access, and handover details are agreed for each project and documented in its scope.",
   },
+  {
+    question: "How much does a website cost in India?",
+    answer: "It depends on the number of pages, the design, the copy and the integrations. We quote after a short discovery call and agree the scope and price before work starts.",
+  },
+  {
+    question: "How do I choose a website developer in Faridabad?",
+    answer: "Ask to see live sites they have built, who owns the code and content after launch, and for a written scope and timeline. Check the site loads fast on mobile and is set up for search. You can review our work on the portfolio page.",
+  },
+  {
+    question: "Do you build websites for businesses in Faridabad?",
+    answer: "Yes. MooreRevenue is based in Faridabad, Haryana, and builds websites for local businesses and for clients elsewhere in India.",
+  },
 ];
 
 const faqSchema = {
@@ -62,10 +79,11 @@ const breadcrumbs = [
 ---
 
 <Layout
-  title="Website Design and Development Services | MooreRevenue"
-  description="Plan and build a business website with clear pages, responsive layouts, useful content, and practical contact paths."
+  title="Website Development in Faridabad | MooreRevenue"
+  description="Website development in Faridabad. Clear pages, mobile-first design and contact paths. Book a free website audit."
   canonicalUrl="https://www.moorerevenue.com/services/website-development-faridabad"
   breadcrumbs={breadcrumbs}
+  schemas={[serviceSchema({ name: "Website Design and Development", serviceType: "Website design and development", path: "/services/website-development-faridabad", description: "Website development in Faridabad. Clear pages, mobile-first design and contact paths. Book a free website audit." })]}
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
@@ -91,28 +109,28 @@ const breadcrumbs = [
       </div>
 
       <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
-        Websites Design & Development
+        Website Development in Faridabad
       </h1>
 
       {/* Contact Bar */}
-      <div class="flex flex-wrap items-center justify-between gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm text-slate-700 shadow-xs">
-        <div class="flex items-center gap-2">
-          <Globe class="w-4 h-4 text-[#059669]" />
-          <span>Page structure, responsive design, content, and contact paths</span>
-        </div>
-        <div class="flex flex-wrap items-center gap-3">
-          <a href="/portfolio" class="text-xs font-bold text-[#059669] bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 px-3 py-1.5 rounded-lg transition-colors">
-            View Our Website Portfolio →
-          </a>
-          <a href="tel:+918287367640" class="text-slate-700 font-mono font-medium hover:underline">+91 8287367640</a>
-          <span class="text-slate-300">•</span>
-          <a href="https://wa.me/918287367640" target="_blank" rel="noopener noreferrer" class="text-[#059669] font-mono font-bold hover:underline">WhatsApp Chat</a>
-        </div>
-      </div>
+      <ServiceFirstFold
+        ctaText="Book a free website discovery audit"
+        blurb="Page structure, responsive design, content, and contact paths"
+        trust="First working version within 7 days"
+      >
+  <a href="/portfolio" class="text-xs font-bold text-[#059669] bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 px-3 py-1.5 rounded-lg transition-colors">View Our Website Portfolio →</a>
+      </ServiceFirstFold>
     </section>
 
     {/* Detailed Article */}
     <article class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-14 space-y-12 text-slate-600 leading-relaxed">
+
+      {/* Local intro */}
+      <section>
+        <p class="text-lg text-slate-700 leading-relaxed">
+          MooreRevenue designs and builds websites in Faridabad. We plan the pages, write clear copy, build a mobile-friendly site and set up the contact paths your customers use, including phone, WhatsApp and forms.
+        </p>
+      </section>
       
       {/* Section 1: Modern Web Engineering vs Outdated Templates */}
       <section class="space-y-4">
@@ -188,6 +206,14 @@ const breadcrumbs = [
         </div>
       </section>
 
+      <CostFactors
+        heading="How much does a website cost in India?"
+        intro="Website prices in India range from a simple few-page site to a large custom build, so we price each project after a short discovery call. These are the things that change it:"
+        factors={["The number of pages and page types","Custom design or a standard layout","Whether you supply the copy and photos or we write them","Integrations such as WhatsApp, forms, booking or a CRM","Search setup: titles, structured data and local SEO basics","Support after launch"]}
+      />
+
+      <ServiceAreasBlock service="Website design and development" />
+
       {/* Section 5: FAQs */}
       <section class="space-y-6 pt-6 border-t border-slate-200">
         <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
@@ -229,13 +255,13 @@ const breadcrumbs = [
             <ArrowRight class="w-4 h-4" />
           </a>
           <a
-            href="https://wa.me/918287367640"
+            href={BUSINESS.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
             class="w-full sm:w-auto px-6 py-4 rounded-xl border border-slate-200 bg-white hover:bg-slate-50 text-slate-800 font-mono font-semibold text-sm flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-xs"
           >
             <MessageSquare class="w-4 h-4 text-[#059669]" />
-            <span>WhatsApp +91 8287367640</span>
+            <span>WhatsApp {BUSINESS.phoneDisplay}</span>
           </a>
         </div>
       </section>

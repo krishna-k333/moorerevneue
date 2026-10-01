@@ -20,7 +20,7 @@ export const faqsData: FaqItem[] = [
   {
     question: "How long does it take from discovery audit to live deployment?",
     answer:
-      "We develop your custom voice agent or automation pipeline within week one and then deliver you on week two",
+      "Most projects go live within two weeks. We build and test the voice agent or automation in the first week and launch in the second.",
   },
   {
     question: "Which business processes can be automated with AI?",
@@ -31,6 +31,16 @@ export const faqsData: FaqItem[] = [
     question: "Is AI automation suitable for small and mid-size businesses?",
     answer:
       "Yes. Many mid-size companies start with one or two high-impact processes. Once they see time savings and positive impact, they expand. You do not need a large technical team to begin.",
+  },
+  {
+    question: "Do you offer AI automation services in Faridabad?",
+    answer:
+      "Yes. MooreRevenue is based in Faridabad, Haryana. We build AI voice agents, WhatsApp automation, workflow automation, websites and local SEO for businesses in Faridabad and across Delhi NCR.",
+  },
+  {
+    question: "How much does AI automation cost?",
+    answer:
+      "It depends on the number of tools, the steps in the workflow and the integrations you need, so we do not publish fixed prices. Request a free audit and we will reply with a figure for your case before any work starts.",
   },
   {
     question: "Can the system handle documents and communication in Indian languages?",

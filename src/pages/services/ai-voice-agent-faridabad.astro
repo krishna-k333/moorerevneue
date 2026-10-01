@@ -1,7 +1,12 @@
 ---
+import { BUSINESS } from "../../lib/business";
 import Layout from "../../layouts/Layout.astro";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer.astro";
+import ServiceFirstFold from "../../components/ServiceFirstFold.astro";
+import ServiceAreasBlock from "../../components/ServiceAreasBlock.astro";
+import CostFactors from "../../components/CostFactors.astro";
+import { serviceSchema } from "../../lib/schema";
 import { 
   CheckCircle2, 
   ArrowRight, 
@@ -37,7 +42,19 @@ const pageFaqs = [
   },
   {
     question: "How do I hear a demo before committing?",
-    answer: "Message us on WhatsApp at +91 8287367640 and we will set up a short demo call tailored to your business type.",
+    answer: `Message us on WhatsApp at ${BUSINESS.phoneDisplay} and we will set up a short demo call tailored to your business type.`,
+  },
+  {
+    question: "How much does an AI voice agent cost in Faridabad?",
+    answer: "The price depends on call volume, languages, integrations and telephony setup, so we quote after a short audit. Request a free quote on WhatsApp or through the audit form and we will reply with a figure for your case.",
+  },
+  {
+    question: "Do you build AI voice agents for businesses in Faridabad?",
+    answer: "Yes. MooreRevenue is based in Faridabad, Haryana, and works with businesses on Mathura Road, in DLF Industrial Area, Ballabgarh, Greater Faridabad and Sector 15 and 16, as well as across Delhi NCR.",
+  },
+  {
+    question: "Can an AI voice agent answer calls outside office hours?",
+    answer: "Yes, if you set it up that way. The agent can take calls outside working hours, collect the caller's details and pass them to your team for follow-up.",
   },
 ];
 
@@ -62,10 +79,11 @@ const breadcrumbs = [
 ---
 
 <Layout
-  title="AI Voice Agent Services | MooreRevenue"
-  description="AI voice agents for inbound calls, common inquiries, lead details, and appointment requests."
+  title="AI Voice Agent in Faridabad | MooreRevenue"
+  description="AI voice agent in Faridabad that answers calls in Hindi and English and books appointments. Book a free demo with MooreRevenue."
   canonicalUrl="https://www.moorerevenue.com/services/ai-voice-agent-faridabad"
   breadcrumbs={breadcrumbs}
+  schemas={[serviceSchema({ name: "AI Voice Agent", serviceType: "AI voice agent for inbound calls and appointment booking", path: "/services/ai-voice-agent-faridabad", description: "AI voice agent in Faridabad that answers calls in Hindi and English and books appointments. Book a free demo with MooreRevenue." })]}
 >
   <!-- Inject FAQ Schema -->
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
@@ -92,25 +110,26 @@ const breadcrumbs = [
       </div>
 
       <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
-        AI voice agents for inbound calls in Hindi and English
+        AI Voice Agent in Faridabad for Hindi and English Calls
       </h1>
 
       {/* Local Contact Bar */}
-      <div class="flex flex-wrap items-center justify-between gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs sm:text-sm text-slate-700 shadow-xs">
-        <div class="flex items-center gap-2">
-          <PhoneCall class="w-4 h-4 text-[#059669]" />
-          <span>Call handling, inquiry responses, and appointment workflows</span>
-        </div>
-        <div class="flex items-center gap-3">
-          <a href="tel:+918287367640" class="text-slate-700 font-mono font-medium hover:underline">+91 8287367640</a>
-          <span class="text-slate-300">•</span>
-          <a href="https://wa.me/918287367640" target="_blank" rel="noopener noreferrer" class="text-[#059669] font-mono font-bold hover:underline">WhatsApp Chat</a>
-        </div>
-      </div>
+      <ServiceFirstFold
+        ctaText="Book a free voice agent demo"
+        blurb="Call handling, inquiry responses, and appointment workflows"
+        trust="Go-live in 7 to 14 days"
+      ></ServiceFirstFold>
     </section>
 
     {/* Deep Topical Authority Article */}
     <article class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-14 space-y-12 text-slate-600 leading-relaxed">
+
+      {/* Local intro */}
+      <section>
+        <p class="text-lg text-slate-700 leading-relaxed">
+          MooreRevenue builds AI voice agents for businesses in Faridabad. The agent answers inbound calls in Hindi, English and Hinglish, answers common questions, collects the caller's details and books appointments, so fewer calls go unanswered while your team is busy.
+        </p>
+      </section>
       
       {/* Section 1: The Problem */}
       <section class="space-y-4">
@@ -240,7 +259,18 @@ const breadcrumbs = [
         <p>
           MooreRevenue configures the call path, business information, integrations, and escalation rules around your process. Calls can be routed to a team member when a request needs human attention.
         </p>
+        <p>
+          See working examples in our guides to an <a href="/blog/ai-receptionist-for-clinics" class="text-[#059669] font-semibold hover:underline">AI receptionist for clinics</a> and a <a href="/blog/build-vapi-voice-agent-for-coaching-institute" class="text-[#059669] font-semibold hover:underline">voice agent for a coaching institute</a>, both built with n8n and Vapi.
+        </p>
       </section>
+
+      <CostFactors
+        heading="How much does an AI voice agent cost in Faridabad?"
+        intro="The cost depends on the work involved, so we do not publish a fixed price. These are the things that change it:"
+        factors={["Call volume and the number of call types the agent handles","Languages needed: Hindi, English or Hinglish","Integrations such as a calendar, CRM or WhatsApp follow-up","Telephony setup: your existing number, SIP trunking or a cloud telephony provider","Escalation rules and how much testing you want before launch"]}
+      />
+
+      <ServiceAreasBlock service="AI voice agents" />
 
       {/* Section 6: FAQs */}
       <section class="space-y-6 pt-6 border-t border-slate-200">
@@ -276,13 +306,13 @@ const breadcrumbs = [
         </p>
         <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href="https://wa.me/918287367640"
+            href={BUSINESS.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
             class="w-full sm:w-auto px-8 py-4 text-base font-bold text-black bg-[#00dc82] hover:bg-[#05df85] rounded-xl shadow-[0_4px_16px_rgba(0,220,130,0.3)] hover:shadow-[0_6px_24px_rgba(0,220,130,0.5)] transition-all flex items-center justify-center gap-2 cursor-pointer"
           >
             <MessageSquare class="w-5 h-5 text-black" />
-            <span>WhatsApp +91 8287367640</span>
+            <span>WhatsApp {BUSINESS.phoneDisplay}</span>
           </a>
           <a
             href="/#audit-section"

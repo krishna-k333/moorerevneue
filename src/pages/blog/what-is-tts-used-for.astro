@@ -1,4 +1,5 @@
 ---
+import { BUSINESS } from "../../lib/business";
 import Layout from "../../layouts/Layout.astro";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer.astro";
@@ -261,7 +262,7 @@ const breadcrumbs = [
             According to the <a href="https://learn.microsoft.com/en-us/azure/foundry/responsible-ai/speech-service/text-to-speech/transparency-note" target="_blank" rel="noopener noreferrer" class="text-[#047857] font-semibold underline hover:text-[#059669]">Microsoft transparency note</a>, TTS also supports interactive voice response, chatbots, and multilingual announcements, all of which reduce the manual workload on your team. For routine tasks like answering FAQs or booking appointments, a TTS system often costs a fraction of what a full-time telecaller would.
           </p>
           <p class="text-base text-slate-600 leading-relaxed">
-            <a href="/services/ai-automation-agency-faridabad" class="text-[#047857] font-semibold underline hover:text-[#059669]">MooreRevenue’s AI automation services</a> combine TTS with workflow automation so your calls, WhatsApp messages, and CRM stay in sync without extra manual work.
+            <a href="/services/ai-automation-agency-faridabad" class="text-[#047857] font-semibold underline hover:text-[#059669]">MooreRevenue’s AI automation services</a> combine TTS with workflow automation so your calls, WhatsApp messages, and CRM stay in sync without extra manual work. If you want a voice agent that answers calls in Hindi and English, see our <a href="/services/ai-voice-agent-faridabad" class="text-[#047857] font-semibold underline hover:text-[#059669]">AI voice agent service in Faridabad</a>.
           </p>
         </section>
 
@@ -349,12 +350,12 @@ const breadcrumbs = [
                 <span>Book Free Discovery Call</span>
               </a>
               <a
-                href="https://wa.me/918287367640?text=Hi%20Krishna,%20I%20read%20your%20TTS%20article%20and%20would%20like%20to%20see%20a%20voice%20agent%20demo."
+                href={`${BUSINESS.whatsappUrl}?text=Hi%20Krishna,%20I%20read%20your%20TTS%20article%20and%20would%20like%20to%20see%20a%20voice%20agent%20demo.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-white/20 bg-white/5 hover:bg-white/10 text-white font-semibold text-xs transition-colors"
               >
-                <span>WhatsApp +91 8287367640</span>
+                <span>WhatsApp {BUSINESS.phoneDisplay}</span>
               </a>
             </div>
           </div>

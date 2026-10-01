@@ -1,0 +1,41 @@
+---
+import { MapPin } from "lucide-react";
+import { BUSINESS } from "../lib/business";
+
+interface Props {
+  /** The service named in the sentence, for example "AI voice agents". */
+  service: string;
+}
+
+const { service } = Astro.props;
+
+const areas = [
+  { name: "Mathura Road", href: "/areas-we-serve/mathura-road-faridabad" },
+  { name: "DLF Industrial Area", href: "/areas-we-serve/dlf-industrial-area-faridabad" },
+  { name: "Ballabgarh", href: "/areas-we-serve/ballabgarh-faridabad" },
+  { name: "Greater Faridabad", href: "/areas-we-serve/greater-faridabad" },
+  { name: "Sector 15 & 16", href: "/areas-we-serve/sector-15-16-faridabad" },
+];
+---
+
+<section class="space-y-4">
+  <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+    {service} for businesses across Faridabad
+  </h2>
+  <p>
+    {BUSINESS.name} is based in Faridabad, Haryana. We work with businesses in the areas below, and with clients elsewhere in Delhi NCR and across India remotely.
+  </p>
+  <ul class="flex flex-wrap gap-3">
+    {areas.map((a) => (
+      <li>
+        <a href={a.href} class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-slate-200 bg-white hover:border-emerald-400 text-sm text-slate-800 shadow-xs">
+          <MapPin class="w-3.5 h-3.5 text-[#059669]" />
+          {a.name}
+        </a>
+      </li>
+    ))}
+  </ul>
+  <p class="text-sm">
+    Not sure your area is covered? See <a href="/areas-we-serve" class="text-[#059669] font-semibold hover:underline">all areas we serve</a> or <a href="/contact" class="text-[#059669] font-semibold hover:underline">contact us</a>.
+  </p>
+</section>

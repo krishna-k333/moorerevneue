@@ -1,0 +1,104 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer.astro";
+import AuditForm from "../components/AuditForm";
+import { BUSINESS, telHref } from "../lib/business";
+import { MapPin, PhoneCall, Clock, MessageSquare } from "lucide-react";
+
+const pageUrl = `${BUSINESS.url}/contact`;
+
+const breadcrumbs = [
+  { name: "Home", url: `${BUSINESS.url}/` },
+  { name: "Contact", url: pageUrl },
+];
+
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": `Contact ${BUSINESS.name}`,
+  "url": pageUrl,
+  "mainEntity": { "@id": `${BUSINESS.url}/#organization` },
+};
+
+const hoursLabel = (h: (typeof BUSINESS.hours)[number]) => {
+  const days = h.days.length > 1 ? `${h.days[0]} to ${h.days[h.days.length - 1]}` : h.days[0];
+  return `${days}: ${h.opens} to ${h.closes}`;
+};
+---
+
+<Layout
+  title={`Contact ${BUSINESS.name} | AI Automation Agency in Faridabad`}
+  description={`Call or WhatsApp ${BUSINESS.name}, an AI automation agency in Faridabad, Haryana. Phone ${BUSINESS.phoneDisplay}. Serving Faridabad, Delhi NCR and remote clients.`}
+  canonicalUrl={pageUrl}
+  breadcrumbs={breadcrumbs}
+  faqSchema={contactSchema}
+>
+  <Navbar client:load />
+
+  <main class="pt-32 pb-24 bg-white">
+    <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+        Contact {BUSINESS.name} in Faridabad
+      </h1>
+      <p class="text-lg text-slate-600 leading-relaxed">
+        {BUSINESS.name} is an {BUSINESS.legalDescriptor} based in Faridabad, Haryana. Call, message us on WhatsApp, or send the audit request below.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-xs space-y-3">
+          <div class="flex items-center gap-2 text-slate-900 font-bold">
+            <PhoneCall class="w-4 h-4 text-[#059669]" />
+            Phone and WhatsApp
+          </div>
+          <p class="text-sm text-slate-600">{BUSINESS.name}</p>
+          <div class="flex flex-wrap items-center gap-3 text-sm">
+            <a href={telHref} class="text-slate-700 font-mono font-medium hover:underline">{BUSINESS.phoneDisplay}</a>
+            <span class="text-slate-300">•</span>
+            <a href={BUSINESS.whatsappUrl} target="_blank" rel="noopener noreferrer" class="text-[#059669] font-mono font-bold hover:underline">WhatsApp Chat</a>
+          </div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-xs space-y-3">
+          <div class="flex items-center gap-2 text-slate-900 font-bold">
+            <Clock class="w-4 h-4 text-[#059669]" />
+            Hours
+          </div>
+          <ul class="text-sm text-slate-600 space-y-1">
+            {BUSINESS.hours.map((h) => <li>{hoursLabel(h)}</li>)}
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-xs space-y-3 md:col-span-2">
+          <div class="flex items-center gap-2 text-slate-900 font-bold">
+            <MapPin class="w-4 h-4 text-[#059669]" />
+            {BUSINESS.address.public ? "Address and service area" : "Service area"}
+          </div>
+          {BUSINESS.address.public && (
+            <p class="text-sm text-slate-600">
+              {BUSINESS.address.streetAddress}, {BUSINESS.address.addressLocality}, {BUSINESS.address.addressRegion} {BUSINESS.address.postalCode}, India
+            </p>
+          )}
+          <p class="text-sm text-slate-600">
+            We work with businesses in {BUSINESS.serviceAreas.filter((a) => a.type === "AdministrativeArea").map((a) => a.name).join(", ")}. Remote projects are available for clients elsewhere in India and worldwide.
+          </p>
+          <a
+            href={BUSINESS.mapsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-sm text-[#059669] font-semibold hover:underline"
+          >
+            <MessageSquare class="w-3.5 h-3.5" />
+            View {BUSINESS.name} on Google Maps &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <div class="mt-16">
+      <AuditForm client:visible />
+    </div>
+  </main>
+
+  <Footer />
+</Layout>

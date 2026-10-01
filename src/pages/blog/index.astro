@@ -1,4 +1,5 @@
 ---
+import { BUSINESS } from "../../lib/business";
 import Layout from "../../layouts/Layout.astro";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer.astro";
@@ -21,6 +22,24 @@ const breadcrumbs = [
 ];
 
 const articles = [
+  {
+    title: "How to Build a Vapi Voice Agent for a Coaching Institute (Step by Step)",
+    slug: "build-vapi-voice-agent-for-coaching-institute",
+    excerpt: "Build an inbound voice agent that answers admission calls, books free demo classes and saves leads to Google Sheets. Steps, per-minute cost and India rules.",
+    category: "AI Voice Agents",
+    icon: Volume2,
+    readTime: "9 min read",
+    publishDate: "Oct 1, 2026"
+  },
+  {
+    title: "AI Receptionist for Clinics: How to Build One with n8n and Vapi",
+    slug: "ai-receptionist-for-clinics",
+    excerpt: "See how an AI receptionist books clinic appointments by voice. The n8n and Vapi workflow, the five tools behind the agent and the data tables that store every booking.",
+    category: "AI Voice Agents",
+    icon: Volume2,
+    readTime: "6 min read",
+    publishDate: "Oct 1, 2026"
+  },
   {
     title: "What Is n8n? A Practical Beginner’s Guide to Workflow Automation, Self‑Hosting, and Why It Still Matters in 2026",
     slug: "what-is-n8n",
@@ -149,7 +168,7 @@ const articles = [
             <span>Book Free AI Audit</span>
           </a>
           <a
-            href="https://wa.me/918287367640"
+            href={BUSINESS.whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
             class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl border border-white/20 bg-white/5 hover:bg-white/10 text-white font-semibold text-xs sm:text-sm transition-colors"

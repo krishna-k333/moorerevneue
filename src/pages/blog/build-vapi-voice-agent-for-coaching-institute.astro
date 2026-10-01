@@ -1,0 +1,417 @@
+---
+import { BUSINESS } from "../../lib/business";
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer.astro";
+import {
+  PhoneCall,
+  Clock,
+  Calendar,
+  Sparkles,
+  Play,
+  ExternalLink,
+  GraduationCap,
+  AlertTriangle,
+} from "lucide-react";
+
+// Title: 49 characters. Meta description: under 155 characters.
+const pageTitle = "Build a Vapi Voice Agent for a Coaching Institute";
+const pageDescription = "How an AI voice agent helps a coaching institute: answers admission calls, books demos and saves leads. See how it is built, with a full video walkthrough.";
+
+const canonicalUrl = "https://www.moorerevenue.com/blog/build-vapi-voice-agent-for-coaching-institute";
+const publishDate = "2026-10-01";
+const videoId = "4MtXk-KMY6g";
+const videoUrl = `https://www.youtube.com/watch?v=${videoId}`;
+const videoEmbedUrl = `https://www.youtube-nocookie.com/embed/${videoId}`;
+
+const link = "text-[#047857] font-semibold underline hover:text-[#059669]";
+
+const parts = [
+  { part: "Transcriber", does: "Turns the caller's speech into text.", example: "Deepgram" },
+  { part: "Model", does: "Decides what to say and when to use a tool.", example: "OpenAI" },
+  { part: "Voice", does: "Turns the reply into speech.", example: "ElevenLabs" },
+  { part: "Telephony", does: "Connects the call to a number or the browser.", example: "Vapi, Twilio, Telnyx" },
+  { part: "Tools", does: "Lets the agent book a demo or save a lead through n8n.", example: "n8n webhook" },
+];
+
+const costs = [
+  { item: "Vapi hosting", low: 0.05, high: 0.05, note: "Vapi's own fee. Models are passed through at cost." },
+  { item: "Transcriber (Deepgram)", low: 0.0095, high: 0.0099, note: "" },
+  { item: "Model (OpenAI)", low: 0.0077, high: 0.0452, note: "Depends on the model you pick." },
+  { item: "Voice (ElevenLabs)", low: 0.0146, high: 0.0238, note: "Depends on the voice plan." },
+  { item: "Telephony (Telnyx to Twilio inbound)", low: 0.0055, high: 0.008, note: "Vapi's own telephony and SIP are listed as free." },
+];
+const totalLow = costs.reduce((a, c) => a + c.low, 0);
+const totalHigh = costs.reduce((a, c) => a + c.high, 0);
+const usd = (n: number) => "$" + n.toFixed(4);
+const usd2 = (n: number) => "$" + n.toFixed(2);
+
+const blogFaqs = [
+  {
+    question: "What is an AI voice agent and how does it work?",
+    answer: "An AI voice agent answers phone calls in a spoken conversation. A transcriber turns the caller's speech into text, a language model decides the reply and any action, and a voice turns the reply back into speech. Tools let it do things, such as booking a demo or saving a lead to a sheet.",
+  },
+  {
+    question: "How much does it cost to use an AI voice calling agent in India?",
+    answer: `On Vapi's pricing page on 1 October 2026, the parts add up to about ${usd2(totalLow)} to ${usd2(totalHigh)} per minute in US dollars: $0.05 for Vapi plus transcription, the model, the voice and telephony. The exact figure depends on the model, voice and telephone provider you choose. Prices change, so check the current page.`,
+  },
+  {
+    question: "Is it free to build an AI voice agent?",
+    answer: "Building is close to free to start: Vapi's pricing page lists $5 of free credits. Running it is not free, because every minute of calls is charged. The n8n workflows and the Google Sheet in the video cost nothing extra to set up.",
+  },
+  {
+    question: "Are AI voice calls legal in India?",
+    answer: "An AI agent answering inbound calls is not unlawful in itself. Outbound promotional calls are different: TRAI regulates them, including numbers on the Do Not Disturb register. Recording calls and storing student details are covered by India's Digital Personal Data Protection Act, 2023. This is not legal advice, so check your case.",
+  },
+  {
+    question: "Can ChatGPT do voice AI for my coaching institute?",
+    answer: "ChatGPT has a voice mode for personal chats, but it is not connected to your phone number, your batch details or your CRM. A business voice agent needs telephony, a knowledge base and tools, which is what Vapi and n8n provide in this guide.",
+  },
+  {
+    question: "Can the agent speak Hindi?",
+    answer: "The demo call is in English. Vapi lets you choose the transcriber, model and voice, so Hindi and Hinglish support depends on those choices. Test with real calls from your own students before launch.",
+  },
+  {
+    question: "Will AI replace counsellors at a coaching institute?",
+    answer: "It takes the repetitive first call: course details, batch timings, fees and demo bookings. Counselling a worried parent or choosing between programs still suits a person. The best setup lets the agent hand those calls to your team.",
+  },
+  {
+    question: "Do I need to code to build this?",
+    answer: "The video does not write code. It imports ready-made n8n workflows, pastes function schemas into Vapi and replaces one server URL. You will need to follow the steps carefully and test each tool.",
+  },
+];
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": canonicalUrl },
+  "headline": "AI Voice Agent for a Coaching Institute: Benefits and How It Is Built",
+  "description": pageDescription,
+  "image": "https://www.moorerevenue.com/og-image.png",
+  "author": {
+    "@type": "Person",
+    "name": "Krishna Aggarwal",
+    "jobTitle": "Founder and CEO",
+    "url": "https://www.moorerevenue.com",
+    "sameAs": ["https://youtube.com/@preparemytech", "https://instagram.com/aiwkrishna"],
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "MooreRevenue",
+    "url": "https://www.moorerevenue.com",
+    "logo": { "@type": "ImageObject", "url": "https://www.moorerevenue.com/favicon.svg" },
+  },
+  "datePublished": publishDate,
+  "dateModified": publishDate,
+};
+
+const videoSchema = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "How to Build a Voice Agent for UPSC & Competitive Exam Coaching Institute",
+  "description": "Build an inbound voice agent for a coaching institute with Vapi, n8n and Google Sheets: prompt, knowledge base, three tools, a test call and the CRM row it creates.",
+  "thumbnailUrl": `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`,
+  "uploadDate": "2026-09-28",
+  "duration": "PT14M50S",
+  "embedUrl": videoEmbedUrl,
+  "contentUrl": videoUrl,
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": blogFaqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": { "@type": "Answer", "text": faq.answer },
+  })),
+};
+
+const breadcrumbs = [
+  { name: "Home", url: "https://www.moorerevenue.com/" },
+  { name: "Blog", url: "https://www.moorerevenue.com/blog" },
+  { name: "Vapi Voice Agent for a Coaching Institute", url: canonicalUrl },
+];
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+  breadcrumbs={breadcrumbs}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(videoSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <Navbar client:idle />
+
+  <main class="pt-32 pb-24 bg-white text-slate-800">
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+      <nav class="flex items-center gap-2 text-xs text-slate-500 font-mono flex-wrap">
+        <a href="/" class="hover:text-[#059669] transition-colors">Home</a>
+        <span>/</span>
+        <a href="/blog" class="hover:text-[#059669] transition-colors">Blog</a>
+        <span>/</span>
+        <span class="text-slate-800 font-medium truncate max-w-xs sm:max-w-md">Vapi Voice Agent for a Coaching Institute</span>
+      </nav>
+    </div>
+
+    <header class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+      <div class="flex flex-wrap items-center gap-2.5">
+        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold font-mono tracking-wide bg-emerald-50 text-[#047857] border border-emerald-200">
+          <GraduationCap class="w-3.5 h-3.5 text-[#00dc82]" />
+          AI Voice Agents
+        </span>
+        <span class="inline-flex items-center gap-1 text-xs text-slate-500 font-mono">
+          <Clock class="w-3.5 h-3.5" />
+          5 min read
+        </span>
+        <span class="inline-flex items-center gap-1 text-xs text-slate-500 font-mono">
+          <Calendar class="w-3.5 h-3.5" />
+          October 1, 2026
+        </span>
+      </div>
+
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.2]">
+        AI Voice Agent for a Coaching Institute: Benefits and How It Is Built
+      </h1>
+
+      <p class="text-lg text-slate-600 leading-relaxed font-normal">
+        Coaching institutes get most of their calls in a few weeks, when admissions open. A voice agent can answer each one, book free demo classes and save every lead to a sheet. This guide explains how it helps, how one is made and how an institute uses it, with a full video build if you want to go deeper.
+      </p>
+
+      <div class="flex items-center justify-between py-4 border-y border-slate-100">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-[#00dc82] to-[#047857] flex items-center justify-center text-white font-bold text-sm shadow-xs">
+            KA
+          </div>
+          <div>
+            <div class="text-sm font-bold text-slate-900">Krishna Aggarwal</div>
+            <div class="text-xs text-slate-500">Founder and CEO at MooreRevenue</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-2 text-xs font-mono text-slate-500">
+          <span class="hidden sm:inline">Follow:</span>
+          <a href="https://youtube.com/@preparemytech" target="_blank" rel="noopener noreferrer" class="hover:text-red-600 transition-colors font-semibold">YouTube</a>
+          <span>•</span>
+          <a href="https://instagram.com/aiwkrishna" target="_blank" rel="noopener noreferrer" class="hover:text-pink-600 transition-colors font-semibold">Instagram</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+      <article class="space-y-10 prose prose-slate max-w-none">
+
+        <div class="p-6 rounded-2xl bg-gradient-to-br from-emerald-50/80 via-slate-50 to-white border-2 border-emerald-500/20 shadow-xs space-y-3">
+          <div class="flex items-center gap-2 text-sm font-bold text-[#047857] uppercase font-mono tracking-wider">
+            <Sparkles class="w-4 h-4 text-[#00dc82]" />
+            <span>Key Takeaways (TL;DR)</span>
+          </div>
+          <ul class="space-y-2 text-sm text-slate-700 pl-4 list-disc marker:text-[#00dc82]">
+            <li><strong>What it does:</strong> answers every admission call, gives the same course, batch and fee details each time, books free demo classes and saves each lead to a sheet.</li>
+            <li><strong>Why it helps:</strong> no missed calls during the admission rush, and counsellors spend their time on parents and decisions instead of repeating basics.</li>
+            <li><strong>How it is made:</strong> a prompt, a knowledge base of your fees and batches, tools that save bookings, then testing with real calls before going live.</li>
+            <li><strong>See it work:</strong> in the demo call, the agent explains a NEET program, takes a name and number, books a free demo and the booking appears in the sheet. The video above shows the full build.</li>
+          </ul>
+        </div>
+
+        <section id="video" class="space-y-4">
+          <div class="rounded-2xl overflow-hidden border border-slate-800 bg-slate-950 shadow-xl">
+            <div class="p-4 flex items-center justify-between gap-3 text-xs text-slate-300">
+              <span class="flex items-center gap-1.5 font-mono font-semibold">
+                <Play class="w-3.5 h-3.5 text-[#00dc82]" />
+                Watch the full build (14:50)
+              </span>
+              <a href={videoUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-[#00dc82] font-semibold hover:underline shrink-0">
+                YouTube
+                <ExternalLink class="w-3.5 h-3.5" />
+              </a>
+            </div>
+            <div class="relative w-full aspect-video bg-black">
+              <iframe
+                src={videoEmbedUrl}
+                title="How to Build a Voice Agent for a Coaching Institute - MooreRevenue"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                loading="lazy"
+                class="absolute inset-0 w-full h-full border-0"
+              ></iframe>
+            </div>
+          </div>
+        </section>
+
+        <section id="what-is-it" class="space-y-4">
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight pt-4">
+            What is an AI voice agent and how does it work?
+          </h2>
+          <p class="text-base text-slate-600 leading-relaxed">
+            An AI voice agent answers a phone call in a spoken conversation and can act on what the caller says. It is built from five parts:
+          </p>
+          <div class="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-xs">
+            <table class="w-full text-left text-sm min-w-[480px]">
+              <thead>
+                <tr class="border-b border-slate-200 text-xs font-mono uppercase text-slate-500 bg-slate-50">
+                  <th class="py-3 px-4">Part</th>
+                  <th class="py-3 px-4">What it does</th>
+                  <th class="py-3 px-4">Example</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-100 text-slate-700">
+                {parts.map((p) => (
+                  <tr>
+                    <td class="py-3 px-4 font-semibold text-slate-900">{p.part}</td>
+                    <td class="py-3 px-4">{p.does}</td>
+                    <td class="py-3 px-4 font-mono text-xs">{p.example}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p class="text-base text-slate-600 leading-relaxed">
+            Vapi connects the first four and lets you choose a provider for each. The tools are where your business logic lives. For the general version of this, see our guide to an <a href="/services/ai-voice-agent-faridabad" class={link}>AI voice agent service in Faridabad</a>.
+          </p>
+        </section>
+
+        <section id="why-coaching" class="space-y-4">
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight pt-4">
+            Why build a voice agent for a coaching institute?
+          </h2>
+          <p class="text-base text-slate-600 leading-relaxed">
+            India has several competitive exams, such as NEET, JEE and UPSC, and large numbers of students prepare for each one every year. Most prepare through a coaching institute, so institutes receive a high volume of calls in the month admissions open.
+          </p>
+          <p class="text-base text-slate-600 leading-relaxed">
+            Two things follow. A human receptionist cannot always pick up every call during that rush, so some leads are missed. And staffing a larger phone team just for those weeks costs money. An inbound voice agent answers each call, gives the same course details every time and records the lead, which addresses both.
+          </p>
+        </section>
+
+        <section id="demo" class="space-y-4">
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight pt-4">
+            What does the demo agent do on a call?
+          </h2>
+          <p class="text-base text-slate-600 leading-relaxed">
+            The demo is a made-up institute called NEET Masters Academy. In the test call, a student says they are looking for a good institute for NEET. The agent then:
+          </p>
+          <ol class="list-decimal pl-6 space-y-2 text-base text-slate-600 leading-relaxed">
+            <li>Explains the NEET UG coaching on offer for class 11, class 12 and repeater students, in classroom and live online formats.</li>
+            <li>Describes the Foundation 11 program, which covers NEET preparation over two years.</li>
+            <li>Offers a free demo class and asks for the student's name and mobile number.</li>
+            <li>Reads the number back and asks the caller to confirm it.</li>
+            <li>Confirms that the free demo and counselling session is booked.</li>
+          </ol>
+          <p class="text-base text-slate-600 leading-relaxed">
+            Afterwards, the Google Sheet has a new row with the student's name, phone number and the course, Foundation 11. The demo runs as a browser test with Vapi's Talk button, not on a live phone line. Connecting a real number is a separate step.
+          </p>
+        </section>
+
+        <section id="benefits" class="space-y-4">
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight pt-4">
+            How can a voice agent help a coaching institute?
+          </h2>
+          <ul class="list-disc pl-6 space-y-2 text-base text-slate-600 leading-relaxed marker:text-[#00dc82]">
+            <li><strong>No missed calls in admission season.</strong> Every caller gets an answer, even when all your counsellors are busy or the office is closed.</li>
+            <li><strong>Same answers every time.</strong> Courses, batch timings, fees and scholarship rules come from one source, so callers are not told different things.</li>
+            <li><strong>Demo classes get booked on the call.</strong> The agent offers a free demo or counselling session and takes the student's name and number.</li>
+            <li><strong>Every lead is saved.</strong> Enquiries land in a sheet or CRM with the course they asked about, ready for follow-up.</li>
+            <li><strong>Your team handles the conversations that matter.</strong> Counsellors spend their time on worried parents and admissions decisions, not on repeating batch timings.</li>
+          </ul>
+        </section>
+
+        <section id="how-made" class="space-y-4">
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight pt-4">
+            How is a coaching institute voice agent made?
+          </h2>
+          <p class="text-base text-slate-600 leading-relaxed">
+            In plain terms, there are four pieces of work:
+          </p>
+          <ol class="list-decimal pl-6 space-y-2 text-base text-slate-600 leading-relaxed">
+            <li><strong>A prompt</strong> that tells the agent who it is, how to speak to students and parents, and what it should and should not do.</li>
+            <li><strong>A knowledge base</strong> holding your fees, batches, scholarship rules and course details, so it answers from facts instead of guessing.</li>
+            <li><strong>Tools</strong> that let the agent act, such as booking a demo or saving a lead. These usually run through an automation platform; see <a href="/blog/what-is-n8n" class={link}>what n8n is</a> for an example.</li>
+            <li><strong>Testing and go-live.</strong> Try it with real calls, in the languages your students use, then connect a phone number.</li>
+          </ol>
+          <p class="text-base text-slate-600 leading-relaxed">
+            Want the full walkthrough? <a href="#video" class={link}>Watch the video above</a> to see the whole build. The prompt, workflows and sheet template are linked in its description.
+          </p>
+        </section>
+
+        <section id="how-used" class="space-y-4">
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight pt-4">
+            How does an institute use it day to day?
+          </h2>
+          <p class="text-base text-slate-600 leading-relaxed">
+            Once it is live, the agent answers incoming calls on its own. Your team opens the sheet each morning, sees who enquired and who booked a demo, and follows up. Before each admission cycle, update the knowledge base with new fees, batches and dates so the agent stays accurate.
+          </p>
+        </section>
+
+
+        <section id="limits" class="space-y-4">
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight pt-4">
+            What should an institute check before going live?
+          </h2>
+          <ul class="list-disc pl-6 space-y-2 text-base text-slate-600 leading-relaxed marker:text-[#00dc82]">
+            <li><strong>Accuracy of fees and dates.</strong> Keep fees, batch timings and scholarship rules in the knowledge base and update them before each admission cycle.</li>
+            <li><strong>Language.</strong> The demo is in English. Test Hindi and Hinglish callers with real recordings before launch.</li>
+            <li><strong>Handoff.</strong> Decide when the agent passes a call to a counsellor, for example a worried parent or a fee negotiation.</li>
+            <li><strong>Number check.</strong> The demo reads the phone number back and asks for confirmation. Keep that step.</li>
+            <li><strong>A real phone line.</strong> The test used a browser button. Connecting a number needs a telephony provider and its own testing.</li>
+          </ul>
+          <p class="text-base text-slate-600 leading-relaxed">
+            Want it built and tested for your institute? We handle the prompt, knowledge base, workflows and phone setup. See our <a href="/services/ai-automation-agency-faridabad" class={link}>AI workflow automation service</a> or the guide to an <a href="/blog/ai-receptionist-for-clinics" class={link}>AI receptionist for clinics</a> for a similar build.
+          </p>
+        </section>
+
+        <section id="faq" class="space-y-6 pt-6 border-t border-slate-200">
+          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
+            Frequently asked questions
+          </h2>
+          <div class="space-y-4">
+            {blogFaqs.map((faq) => (
+              <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
+                <h3 class="text-base font-bold text-slate-900">{faq.question}</h3>
+                <p class="text-sm text-slate-600 leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section class="p-8 sm:p-10 rounded-3xl bg-slate-950 text-white relative overflow-hidden shadow-2xl text-center sm:text-left mt-12">
+          <div class="absolute -right-16 -top-16 w-64 h-64 bg-[#00dc82]/20 rounded-full blur-3xl pointer-events-none" />
+          <div class="relative z-10 space-y-4 max-w-xl">
+            <span class="text-xs font-mono font-bold uppercase tracking-wider text-[#00dc82]">
+              Run a coaching institute?
+            </span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white leading-tight">
+              Answer every admission call and save every lead.
+            </h2>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              We build and test the voice agent around your courses, fees and batches. We agree scope, timeline and cost before any work starts.
+            </p>
+            <div class="pt-2 flex flex-col sm:flex-row items-center gap-3">
+              <a
+                href="/#audit-section"
+                class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#00dc82] hover:bg-[#05df85] text-black font-bold text-xs shadow-md transition-all cursor-pointer"
+              >
+                <PhoneCall class="w-4 h-4" />
+                <span>Book a free voice agent demo</span>
+              </a>
+              <a
+                href={`${BUSINESS.whatsappUrl}?text=Hi%20Krishna,%20I%20read%20your%20coaching%20institute%20voice%20agent%20guide%20and%20would%20like%20a%20demo.`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl border border-white/20 bg-white/5 hover:bg-white/10 text-white font-semibold text-xs transition-colors"
+              >
+                <span>WhatsApp {BUSINESS.phoneDisplay}</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </div>
+
+  </main>
+
+  <Footer />
+</Layout>
