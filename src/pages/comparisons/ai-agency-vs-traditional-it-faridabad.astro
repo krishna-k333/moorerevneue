@@ -18,7 +18,7 @@ import {
 const pageFaqs = [
   {
     question: "When does it make more sense to work with an AI automation agency vs a traditional IT company?",
-    answer: "Traditional IT vendors typically focus on infrastructure, ERP maintenance, or building software from scratch. An AI automation agency like MooreRevenue focuses on connecting and configuring systems that handle specific business tasks automatically — things like call answering, lead qualification, or data syncing. If you need a system built and running quickly rather than a long software development project, an agency approach usually makes more sense.",
+    answer: 'Traditional IT vendors typically focus on infrastructure, ERP maintenance, or building software from scratch. An <a href="/services" class="text-[#059669] font-semibold hover:underline">AI automation agency like MooreRevenue</a> focuses on connecting and configuring systems that handle specific business tasks automatically — things like call answering, lead qualification, or data syncing. If you need a system built and running quickly rather than a long software development project, an agency approach usually makes more sense.',
   },
   {
     question: "How does cost compare between hiring staff and deploying an AI voice agent?",
@@ -155,7 +155,7 @@ const breadcrumbs = [
           {pageFaqs.map((faq) => (
             <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
               <h3 class="text-base font-bold text-slate-900">{faq.question}</h3>
-              <p class="text-sm text-slate-600 leading-relaxed">{faq.answer}</p>
+              <p class="text-sm text-slate-600 leading-relaxed" set:html={faq.answer} />
             </div>
           ))}
         </div>

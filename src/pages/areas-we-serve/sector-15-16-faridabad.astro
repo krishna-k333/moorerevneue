@@ -17,7 +17,7 @@ import {
 const pageFaqs = [
   {
     question: "What automation is useful for clinics and consultancies in Sector 15 & 16?",
-    answer: "Common use cases are automated appointment booking by phone or WhatsApp, answering availability queries, sending reminders, and routing enquiries. We scope what fits your practice on a discovery call.",
+    answer: 'Common use cases are <a href="/blog/ai-receptionist-for-clinics" class="text-[#059669] font-semibold hover:underline">automated appointment booking</a> by phone or WhatsApp, answering availability queries, sending reminders, and routing enquiries. We scope what fits your practice on a discovery call.',
   },
   {
     question: "Can the agent sync appointments to Google Calendar?",
@@ -149,7 +149,7 @@ const breadcrumbs = [
           {pageFaqs.map((faq) => (
             <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
               <h3 class="text-base font-bold text-slate-900">{faq.question}</h3>
-              <p class="text-sm text-slate-600 leading-relaxed">{faq.answer}</p>
+              <p class="text-sm text-slate-600 leading-relaxed" set:html={faq.answer} />
             </div>
           ))}
         </div>

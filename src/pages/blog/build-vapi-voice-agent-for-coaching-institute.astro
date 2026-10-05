@@ -65,7 +65,7 @@ const blogFaqs = [
   },
   {
     question: "Can ChatGPT do voice AI for my coaching institute?",
-    answer: "ChatGPT has a voice mode for personal chats, but it is not connected to your phone number, your batch details or your CRM. A business voice agent needs telephony, a knowledge base and tools, which is what Vapi and n8n provide in this guide.",
+    answer: 'ChatGPT has a voice mode for personal chats, but it is not connected to your phone number, your batch details or your CRM. A business voice agent needs telephony, a knowledge base and tools, which is what <a href="/blog" class="text-[#047857] font-semibold underline hover:text-[#059669]">Vapi and n8n</a> provide in this guide.',
   },
   {
     question: "Can the agent speak Hindi?",
@@ -370,7 +370,7 @@ const breadcrumbs = [
             {blogFaqs.map((faq) => (
               <div class="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
                 <h3 class="text-base font-bold text-slate-900">{faq.question}</h3>
-                <p class="text-sm text-slate-600 leading-relaxed">{faq.answer}</p>
+                <p class="text-sm text-slate-600 leading-relaxed" set:html={faq.answer} />
               </div>
             ))}
           </div>
