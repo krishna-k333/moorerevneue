@@ -2,9 +2,9 @@ export const prerender = true;
 
 export const SITE_PAGES = [
   {
-    title: "AI Automation Agency in Faridabad | MooreRevenue",
+    title: "AI Automation Agency | MooreRevenue",
     url: "/",
-    excerpt: "Custom AI Voice Agents, WhatsApp business automation, and fast modern websites for businesses in Faridabad, Delhi NCR, and worldwide.",
+    excerpt: "Custom AI Voice Agents, WhatsApp business automation, and fast modern websites for businesses worldwide.",
   },
   {
     title: "All Services | MooreRevenue",

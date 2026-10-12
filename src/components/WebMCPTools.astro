@@ -44,7 +44,7 @@
 
     navigator.modelContext.registerTool({
       name: 'book_consultation',
-      description: 'Prepare a free AI discovery audit and consultation booking for MooreRevenue with direct WhatsApp contact details.',
+      description: 'Prepare a free AI discovery audit and consultation booking for MooreRevenue with direct WhatsApp contact details for clients worldwide.',
       inputSchema: {
         type: 'object',
         properties: {
@@ -52,9 +52,8 @@
           company: { type: 'string', description: 'Company, store, or business name.' },
           service: {
             type: 'string',
-            description: 'The service required, such as AI Voice Agents, Workflow Automation, WhatsApp Automation, Website Development, or Local SEO.'
+            description: 'The service required, such as AI Voice Agents, Workflow Automation, WhatsApp Automation, Website Development, or SEO.'
           },
-          location: { type: 'string', description: 'City or location of the business, default Faridabad.', default: 'Faridabad' },
           notes: { type: 'string', description: 'Optional project goals or details.' }
         },
         required: ['name', 'service']
@@ -67,10 +66,9 @@
           return 'Please provide both your name and the service you are interested in.';
         }
         const company = String(input.company || '').trim() || 'Business';
-        const location = String(input.location || '').trim() || 'Faridabad';
         const notes = String(input.notes || '').trim();
 
-        let message = 'Hi Krishna, I am ' + name + ' from ' + company + ' in ' + location + '. I am interested in ' + service + ' solutions.';
+        let message = 'Hi Krishna, I am ' + name + ' from ' + company + '. I am interested in ' + service + ' solutions.';
         if (notes) {
           message += ' Details: ' + notes;
         }
@@ -83,7 +81,6 @@
           'Consultation request prepared for MooreRevenue:',
           '- Client: ' + name,
           '- Company: ' + company,
-          '- Location: ' + location,
           '- Service: ' + service,
           '- Pre-filled WhatsApp Link: ' + whatsappUrl,
           '- Direct Phone: ' + phone,

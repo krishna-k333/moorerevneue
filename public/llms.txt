@@ -1,18 +1,18 @@
 # MooreRevenue
 
-> MooreRevenue is an AI automation agency in Faridabad, Haryana, building custom AI voice agents, WhatsApp business automations, and high-performance websites for businesses locally and worldwide.
+> MooreRevenue is an AI automation agency building custom AI voice agents, WhatsApp business automations, and high-performance websites for businesses worldwide.
 
 ## About
 
-MooreRevenue was founded by Krishna Aggarwal in Faridabad, Haryana. The agency specializes in automating customer communications, inbound call handling, lead follow-up, and internal business workflows using conversational AI voice agents, n8n, and the WhatsApp Cloud API. MooreRevenue works with industrial and commercial enterprises across Faridabad, Delhi NCR, as well as remote clients across India and internationally.
+MooreRevenue was founded by Krishna Aggarwal. The agency specializes in automating customer communications, inbound call handling, lead follow-up, and internal business workflows using conversational AI voice agents, n8n, and the WhatsApp Cloud API. MooreRevenue works with businesses and enterprises across the globe.
 
 ## Services
 
-- [AI Voice Calling & Reception Agents](https://www.moorerevenue.com/services/ai-voice-agent-faridabad): Bilingual Hindi and English conversational AI voice agents for 24/7 inbound customer support, outbound lead qualification, and automated appointment scheduling.
+- [AI Voice Calling & Reception Agents](https://www.moorerevenue.com/services/ai-voice-agent-faridabad): Bilingual conversational AI voice agents for 24/7 inbound customer support, outbound lead qualification, and automated appointment scheduling.
 - [AI Workflow Automation](https://www.moorerevenue.com/services/ai-automation-agency-faridabad): End-to-end business workflow automation, n8n orchestrations, CRM integrations, and webhook data pipelines.
 - [WhatsApp Business Automation](https://www.moorerevenue.com/services/whatsapp-automation-faridabad): Official WhatsApp Cloud API chatbots, automated product catalog inquiries, instant customer messaging, and lead routing.
 - [Website Design and Development](https://www.moorerevenue.com/services/website-development-faridabad): Ultra-fast modern websites and web applications built with Astro, React, and Tailwind CSS, engineered for high conversions and top performance.
-- [Local SEO and AI Search Visibility](https://www.moorerevenue.com/services/local-seo-aeo-faridabad): Google Business Profile optimization, local citation management, structured data schemas, and AI search visibility (AEO).
+- [Local SEO and AI Search Visibility](https://www.moorerevenue.com/services/local-seo-aeo-faridabad): Business profile optimization, citation management, structured data schemas, and AI search visibility (AEO).
 
 ## Key Pages
 
@@ -21,8 +21,8 @@ MooreRevenue was founded by Krishna Aggarwal in Faridabad, Haryana. The agency s
 - [Portfolio & Case Studies](https://www.moorerevenue.com/portfolio): Proven client projects including Shri Krishna Sarees and Story Night 4 Kids.
 - [Blog & Guides](https://www.moorerevenue.com/blog): Technical articles on n8n workflows, text-to-speech technology, and clinic receptionist automation.
 - [Global Clients](https://www.moorerevenue.com/global): Solutions for international businesses seeking remote AI and web development.
-- [Areas We Serve](https://www.moorerevenue.com/areas-we-serve): Service coverage for Mathura Road, DLF Industrial Area, Ballabgarh, Greater Faridabad, and Delhi NCR.
-- [Contact](https://www.moorerevenue.com/contact): Direct communication options, service area details, and audit call submission.
+- [Areas We Serve](https://www.moorerevenue.com/areas-we-serve): Service directory and coverage guide.
+- [Contact](https://www.moorerevenue.com/contact): Direct communication options and audit call submission.
 
 ## Agent Tools Available
 
@@ -35,6 +35,5 @@ MooreRevenue was founded by Krishna Aggarwal in Faridabad, Haryana. The agency s
 - Founder: Krishna Aggarwal
 - Phone: +91 8287367640
 - WhatsApp: https://wa.me/918287367640
-- Office Location: Mathura Road, Faridabad, Haryana 121003, India
 - Hours: Monday to Saturday, 09:00 to 20:00 IST
-- Google Maps: https://share.google/9eP7csF1sUEW5wZyT
+- Website: https://www.moorerevenue.com
