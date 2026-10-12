@@ -1,0 +1,97 @@
+---
+---
+<script is:inline>
+  (function () {
+    if (typeof navigator === 'undefined' || !navigator.modelContext) return;
+
+    navigator.modelContext.registerTool({
+      name: 'search_site',
+      description: 'Search this site by keyword and return up to ten matching pages with title, URL, and excerpt.',
+      inputSchema: {
+        type: 'object',
+        properties: {
+          query: { type: 'string', description: 'Keyword or phrase, plain text.' },
+          limit: { type: 'integer', description: 'Max results, default 5, max 10.', default: 5 }
+        },
+        required: ['query']
+      },
+      annotations: { readOnlyHint: true },
+      execute: async function (input) {
+        const q = String(input.query || '').trim();
+        if (!q) return 'No query provided.';
+        const limit = Math.min(parseInt(input.limit, 10) || 5, 10);
+        try {
+          const res = await fetch('/api/search.json?q=' + encodeURIComponent(q) + '&limit=' + limit);
+          if (!res.ok) return 'Search failed with status ' + res.status;
+          const data = await res.json();
+          let results = (data && data.results) || [];
+          if (results.length && q) {
+            const terms = q.toLowerCase().split(/\s+/).filter(Boolean);
+            results = results.filter(function (r) {
+              const text = ((r.title || '') + ' ' + (r.excerpt || '') + ' ' + (r.url || '')).toLowerCase();
+              return terms.every(function (t) { return text.includes(t); }) || terms.some(function (t) { return text.includes(t); });
+            }).slice(0, limit);
+          }
+          if (!results.length) return 'No results for "' + q + '".';
+          return results.map(function (r) {
+            return '- ' + r.title + ': ' + r.url + (r.excerpt ? ' (' + r.excerpt + ')' : '');
+          }).join('\n');
+        } catch (e) {
+          return 'Search error: ' + e.message;
+        }
+      }
+    });
+
+    navigator.modelContext.registerTool({
+      name: 'book_consultation',
+      description: 'Prepare a free AI discovery audit and consultation booking for MooreRevenue with direct WhatsApp contact details.',
+      inputSchema: {
+        type: 'object',
+        properties: {
+          name: { type: 'string', description: 'Client full name or contact person.' },
+          company: { type: 'string', description: 'Company, store, or business name.' },
+          service: {
+            type: 'string',
+            description: 'The service required, such as AI Voice Agents, Workflow Automation, WhatsApp Automation, Website Development, or Local SEO.'
+          },
+          location: { type: 'string', description: 'City or location of the business, default Faridabad.', default: 'Faridabad' },
+          notes: { type: 'string', description: 'Optional project goals or details.' }
+        },
+        required: ['name', 'service']
+      },
+      annotations: { readOnlyHint: false },
+      execute: async function (input) {
+        const name = String(input.name || '').trim();
+        const service = String(input.service || '').trim();
+        if (!name || !service) {
+          return 'Please provide both your name and the service you are interested in.';
+        }
+        const company = String(input.company || '').trim() || 'Business';
+        const location = String(input.location || '').trim() || 'Faridabad';
+        const notes = String(input.notes || '').trim();
+
+        let message = 'Hi Krishna, I am ' + name + ' from ' + company + ' in ' + location + '. I am interested in ' + service + ' solutions.';
+        if (notes) {
+          message += ' Details: ' + notes;
+        }
+
+        const phone = '+91 8287367640';
+        const phoneTel = '+918287367640';
+        const whatsappUrl = 'https://wa.me/918287367640?text=' + encodeURIComponent(message);
+
+        return [
+          'Consultation request prepared for MooreRevenue:',
+          '- Client: ' + name,
+          '- Company: ' + company,
+          '- Location: ' + location,
+          '- Service: ' + service,
+          '- Pre-filled WhatsApp Link: ' + whatsappUrl,
+          '- Direct Phone: ' + phone,
+          '- Direct Calling Link: tel:' + phoneTel,
+          '- Working Hours: Monday to Saturday, 09:00 to 20:00 IST',
+          'You can open the WhatsApp link above to initiate the consultation directly with Krishna Aggarwal.'
+        ].join('\n');
+      }
+    });
+  })();
+</script>

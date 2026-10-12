@@ -1,6 +1,8 @@
 ---
 import "../styles/global.css";
 import { BUSINESS } from "../lib/business";
+import WebMCPTools from "../components/WebMCPTools.astro";
+import WebMCPSearchForm from "../components/WebMCPSearchForm.astro";
 
 interface Props {
   title?: string;
@@ -226,5 +228,7 @@ const breadcrumbsSchema = breadcrumbs.length > 0 ? {
   </head>
   <body class="min-h-screen bg-[#ffffff] text-slate-900 antialiased selection:bg-[#00dc82] selection:text-black overflow-x-hidden">
     <slot />
+    <WebMCPSearchForm />
+    <WebMCPTools />
   </body>
 </html>

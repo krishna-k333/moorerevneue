@@ -1,0 +1,30 @@
+---
+---
+<form
+  toolname="search_site_form"
+  tooldescription="Search this site for pages by keyword and load the results page."
+  action="/search"
+  method="get"
+  class="webmcp-search-form"
+>
+  <label for="webmcp-q">Search the site</label>
+  <input
+    id="webmcp-q"
+    type="search"
+    name="q"
+    toolparamdescription="The keyword or phrase to search for. Plain text."
+    autocomplete="off"
+  />
+  <button type="submit">Search</button>
+</form>
+
+<style>
+  .webmcp-search-form {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+</style>
