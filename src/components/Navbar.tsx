@@ -124,10 +124,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAudit }) => {
             </a>
 
             <a
-              href="https://instagram.com/aiwkrishna"
+              href="https://instagram.com/buildwkrishna"
               target="_blank"
               rel="noopener noreferrer"
-              title="Instagram (@aiwkrishna)"
+              title="Instagram (@buildwkrishna)"
               aria-label="Krishna on Instagram"
               className="p-2 text-slate-500 hover:text-[#e1306c] hover:bg-pink-50 rounded-lg transition-colors"
             >
@@ -232,7 +232,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenAudit }) => {
               <span>YouTube</span>
             </a>
             <a
-              href="https://instagram.com/aiwkrishna"
+              href="https://instagram.com/buildwkrishna"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-700 hover:text-pink-600 transition-colors"
