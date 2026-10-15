@@ -3,20 +3,19 @@ import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer.astro";
 import AuditForm from "../components/AuditForm";
-import { BUSINESS, telHref } from "../lib/business";
+import { BUSINESS } from "../lib/business";
 import { 
   Globe, 
-  PhoneCall, 
   Workflow, 
   MessageSquare, 
   Laptop, 
+  Layers,
   Clock, 
   CreditCard, 
   Video, 
   CheckCircle2, 
   ArrowRight,
-  ShieldCheck,
-  Zap
+  ShieldCheck
 } from "lucide-react";
 
 const pageUrl = `${BUSINESS.url}/global`;
@@ -29,8 +28,8 @@ const breadcrumbs = [
 const webPageSchema = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "Global Remote AI Automation & Web Development | MooreRevenue",
-  "description": "MooreRevenue builds practical AI voice agents, workflow automations, and fast websites for businesses worldwide. Direct communication, fair pricing, and quick turnaround.",
+  "name": "AI Automations & Modern Websites for Global Clients | MooreRevenue",
+  "description": "MooreRevenue builds practical workflow automations and clean modern websites for businesses worldwide. Direct communication, clear pricing, and reliable delivery.",
   "url": pageUrl,
   "publisher": { "@id": `${BUSINESS.url}/#organization` },
 };
@@ -38,7 +37,7 @@ const webPageSchema = {
 const faqs = [
   {
     q: "How do we collaborate across different time zones?",
-    a: "We work on an async-first workflow. For quick updates and progress demos, we use Loom videos, Slack, or WhatsApp. When live meetings are needed, we schedule calls during overlapping working hours across US (EST/PST), UK (GMT), Europe (CET), and Australia (AEST)."
+    a: "We work on an async-first workflow. For quick updates and progress demos, we use Loom videos, Slack, or WhatsApp. When live meetings are needed, we schedule calls during overlapping working hours across US, UK, Europe, and Australia."
   },
   {
     q: "How do international payments work?",
@@ -46,49 +45,49 @@ const faqs = [
   },
   {
     q: "Who actually builds the systems?",
-    a: "You work directly with Krishna and our focused core team. No junior account reps, no outsourcing to random contractors. You talk directly with the person building your workflows or website."
+    a: "You work directly with Krishna and our focused core team. No confusing layers or account managers—just direct communication with the people doing the work."
   },
   {
     q: "Who owns the code, accounts, and workflows?",
-    a: "You own 100% of everything we build. All automations, Vapi/Retell setups, codebases, and integrations are deployed directly into your own accounts or handed over completely upon completion."
+    a: "You own 100% of everything we build. All automations, accounts, and codebases are set up in your own environment or handed over completely upon completion."
   },
   {
     q: "Can you connect with our existing tools and CRM?",
-    a: "Yes. We frequently integrate with tools like GoHighLevel, HubSpot, Airtable, Notion, Google Workspace, Stripe, Twilio, and custom REST APIs."
+    a: "Yes. We frequently integrate with tools like GoHighLevel, HubSpot, Airtable, Notion, Google Workspace, Stripe, and custom REST APIs."
   }
 ];
 
 const services = [
   {
-    title: "AI Voice Calling Agents",
-    badge: "Vapi & Retell AI",
-    icon: PhoneCall,
-    desc: "Inbound phone agents that answer after-hours questions, qualify leads, and schedule appointments straight into your calendar. Outbound agents for instant follow-up when someone fills a form.",
-  },
-  {
-    title: "Workflow Automation",
+    title: "Business Workflow Automation",
     badge: "n8n, Make & APIs",
     icon: Workflow,
-    desc: "Connect your CRM, forms, email, and internal databases. Eliminate repetitive data entry, route leads instantly, and make sure customer inquiries never get lost.",
+    desc: "Connect your CRM, forms, email, and databases. Automate routine manual tasks so your leads are organized and your team saves time every day.",
   },
   {
-    title: "WhatsApp & Omnichannel Bots",
-    badge: "Meta Cloud API",
+    title: "Chat & Messaging Automation",
+    badge: "WhatsApp & Chatbots",
     icon: MessageSquare,
-    desc: "Automated customer chat pipelines that handle common queries, send order or appointment reminders, and hand off warm leads directly to your team.",
+    desc: "Automated chat flows to answer common customer inquiries, share helpful information, and route warm leads directly to your team.",
   },
   {
-    title: "Fast Custom Websites",
+    title: "Modern Web Development",
     badge: "Astro & React",
     icon: Laptop,
-    desc: "Clean, responsive websites and landing pages built for speed and conversions. No heavy plugin-bloated templates—just fast code that loads in under 1 second.",
+    desc: "Clean, responsive websites and landing pages built for your business. Fast, mobile-friendly, and easy to maintain without unnecessary clutter.",
+  },
+  {
+    title: "API & Tool Integrations",
+    badge: "Custom Integrations",
+    icon: Layers,
+    desc: "Connect your everyday tools, payment gateways, and databases together so information flows smoothly across your business.",
   },
 ];
 ---
 
 <Layout
-  title="Global Remote AI Automation & Web Development | MooreRevenue"
-  description="MooreRevenue builds practical AI voice agents, workflow automations, and fast websites for businesses worldwide. Direct communication, fair pricing, and quick turnaround."
+  title="AI Automations & Modern Websites for Global Clients | MooreRevenue"
+  description="MooreRevenue builds practical workflow automations and clean modern websites for businesses worldwide. Direct communication, clear pricing, and reliable delivery."
   canonicalUrl={pageUrl}
   breadcrumbs={breadcrumbs}
   schemas={[webPageSchema]}
@@ -104,11 +103,11 @@ const services = [
       </div>
 
       <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
-        AI Automations & Fast Websites for <span class="text-[#059669]">Global Clients</span>
+        AI Automations & Modern Websites for <span class="text-[#059669]">Global Clients</span>
       </h1>
 
       <p class="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-        We're a boutique agency based in India, building practical AI voice agents, backend automations, and high-performance websites for founders and operators across the US, UK, Australia, Canada, and Europe.
+        We're a boutique agency helping founders and small businesses simplify operations, connect their day-to-day tools, and build clean, reliable websites.
       </p>
 
       {/* Quick reassurance pill row */}
@@ -119,11 +118,11 @@ const services = [
         </span>
         <span class="inline-flex items-center gap-1.5 bg-slate-50 border border-slate-200 px-3 py-1.5 rounded-lg shadow-xs">
           <CheckCircle2 class="w-3.5 h-3.5 text-[#059669]" />
-          No big-agency retainers
+          Clear, upfront pricing
         </span>
         <span class="inline-flex items-center gap-1.5 bg-slate-50 border border-slate-200 px-3 py-1.5 rounded-lg shadow-xs">
           <CheckCircle2 class="w-3.5 h-3.5 text-[#059669]" />
-          Delivery in 5–10 days
+          Practical, working solutions
         </span>
       </div>
 
@@ -151,10 +150,10 @@ const services = [
     <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
       <div class="text-center max-w-2xl mx-auto mb-12">
         <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
-          What We Build for Remote Clients
+          What We Build for Global Clients
         </h2>
         <p class="text-sm sm:text-base text-slate-600 mt-2">
-          Focused tools that solve real operational headaches, without unnecessary complexity.
+          Practical systems that solve real operational headaches without unnecessary complexity.
         </p>
       </div>
 
@@ -174,12 +173,12 @@ const services = [
       </div>
     </section>
 
-    {/* Why Remote Clients Work With Us */}
+    {/* How Working With Us Actually Works */}
     <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
       <div class="p-8 sm:p-12 rounded-3xl bg-slate-50 border border-slate-200 shadow-xs space-y-10">
         <div class="text-center max-w-2xl mx-auto space-y-2">
           <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">
-            How Working With Us Actually Works
+            How Working With Us Works
           </h2>
           <p class="text-sm text-slate-600">
             Simple, honest collaboration with clear milestones and regular updates.
@@ -193,7 +192,7 @@ const services = [
             </div>
             <h3 class="text-base font-bold text-slate-900">Time Zone Overlap</h3>
             <p class="text-xs text-slate-600 leading-relaxed">
-              We coordinate schedule slots for live calls during morning US (EST/PST) or European afternoon hours so meetings are easy to attend.
+              We schedule calls during convenient overlapping hours across North America, Europe, and Australia so meetings are easy to attend.
             </p>
           </div>
 
@@ -203,7 +202,7 @@ const services = [
             </div>
             <h3 class="text-base font-bold text-slate-900">Loom & Async Updates</h3>
             <p class="text-xs text-slate-600 leading-relaxed">
-              Instead of endless meetings, we send quick 2-minute video walkthroughs showing live demos of what we built.
+              Instead of endless meetings, we share short video walkthroughs and updates showing live progress.
             </p>
           </div>
 
@@ -211,9 +210,9 @@ const services = [
             <div class="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-[#059669] shadow-xs">
               <CreditCard class="w-5 h-5" />
             </div>
-            <h3 class="text-base font-bold text-slate-900">Simple International Billing</h3>
+            <h3 class="text-base font-bold text-slate-900">Straightforward Billing</h3>
             <p class="text-xs text-slate-600 leading-relaxed">
-              Transparent project quotes in USD, EUR, or GBP. Pay via Wise, Stripe, or standard bank wire without currency confusion.
+              Transparent project quotes in USD, EUR, or GBP. Pay securely via Wise, Stripe, or standard bank transfer.
             </p>
           </div>
 
@@ -223,7 +222,7 @@ const services = [
             </div>
             <h3 class="text-base font-bold text-slate-900">Full Ownership</h3>
             <p class="text-xs text-slate-600 leading-relaxed">
-              No vendor lock-in. Everything is deployed directly to your accounts, and we provide clean documentation so you stay in full control.
+              No lock-in. Everything is deployed directly to your accounts, and we provide clean documentation so you stay in complete control.
             </p>
           </div>
         </div>
@@ -234,40 +233,40 @@ const services = [
     <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
       <div class="text-center mb-10">
         <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">
-          Our 4-Step Engagement Process
+          Our 4-Step Process
         </h2>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
           <div class="text-xs font-mono font-bold text-[#059669]">Step 01</div>
-          <h3 class="text-base font-bold text-slate-900">15-Min Intro or Loom</h3>
+          <h3 class="text-base font-bold text-slate-900">Intro & Discussion</h3>
           <p class="text-xs text-slate-600 leading-relaxed">
-            Tell us about your current workflow, what you want to automate, or what site you want to build.
+            Tell us about your current workflow, what you want to automate, or what website you need.
           </p>
         </div>
 
         <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
           <div class="text-xs font-mono font-bold text-[#059669]">Step 02</div>
-          <h3 class="text-base font-bold text-slate-900">Scope & Fixed Quote</h3>
+          <h3 class="text-base font-bold text-slate-900">Clear Scope & Quote</h3>
           <p class="text-xs text-slate-600 leading-relaxed">
-            We provide a clear, 1-page scope outlining deliverables, exact timelines, and a fixed price.
+            We provide a clear scope outlining deliverables, estimated timeline, and upfront pricing.
           </p>
         </div>
 
         <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
           <div class="text-xs font-mono font-bold text-[#059669]">Step 03</div>
-          <h3 class="text-base font-bold text-slate-900">Sprint Build (3–10 Days)</h3>
+          <h3 class="text-base font-bold text-slate-900">Build & Review</h3>
           <p class="text-xs text-slate-600 leading-relaxed">
-            We build the solution and share private test links or live phone numbers for you to try out.
+            We build the solution and share progress or preview links so you can test and provide feedback.
           </p>
         </div>
 
         <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
           <div class="text-xs font-mono font-bold text-[#059669]">Step 04</div>
-          <h3 class="text-base font-bold text-slate-900">Live Handover & Support</h3>
+          <h3 class="text-base font-bold text-slate-900">Handover & Walkthrough</h3>
           <p class="text-xs text-slate-600 leading-relaxed">
-            We verify the setup together, record video guides for your team, and stay on hand for post-launch adjustments.
+            We walk you through everything, share short guides for your team, and ensure a smooth handover.
           </p>
         </div>
       </div>
@@ -280,7 +279,7 @@ const services = [
           Frequently Asked Questions
         </h2>
         <p class="text-sm text-slate-600 mt-2">
-          Straight answers about working with an overseas boutique agency.
+          Straightforward answers about working with our team remotely.
         </p>
       </div>
 
@@ -295,7 +294,7 @@ const services = [
     </section>
 
     {/* Contact / Audit Form Section */}
-    <div class="mt-20">
+    <div id="audit-section" class="mt-20">
       <AuditForm client:visible />
     </div>
   </main>
