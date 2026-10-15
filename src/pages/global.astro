@@ -3,9 +3,9 @@ import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer.astro";
 import AuditForm from "../components/AuditForm";
+import Testimonials from "../components/Testimonials.astro";
 import { BUSINESS } from "../lib/business";
 import { 
-  Globe, 
   Workflow, 
   MessageSquare, 
   Laptop, 
@@ -34,28 +34,6 @@ const webPageSchema = {
   "publisher": { "@id": `${BUSINESS.url}/#organization` },
 };
 
-const faqs = [
-  {
-    q: "How do we collaborate across different time zones?",
-    a: "We work on an async-first workflow. For quick updates and progress demos, we use Loom videos, Slack, or WhatsApp. When live meetings are needed, we schedule calls during overlapping working hours across US, UK, Europe, and Australia."
-  },
-  {
-    q: "How do international payments work?",
-    a: "We issue clear commercial invoices with payments handled via Wise, Stripe, or direct international bank wire in your preferred currency (USD, GBP, EUR, AUD, etc.)."
-  },
-  {
-    q: "Who actually builds the systems?",
-    a: "You work directly with Krishna and our focused core team. No confusing layers or account managers—just direct communication with the people doing the work."
-  },
-  {
-    q: "Who owns the code, accounts, and workflows?",
-    a: "You own 100% of everything we build. All automations, accounts, and codebases are set up in your own environment or handed over completely upon completion."
-  },
-  {
-    q: "Can you connect with our existing tools and CRM?",
-    a: "Yes. We frequently integrate with tools like GoHighLevel, HubSpot, Airtable, Notion, Google Workspace, Stripe, and custom REST APIs."
-  }
-];
 
 const services = [
   {
@@ -97,17 +75,12 @@ const services = [
   <main class="pt-32 pb-24 bg-white">
     {/* Hero Section */}
     <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-50 text-[#059669] text-xs font-semibold uppercase tracking-wider shadow-xs">
-        <Globe class="w-3.5 h-3.5" />
-        Worldwide • Remote Deployments
-      </div>
-
       <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
-        AI Automations & Modern Websites for <span class="text-[#059669]">Global Clients</span>
+        AI Automation <span class="text-[#059669]">Agency</span>
       </h1>
 
       <p class="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-        We're a boutique agency helping founders and small businesses simplify operations, connect their day-to-day tools, and build clean, reliable websites.
+        We build AI Automation systems and websites for businesses so AI does the work and you book the revenue
       </p>
 
       {/* Quick reassurance pill row */}
@@ -229,72 +202,13 @@ const services = [
       </div>
     </section>
 
-    {/* Step by step process */}
-    <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
-      <div class="text-center mb-10">
-        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">
-          Our 4-Step Process
-        </h2>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
-          <div class="text-xs font-mono font-bold text-[#059669]">Step 01</div>
-          <h3 class="text-base font-bold text-slate-900">Intro & Discussion</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Tell us about your current workflow, what you want to automate, or what website you need.
-          </p>
-        </div>
-
-        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
-          <div class="text-xs font-mono font-bold text-[#059669]">Step 02</div>
-          <h3 class="text-base font-bold text-slate-900">Clear Scope & Quote</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            We provide a clear scope outlining deliverables, estimated timeline, and upfront pricing.
-          </p>
-        </div>
-
-        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
-          <div class="text-xs font-mono font-bold text-[#059669]">Step 03</div>
-          <h3 class="text-base font-bold text-slate-900">Build & Review</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            We build the solution and share progress or preview links so you can test and provide feedback.
-          </p>
-        </div>
-
-        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-xs space-y-2">
-          <div class="text-xs font-mono font-bold text-[#059669]">Step 04</div>
-          <h3 class="text-base font-bold text-slate-900">Handover & Walkthrough</h3>
-          <p class="text-xs text-slate-600 leading-relaxed">
-            We walk you through everything, share short guides for your team, and ensure a smooth handover.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    {/* Frequently Asked Questions */}
-    <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
-      <div class="text-center mb-10">
-        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">
-          Frequently Asked Questions
-        </h2>
-        <p class="text-sm text-slate-600 mt-2">
-          Straightforward answers about working with our team remotely.
-        </p>
-      </div>
-
-      <div class="space-y-4">
-        {faqs.map((faq) => (
-          <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-xs space-y-2">
-            <h3 class="text-base font-bold text-slate-900">{faq.q}</h3>
-            <p class="text-sm text-slate-600 leading-relaxed">{faq.a}</p>
-          </div>
-        ))}
-      </div>
-    </section>
+    {/* Testimonials Section */}
+    <div class="mt-24">
+      <Testimonials />
+    </div>
 
     {/* Contact / Audit Form Section */}
-    <div id="audit-section" class="mt-20">
+    <div id="audit-section" class="mt-10">
       <AuditForm client:visible />
     </div>
   </main>
