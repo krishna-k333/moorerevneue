@@ -10,12 +10,8 @@ import {
   MessageSquare, 
   Laptop, 
   Layers,
-  Clock, 
-  CreditCard, 
-  Video, 
   CheckCircle2, 
-  ArrowRight,
-  ShieldCheck
+  ArrowRight
 } from "lucide-react";
 
 const pageUrl = `${BUSINESS.url}/global`;
@@ -91,10 +87,6 @@ const services = [
         </span>
         <span class="inline-flex items-center gap-1.5 bg-slate-50 border border-slate-200 px-3 py-1.5 rounded-lg shadow-xs">
           <CheckCircle2 class="w-3.5 h-3.5 text-[#059669]" />
-          Clear, upfront pricing
-        </span>
-        <span class="inline-flex items-center gap-1.5 bg-slate-50 border border-slate-200 px-3 py-1.5 rounded-lg shadow-xs">
-          <CheckCircle2 class="w-3.5 h-3.5 text-[#059669]" />
           Practical, working solutions
         </span>
       </div>
@@ -146,61 +138,7 @@ const services = [
       </div>
     </section>
 
-    {/* How Working With Us Actually Works */}
-    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-24">
-      <div class="p-8 sm:p-12 rounded-3xl bg-slate-50 border border-slate-200 shadow-xs space-y-10">
-        <div class="text-center max-w-2xl mx-auto space-y-2">
-          <h2 class="text-2xl sm:text-3xl font-bold text-slate-900">
-            How Working With Us Works
-          </h2>
-          <p class="text-sm text-slate-600">
-            Simple, honest collaboration with clear milestones and regular updates.
-          </p>
-        </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="space-y-2.5">
-            <div class="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-[#059669] shadow-xs">
-              <Clock class="w-5 h-5" />
-            </div>
-            <h3 class="text-base font-bold text-slate-900">Time Zone Overlap</h3>
-            <p class="text-xs text-slate-600 leading-relaxed">
-              We schedule calls during convenient overlapping hours across North America, Europe, and Australia so meetings are easy to attend.
-            </p>
-          </div>
-
-          <div class="space-y-2.5">
-            <div class="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-[#059669] shadow-xs">
-              <Video class="w-5 h-5" />
-            </div>
-            <h3 class="text-base font-bold text-slate-900">Loom & Async Updates</h3>
-            <p class="text-xs text-slate-600 leading-relaxed">
-              Instead of endless meetings, we share short video walkthroughs and updates showing live progress.
-            </p>
-          </div>
-
-          <div class="space-y-2.5">
-            <div class="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-[#059669] shadow-xs">
-              <CreditCard class="w-5 h-5" />
-            </div>
-            <h3 class="text-base font-bold text-slate-900">Straightforward Billing</h3>
-            <p class="text-xs text-slate-600 leading-relaxed">
-              Transparent project quotes in USD, EUR, or GBP. Pay securely via Wise, Stripe, or standard bank transfer.
-            </p>
-          </div>
-
-          <div class="space-y-2.5">
-            <div class="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-[#059669] shadow-xs">
-              <ShieldCheck class="w-5 h-5" />
-            </div>
-            <h3 class="text-base font-bold text-slate-900">Full Ownership</h3>
-            <p class="text-xs text-slate-600 leading-relaxed">
-              No lock-in. Everything is deployed directly to your accounts, and we provide clean documentation so you stay in complete control.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
 
     {/* Testimonials Section */}
     <div class="mt-24">
